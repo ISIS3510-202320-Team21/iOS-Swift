@@ -20,6 +20,8 @@
 		A9A010A62ACB44FD0070E71F /* SportPal_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */; };
 		A9A010A82ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */; };
 		A9FBF0EC2ACC85DF00F5729F /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBF0EB2ACC85DF00F5729F /* Footer.swift */; };
+		A9FBF0EF2ACC885800F5729F /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBF0EE2ACC885800F5729F /* LandingViewModel.swift */; };
+		A9FBF0F12ACC9AA700F5729F /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBF0F02ACC9AA700F5729F /* LandingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITests.swift; sourceTree = "<group>"; };
 		A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A9FBF0EB2ACC85DF00F5729F /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
+		A9FBF0EE2ACC885800F5729F /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		A9FBF0F02ACC9AA700F5729F /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		A954FC4D2ACC563C009E6708 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A9FBF0ED2ACC883D00F5729F /* Landing */,
 				A954FC592ACC73D4009E6708 /* Signup */,
 				A954FC4E2ACC563C009E6708 /* Login */,
 			);
@@ -176,6 +181,15 @@
 				A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */,
 			);
 			path = "SportPal-iOSUITests";
+			sourceTree = "<group>";
+		};
+		A9FBF0ED2ACC883D00F5729F /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				A9FBF0EE2ACC885800F5729F /* LandingViewModel.swift */,
+				A9FBF0F02ACC9AA700F5729F /* LandingViewController.swift */,
+			);
+			path = Landing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +329,8 @@
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
 				A9FBF0EC2ACC85DF00F5729F /* Footer.swift in Sources */,
+				A9FBF0EF2ACC885800F5729F /* LandingViewModel.swift in Sources */,
+				A9FBF0F12ACC9AA700F5729F /* LandingViewController.swift in Sources */,
 				A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

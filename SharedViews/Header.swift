@@ -17,7 +17,7 @@ struct HeaderView: View {
     var body: some View {
         HStack() {
             Text(title)
-                .font(.title)
+                .font(.title).padding()
             Spacer()
             if(messages) {
                 //TODO: Connect to message view
@@ -29,9 +29,9 @@ struct HeaderView: View {
                 //TODO: Connect to notifications view
                 Button(action:{}) {
                     Image("NotificationsIcon")
-                }
+                }.padding()
             }
-        }.padding()
+        }.background(Color.white)
     }
 }
 

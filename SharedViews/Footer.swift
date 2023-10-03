@@ -14,21 +14,21 @@ struct Footer: View {
                 
             }) {
                 Image("HomeButton")
-            }
+            }.padding()
             Spacer()
             Button(action: {
                 
             }) {
                 Image("NewMatchButton")
-            }
+            }.padding()
             Spacer()
             Button(action: {
                 
             }) {
                 Image("ProfileButton")
-            }
+            }.padding()
             
-        }.padding()
+        }.background(Color.white)
     }
 }
 
