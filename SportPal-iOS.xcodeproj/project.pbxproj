@@ -22,6 +22,7 @@
 		A9FBF0EC2ACC85DF00F5729F /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBF0EB2ACC85DF00F5729F /* Footer.swift */; };
 		A9FBF0EF2ACC885800F5729F /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBF0EE2ACC885800F5729F /* LandingViewModel.swift */; };
 		A9FBF0F12ACC9AA700F5729F /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBF0F02ACC9AA700F5729F /* LandingViewController.swift */; };
+		A9FBF0F42ACCA63100F5729F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBF0F32ACCA63100F5729F /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		A9FBF0EB2ACC85DF00F5729F /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		A9FBF0EE2ACC885800F5729F /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		A9FBF0F02ACC9AA700F5729F /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		A9FBF0F32ACCA63100F5729F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		A954FC4D2ACC563C009E6708 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A9FBF0F22ACCA5FC00F5729F /* Profile */,
 				A9FBF0ED2ACC883D00F5729F /* Landing */,
 				A954FC592ACC73D4009E6708 /* Signup */,
 				A954FC4E2ACC563C009E6708 /* Login */,
@@ -190,6 +193,14 @@
 				A9FBF0F02ACC9AA700F5729F /* LandingViewController.swift */,
 			);
 			path = Landing;
+			sourceTree = "<group>";
+		};
+		A9FBF0F22ACCA5FC00F5729F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A9FBF0F32ACCA63100F5729F /* ProfileViewModel.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
 				A9FBF0EC2ACC85DF00F5729F /* Footer.swift in Sources */,
+				A9FBF0F42ACCA63100F5729F /* ProfileViewModel.swift in Sources */,
 				A9FBF0EF2ACC885800F5729F /* LandingViewModel.swift in Sources */,
 				A9FBF0F12ACC9AA700F5729F /* LandingViewController.swift in Sources */,
 				A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */,
