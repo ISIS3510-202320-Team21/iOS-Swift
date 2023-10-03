@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		A53C56362ACC9D830041477C /* NewMatchIIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56352ACC9D830041477C /* NewMatchIIViewModel.swift */; };
 		A53C56382ACCAAEA0041477C /* NewMatchIIIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56372ACCAAEA0041477C /* NewMatchIIIViewModel.swift */; };
 		A53C563A2ACCAF630041477C /* NewMatchTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56392ACCAF630041477C /* NewMatchTimeViewModel.swift */; };
 		A53C563C2ACCD47E0041477C /* NewMatchIVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C563B2ACCD47E0041477C /* NewMatchIVViewModel.swift */; };
 		A54883E52ACC7B4C00B45BE0 /* NewMatchIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54883E42ACC7B4C00B45BE0 /* NewMatchIViewModel.swift */; };
+		A5D0BE432ACCCBDD0063A88B /* NotificationsViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE422ACCCBDD0063A88B /* NotificationsViewmodel.swift */; };
+		A5D0BE4B2ACCCBF00063A88B /* notificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE4A2ACCCBF00063A88B /* notificationsViewController.swift */; };
 		A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */; };
 		A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC502ACC563C009E6708 /* LoginViewController.swift */; };
 		A954FC552ACC59E1009E6708 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC542ACC59E1009E6708 /* Header.swift */; };
@@ -25,6 +28,8 @@
 		A9A010A62ACB44FD0070E71F /* SportPal_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */; };
 		A9A010A82ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */; };
 		A9FBF0EC2ACC85DF00F5729F /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBF0EB2ACC85DF00F5729F /* Footer.swift */; };
+		A9FBF0EF2ACC885800F5729F /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBF0EE2ACC885800F5729F /* LandingViewModel.swift */; };
+		A9FBF0F12ACC9AA700F5729F /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FBF0F02ACC9AA700F5729F /* LandingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,11 +50,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		A53C56352ACC9D830041477C /* NewMatchIIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchIIViewModel.swift; sourceTree = "<group>"; };
 		A53C56372ACCAAEA0041477C /* NewMatchIIIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchIIIViewModel.swift; sourceTree = "<group>"; };
 		A53C56392ACCAF630041477C /* NewMatchTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchTimeViewModel.swift; sourceTree = "<group>"; };
 		A53C563B2ACCD47E0041477C /* NewMatchIVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchIVViewModel.swift; sourceTree = "<group>"; };
 		A54883E42ACC7B4C00B45BE0 /* NewMatchIViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchIViewModel.swift; sourceTree = "<group>"; };
+=======
+		A5D0BE422ACCCBDD0063A88B /* NotificationsViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewmodel.swift; sourceTree = "<group>"; };
+		A5D0BE4A2ACCCBF00063A88B /* notificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsViewController.swift; sourceTree = "<group>"; };
+>>>>>>> origin/develop
 		A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A954FC502ACC563C009E6708 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A954FC542ACC59E1009E6708 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -66,6 +76,8 @@
 		A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITests.swift; sourceTree = "<group>"; };
 		A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A9FBF0EB2ACC85DF00F5729F /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
+		A9FBF0EE2ACC885800F5729F /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		A9FBF0F02ACC9AA700F5729F /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +105,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		A54883E32ACC7B4C00B45BE0 /* Matches */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,12 +116,26 @@
 				A53C563B2ACCD47E0041477C /* NewMatchIVViewModel.swift */,
 			);
 			path = Matches;
+=======
+		A5D0BE412ACCCBC30063A88B /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A5D0BE422ACCCBDD0063A88B /* NotificationsViewmodel.swift */,
+				A5D0BE4A2ACCCBF00063A88B /* notificationsViewController.swift */,
+			);
+			path = Notifications;
+>>>>>>> origin/develop
 			sourceTree = "<group>";
 		};
 		A954FC4D2ACC563C009E6708 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				A54883E32ACC7B4C00B45BE0 /* Matches */,
+=======
+				A5D0BE412ACCCBC30063A88B /* Notifications */,
+				A9FBF0ED2ACC883D00F5729F /* Landing */,
+>>>>>>> origin/develop
 				A954FC592ACC73D4009E6708 /* Signup */,
 				A954FC4E2ACC563C009E6708 /* Login */,
 			);
@@ -199,6 +226,15 @@
 				A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */,
 			);
 			path = "SportPal-iOSUITests";
+			sourceTree = "<group>";
+		};
+		A9FBF0ED2ACC883D00F5729F /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				A9FBF0EE2ACC885800F5729F /* LandingViewModel.swift */,
+				A9FBF0F02ACC9AA700F5729F /* LandingViewController.swift */,
+			);
+			path = Landing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +371,7 @@
 				A954FC5B2ACC73EF009E6708 /* SignupViewModel.swift in Sources */,
 				A954FC5D2ACC74BD009E6708 /* SignupViewController.swift in Sources */,
 				A954FC552ACC59E1009E6708 /* Header.swift in Sources */,
+				A5D0BE4B2ACCCBF00063A88B /* notificationsViewController.swift in Sources */,
 				A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */,
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
 				A54883E52ACC7B4C00B45BE0 /* NewMatchIViewModel.swift in Sources */,
@@ -342,7 +379,13 @@
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
 				A53C563A2ACCAF630041477C /* NewMatchTimeViewModel.swift in Sources */,
 				A9FBF0EC2ACC85DF00F5729F /* Footer.swift in Sources */,
+<<<<<<< HEAD
 				A53C56362ACC9D830041477C /* NewMatchIIViewModel.swift in Sources */,
+=======
+				A9FBF0EF2ACC885800F5729F /* LandingViewModel.swift in Sources */,
+				A5D0BE432ACCCBDD0063A88B /* NotificationsViewmodel.swift in Sources */,
+				A9FBF0F12ACC9AA700F5729F /* LandingViewController.swift in Sources */,
+>>>>>>> origin/develop
 				A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

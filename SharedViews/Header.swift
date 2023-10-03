@@ -17,21 +17,21 @@ struct HeaderView: View {
     var body: some View {
         HStack() {
             Text(title)
-                .font(.title)
+                .font(.title).padding()
             Spacer()
             if(messages) {
                 //TODO: Connect to message view
                 Button(action:{}) {
                     Image("MessagesIcon")
-                }
+                }.padding()
             }
             if(notifications) {
                 //TODO: Connect to notifications view
                 Button(action:{}) {
                     Image("NotificationsIcon")
-                }
+                }.padding()
             }
-        }.padding()
+        }.background(Color.white)
     }
 }
 
