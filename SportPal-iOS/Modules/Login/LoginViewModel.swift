@@ -32,13 +32,13 @@ struct LoginView: View {
                         // TODO: implement login
 
                     }) {
-                        Text("Send")
+                        Text("Login")
                             .font(.title)
                             .padding(.horizontal, 80)
                             .padding(.vertical, 10)
-                            .background(Color.green)
+                            .background(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
                             .foregroundColor(.white)
-                            .cornerRadius(10)
+                            .cornerRadius(40)
                     }
                 }.offset(y:100)                        .padding(.horizontal, 80)
                     .padding(.vertical, 10)
@@ -51,7 +51,7 @@ struct LoginView: View {
                 }.offset(y:100)
                 
                 Spacer()
-            }.background(Color(red: 0.4627, green: 0.8392, blue: 1.0))
+            }.background(Color(red: 245, green: 245, blue: 245))
 
         }
     }
