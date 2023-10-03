@@ -11,6 +11,8 @@ struct LoginView: View {
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var isSignup: Bool = false
+    @State private var isCorrectLogin: Bool = false
+
     
     
     var body: some View {
@@ -32,7 +34,7 @@ struct LoginView: View {
                         
                         Button(action: {
                             // TODO: implement login
-                            
+                            isCorrectLogin = true
                         }) {
                             Text("Login")
                                 .font(.title)
@@ -46,6 +48,9 @@ struct LoginView: View {
                         .padding(.vertical, 10)
                     
                     NavigationLink(destination: SignupViewModel(), isActive: $isSignup) {
+                        EmptyView()
+                    }
+                    NavigationLink(destination: LandingViewModel(), isActive: $isCorrectLogin) {
                         EmptyView()
                     }
                     VStack{
