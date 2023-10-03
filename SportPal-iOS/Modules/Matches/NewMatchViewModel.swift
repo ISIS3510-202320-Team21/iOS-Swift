@@ -13,44 +13,26 @@ struct NewMatchView: View {
     
     
     var body: some View {
+        let images: [String] = ["TennisIcon", "BaseballIcon", "ChessIcon", "BasketballIcon", "VolleyballIcon", "NewSportIcon"]
+        
         VStack () {
             HeaderView(title: "NEW MATCH", notifications: true, messages: true)
             VStack{
-                Text("Or sign up using")                        .padding(.vertical, 10)
+                Text("Camilo, please choose one of your sports, or add a new one:").font(.title3)                        .padding(.vertical, 20).padding(.horizontal, 20).multilineTextAlignment(.center)
                 
-                Image("LoginImg").offset(y:100)
-                VStack{
-                    TextField("Email...", text: $username)
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .padding(.horizontal, 20)
-                                    .padding(.bottom, 10)
-                                
-                    SecureField("Password...", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 20)
-                    
-                    Button(action: {
-                        // TODO: implement login
-
-                    }) {
-                        Text("Send")
-                            .font(.title)
-                            .padding(.horizontal, 80)
-                            .padding(.vertical, 10)
-                            .background(Color.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
-                    }
-                }.offset(y:100)                        .padding(.horizontal, 80)
-                    .padding(.vertical, 10)
-                VStack{
-                    Text("Or sign up using")                        .padding(.vertical, 7)
-
-                    Button("Sign Up", action: {
-                        //TODO: Connect with sign up
-                    })
-                }.offset(y:100)
+                LazyVGrid(columns: [GridItem(), GridItem()], spacing: 10) {
+                                ForEach(images, id: \.self) { imageName in
+                                    Button(action: {
+                                        print("Image \(imageName) clicked!")
+                                    }) {
+                                        Image(imageName)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                    }
+                                }
+                            }
+                            .padding()
                 
                 Spacer()
             }.background(Color(red: 0.96, green: 0.96, blue: 0.96))

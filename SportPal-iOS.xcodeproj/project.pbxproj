@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A54883E52ACC7B4C00B45BE0 /* NewMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54883E42ACC7B4C00B45BE0 /* NewMatchViewModel.swift */; };
 		A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */; };
 		A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC502ACC563C009E6708 /* LoginViewController.swift */; };
 		A954FC552ACC59E1009E6708 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC542ACC59E1009E6708 /* Header.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A54883E42ACC7B4C00B45BE0 /* NewMatchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchViewModel.swift; sourceTree = "<group>"; };
 		A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A954FC502ACC563C009E6708 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A954FC542ACC59E1009E6708 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -81,9 +83,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A54883E32ACC7B4C00B45BE0 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				A54883E42ACC7B4C00B45BE0 /* NewMatchViewModel.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
 		A954FC4D2ACC563C009E6708 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A54883E32ACC7B4C00B45BE0 /* Matches */,
 				A954FC592ACC73D4009E6708 /* Signup */,
 				A954FC4E2ACC563C009E6708 /* Login */,
 			);
@@ -310,6 +321,7 @@
 				A954FC552ACC59E1009E6708 /* Header.swift in Sources */,
 				A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */,
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
+				A54883E52ACC7B4C00B45BE0 /* NewMatchViewModel.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
 				A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */,
 			);
