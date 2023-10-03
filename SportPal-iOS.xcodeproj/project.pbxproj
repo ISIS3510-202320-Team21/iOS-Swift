@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */; };
+		A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC502ACC563C009E6708 /* LoginViewController.swift */; };
+		A954FC552ACC59E1009E6708 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC542ACC59E1009E6708 /* Header.swift */; };
 		A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */; };
 		A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0108C2ACB44FB0070E71F /* ContentView.swift */; };
 		A9A0108F2ACB44FD0070E71F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A0108E2ACB44FD0070E71F /* Assets.xcassets */; };
@@ -14,7 +17,6 @@
 		A9A0109C2ACB44FD0070E71F /* SportPal_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0109B2ACB44FD0070E71F /* SportPal_iOSTests.swift */; };
 		A9A010A62ACB44FD0070E71F /* SportPal_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */; };
 		A9A010A82ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */; };
-		A9A010B72ACBB0A70070E71F /* Modules in Resources */ = {isa = PBXBuildFile; fileRef = A9A010B62ACBB0A60070E71F /* Modules */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A954FC502ACC563C009E6708 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A954FC542ACC59E1009E6708 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		A9A010872ACB44FB0070E71F /* SportPal-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SportPal-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSApp.swift; sourceTree = "<group>"; };
 		A9A0108C2ACB44FB0070E71F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,7 +50,6 @@
 		A9A010A12ACB44FD0070E71F /* SportPal-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SportPal-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITests.swift; sourceTree = "<group>"; };
 		A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A9A010B62ACBB0A60070E71F /* Modules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Modules; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,9 +77,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A954FC4D2ACC563C009E6708 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A954FC4E2ACC563C009E6708 /* Login */,
+			);
+			name = Modules;
+			path = "SportPal-iOS/Modules";
+			sourceTree = "<group>";
+		};
+		A954FC4E2ACC563C009E6708 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */,
+				A954FC502ACC563C009E6708 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A954FC532ACC59C2009E6708 /* SharedViews */ = {
+			isa = PBXGroup;
+			children = (
+				A954FC542ACC59E1009E6708 /* Header.swift */,
+			);
+			path = SharedViews;
+			sourceTree = "<group>";
+		};
 		A9A0107E2ACB44FB0070E71F = {
 			isa = PBXGroup;
 			children = (
+				A954FC532ACC59C2009E6708 /* SharedViews */,
+				A954FC4D2ACC563C009E6708 /* Modules */,
 				A9A010892ACB44FB0070E71F /* SportPal-iOS */,
 				A9A0109A2ACB44FD0070E71F /* SportPal-iOSTests */,
 				A9A010A42ACB44FD0070E71F /* SportPal-iOSUITests */,
@@ -96,7 +128,6 @@
 		A9A010892ACB44FB0070E71F /* SportPal-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				A9A010B62ACBB0A60070E71F /* Modules */,
 				A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */,
 				A9A0108C2ACB44FB0070E71F /* ContentView.swift */,
 				A9A0108E2ACB44FD0070E71F /* Assets.xcassets */,
@@ -234,7 +265,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9A010B72ACBB0A70070E71F /* Modules in Resources */,
 				A9A010922ACB44FD0070E71F /* Preview Assets.xcassets in Resources */,
 				A9A0108F2ACB44FD0070E71F /* Assets.xcassets in Resources */,
 			);
@@ -261,8 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A954FC552ACC59E1009E6708 /* Header.swift in Sources */,
+				A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */,
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
+				A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +461,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,6 +490,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
