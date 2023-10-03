@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A54883E22ACC758300B45BE0 /* NewMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54883E12ACC758300B45BE0 /* NewMatchViewModel.swift */; };
 		A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */; };
 		A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC502ACC563C009E6708 /* LoginViewController.swift */; };
 		A954FC552ACC59E1009E6708 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC542ACC59E1009E6708 /* Header.swift */; };
+		A954FC5B2ACC73EF009E6708 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC5A2ACC73EF009E6708 /* SignupViewModel.swift */; };
+		A954FC5D2ACC74BD009E6708 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC5C2ACC74BD009E6708 /* SignupViewController.swift */; };
 		A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */; };
 		A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0108C2ACB44FB0070E71F /* ContentView.swift */; };
 		A9A0108F2ACB44FD0070E71F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A0108E2ACB44FD0070E71F /* Assets.xcassets */; };
@@ -38,10 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A54883E12ACC758300B45BE0 /* NewMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchViewModel.swift; sourceTree = "<group>"; };
 		A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A954FC502ACC563C009E6708 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A954FC542ACC59E1009E6708 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		A954FC5A2ACC73EF009E6708 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		A954FC5C2ACC74BD009E6708 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		A9A010872ACB44FB0070E71F /* SportPal-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SportPal-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSApp.swift; sourceTree = "<group>"; };
 		A9A0108C2ACB44FB0070E71F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,18 +81,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A54883DE2ACC752F00B45BE0 /* Matches */ = {
-			isa = PBXGroup;
-			children = (
-				A54883E12ACC758300B45BE0 /* NewMatchViewModel.swift */,
-			);
-			path = Matches;
-			sourceTree = "<group>";
-		};
 		A954FC4D2ACC563C009E6708 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A54883DE2ACC752F00B45BE0 /* Matches */,
+				A954FC592ACC73D4009E6708 /* Signup */,
 				A954FC4E2ACC563C009E6708 /* Login */,
 			);
 			name = Modules;
@@ -112,6 +106,15 @@
 				A954FC542ACC59E1009E6708 /* Header.swift */,
 			);
 			path = SharedViews;
+			sourceTree = "<group>";
+		};
+		A954FC592ACC73D4009E6708 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				A954FC5A2ACC73EF009E6708 /* SignupViewModel.swift */,
+				A954FC5C2ACC74BD009E6708 /* SignupViewController.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		A9A0107E2ACB44FB0070E71F = {
@@ -302,10 +305,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A954FC5B2ACC73EF009E6708 /* SignupViewModel.swift in Sources */,
+				A954FC5D2ACC74BD009E6708 /* SignupViewController.swift in Sources */,
 				A954FC552ACC59E1009E6708 /* Header.swift in Sources */,
 				A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */,
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
-				A54883E22ACC758300B45BE0 /* NewMatchViewModel.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
 				A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */,
 			);
