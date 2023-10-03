@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A54883E52ACC7B4C00B45BE0 /* NewMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54883E42ACC7B4C00B45BE0 /* NewMatchViewModel.swift */; };
+		A53C56362ACC9D830041477C /* NewMatchIIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56352ACC9D830041477C /* NewMatchIIViewModel.swift */; };
+		A53C56382ACCAAEA0041477C /* NewMatchIIIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56372ACCAAEA0041477C /* NewMatchIIIViewModel.swift */; };
+		A53C563A2ACCAF630041477C /* NewMatchTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56392ACCAF630041477C /* NewMatchTimeViewModel.swift */; };
+		A53C563C2ACCD47E0041477C /* NewMatchIVViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C563B2ACCD47E0041477C /* NewMatchIVViewModel.swift */; };
+		A54883E52ACC7B4C00B45BE0 /* NewMatchIViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54883E42ACC7B4C00B45BE0 /* NewMatchIViewModel.swift */; };
 		A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */; };
 		A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC502ACC563C009E6708 /* LoginViewController.swift */; };
 		A954FC552ACC59E1009E6708 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC542ACC59E1009E6708 /* Header.swift */; };
@@ -41,7 +45,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A54883E42ACC7B4C00B45BE0 /* NewMatchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchViewModel.swift; sourceTree = "<group>"; };
+		A53C56352ACC9D830041477C /* NewMatchIIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchIIViewModel.swift; sourceTree = "<group>"; };
+		A53C56372ACCAAEA0041477C /* NewMatchIIIViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchIIIViewModel.swift; sourceTree = "<group>"; };
+		A53C56392ACCAF630041477C /* NewMatchTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchTimeViewModel.swift; sourceTree = "<group>"; };
+		A53C563B2ACCD47E0041477C /* NewMatchIVViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchIVViewModel.swift; sourceTree = "<group>"; };
+		A54883E42ACC7B4C00B45BE0 /* NewMatchIViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchIViewModel.swift; sourceTree = "<group>"; };
 		A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A954FC502ACC563C009E6708 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A954FC542ACC59E1009E6708 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -88,7 +96,11 @@
 		A54883E32ACC7B4C00B45BE0 /* Matches */ = {
 			isa = PBXGroup;
 			children = (
-				A54883E42ACC7B4C00B45BE0 /* NewMatchViewModel.swift */,
+				A54883E42ACC7B4C00B45BE0 /* NewMatchIViewModel.swift */,
+				A53C56352ACC9D830041477C /* NewMatchIIViewModel.swift */,
+				A53C56372ACCAAEA0041477C /* NewMatchIIIViewModel.swift */,
+				A53C56392ACCAF630041477C /* NewMatchTimeViewModel.swift */,
+				A53C563B2ACCD47E0041477C /* NewMatchIVViewModel.swift */,
 			);
 			path = Matches;
 			sourceTree = "<group>";
@@ -319,14 +331,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53C56382ACCAAEA0041477C /* NewMatchIIIViewModel.swift in Sources */,
 				A954FC5B2ACC73EF009E6708 /* SignupViewModel.swift in Sources */,
 				A954FC5D2ACC74BD009E6708 /* SignupViewController.swift in Sources */,
 				A954FC552ACC59E1009E6708 /* Header.swift in Sources */,
 				A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */,
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
-				A54883E52ACC7B4C00B45BE0 /* NewMatchViewModel.swift in Sources */,
+				A54883E52ACC7B4C00B45BE0 /* NewMatchIViewModel.swift in Sources */,
+				A53C563C2ACCD47E0041477C /* NewMatchIVViewModel.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
+				A53C563A2ACCAF630041477C /* NewMatchTimeViewModel.swift in Sources */,
 				A9FBF0EC2ACC85DF00F5729F /* Footer.swift in Sources */,
+				A53C56362ACC9D830041477C /* NewMatchIIViewModel.swift in Sources */,
 				A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
