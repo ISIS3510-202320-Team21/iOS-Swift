@@ -58,9 +58,8 @@ struct LoginView: View {
                     }.offset(y:100)
                     
                     Spacer()
-                }.background(Color(red: 245, green: 245, blue: 245))
-                
-            }
+                }
+            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
         }.navigationBarBackButtonHidden()
     }
 }
