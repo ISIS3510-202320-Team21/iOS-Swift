@@ -14,6 +14,7 @@
 		A9A0109C2ACB44FD0070E71F /* SportPal_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0109B2ACB44FD0070E71F /* SportPal_iOSTests.swift */; };
 		A9A010A62ACB44FD0070E71F /* SportPal_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */; };
 		A9A010A82ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */; };
+		A9A010B72ACBB0A70070E71F /* Modules in Resources */ = {isa = PBXBuildFile; fileRef = A9A010B62ACBB0A60070E71F /* Modules */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A9A010A12ACB44FD0070E71F /* SportPal-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SportPal-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITests.swift; sourceTree = "<group>"; };
 		A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A9A010B62ACBB0A60070E71F /* Modules */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Modules; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		A9A010892ACB44FB0070E71F /* SportPal-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				A9A010B62ACBB0A60070E71F /* Modules */,
 				A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */,
 				A9A0108C2ACB44FB0070E71F /* ContentView.swift */,
 				A9A0108E2ACB44FD0070E71F /* Assets.xcassets */,
@@ -231,6 +234,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A010B72ACBB0A70070E71F /* Modules in Resources */,
 				A9A010922ACB44FD0070E71F /* Preview Assets.xcassets in Resources */,
 				A9A0108F2ACB44FD0070E71F /* Assets.xcassets in Resources */,
 			);
