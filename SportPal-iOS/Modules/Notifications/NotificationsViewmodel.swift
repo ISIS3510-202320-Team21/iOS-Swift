@@ -11,7 +11,7 @@ struct NotificationsViewmodel: View {
     var body: some View {
         NavigationView{
             VStack{
-                HeaderView(title: "HOME", notifications: false, messages: true)
+                HeaderView(title: "NOTIFICATIONS", notifications: false, messages: true)
                 
                 VStack{
                 NotificationView(texto: "Hi, please rate your match with David")
