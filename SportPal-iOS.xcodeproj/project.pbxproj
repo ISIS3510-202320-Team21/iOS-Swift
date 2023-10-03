@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5D0BE432ACCCBDD0063A88B /* NotificationsViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE422ACCCBDD0063A88B /* NotificationsViewmodel.swift */; };
+		A5D0BE4B2ACCCBF00063A88B /* notificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE4A2ACCCBF00063A88B /* notificationsViewController.swift */; };
 		A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */; };
 		A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC502ACC563C009E6708 /* LoginViewController.swift */; };
 		A954FC552ACC59E1009E6708 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC542ACC59E1009E6708 /* Header.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5D0BE422ACCCBDD0063A88B /* NotificationsViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewmodel.swift; sourceTree = "<group>"; };
+		A5D0BE4A2ACCCBF00063A88B /* notificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsViewController.swift; sourceTree = "<group>"; };
 		A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A954FC502ACC563C009E6708 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A954FC542ACC59E1009E6708 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -87,9 +91,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5D0BE412ACCCBC30063A88B /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A5D0BE422ACCCBDD0063A88B /* NotificationsViewmodel.swift */,
+				A5D0BE4A2ACCCBF00063A88B /* notificationsViewController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		A954FC4D2ACC563C009E6708 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A5D0BE412ACCCBC30063A88B /* Notifications */,
 				A9FBF0ED2ACC883D00F5729F /* Landing */,
 				A954FC592ACC73D4009E6708 /* Signup */,
 				A954FC4E2ACC563C009E6708 /* Login */,
@@ -325,11 +339,13 @@
 				A954FC5B2ACC73EF009E6708 /* SignupViewModel.swift in Sources */,
 				A954FC5D2ACC74BD009E6708 /* SignupViewController.swift in Sources */,
 				A954FC552ACC59E1009E6708 /* Header.swift in Sources */,
+				A5D0BE4B2ACCCBF00063A88B /* notificationsViewController.swift in Sources */,
 				A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */,
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
 				A9FBF0EC2ACC85DF00F5729F /* Footer.swift in Sources */,
 				A9FBF0EF2ACC885800F5729F /* LandingViewModel.swift in Sources */,
+				A5D0BE432ACCCBDD0063A88B /* NotificationsViewmodel.swift in Sources */,
 				A9FBF0F12ACC9AA700F5729F /* LandingViewController.swift in Sources */,
 				A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */,
 			);

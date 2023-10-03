@@ -23,7 +23,7 @@ struct HeaderView: View {
                 //TODO: Connect to message view
                 Button(action:{}) {
                     Image("MessagesIcon")
-                }
+                }.padding()
             }
             if(notifications) {
                 //TODO: Connect to notifications view
