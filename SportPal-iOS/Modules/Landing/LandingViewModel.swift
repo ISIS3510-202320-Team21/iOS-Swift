@@ -98,7 +98,11 @@ struct LandingViewModel: View {
                     Spacer()
                 }.padding()
                 
-                Footer()
+                FooterView(viewModel: FooterViewModel(
+                    homeButtonAction: NavigateToHomeActionStrategy(),
+                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
+                    profileButtonAction: NavigateToProfileActionStrategy()
+                ))
                 
             }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
         }.navigationBarBackButtonHidden(true)
