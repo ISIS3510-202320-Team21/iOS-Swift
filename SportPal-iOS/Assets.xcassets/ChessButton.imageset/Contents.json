@@ -1,11 +1,7 @@
 {
   "images" : [
     {
-<<<<<<< HEAD
-      "filename" : "ajedrez (1).png",
-=======
-      "filename" : "ajedrez 1.png",
->>>>>>> origin/develop
+      "filename" : "chess.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
