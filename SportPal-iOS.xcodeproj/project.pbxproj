@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A5D0BE432ACCCBDD0063A88B /* NotificationsViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE422ACCCBDD0063A88B /* NotificationsViewmodel.swift */; };
 		A5D0BE4B2ACCCBF00063A88B /* notificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE4A2ACCCBF00063A88B /* notificationsViewController.swift */; };
+		A5D0BE5D2ACCE1A90063A88B /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE5C2ACCE1A90063A88B /* MatchesViewModel.swift */; };
+		A5D0BE652ACCE1D20063A88B /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE642ACCE1D10063A88B /* MatchesViewController.swift */; };
 		A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */; };
 		A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC502ACC563C009E6708 /* LoginViewController.swift */; };
 		A954FC552ACC59E1009E6708 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC542ACC59E1009E6708 /* Header.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		A5D0BE422ACCCBDD0063A88B /* NotificationsViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewmodel.swift; sourceTree = "<group>"; };
 		A5D0BE4A2ACCCBF00063A88B /* notificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsViewController.swift; sourceTree = "<group>"; };
+		A5D0BE5C2ACCE1A90063A88B /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
+		A5D0BE642ACCE1D10063A88B /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A954FC502ACC563C009E6708 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A954FC542ACC59E1009E6708 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -100,9 +104,19 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		A5D0BE5B2ACCE1730063A88B /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				A5D0BE5C2ACCE1A90063A88B /* MatchesViewModel.swift */,
+				A5D0BE642ACCE1D10063A88B /* MatchesViewController.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
 		A954FC4D2ACC563C009E6708 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A5D0BE5B2ACCE1730063A88B /* Matches */,
 				A5D0BE412ACCCBC30063A88B /* Notifications */,
 				A9FBF0ED2ACC883D00F5729F /* Landing */,
 				A954FC592ACC73D4009E6708 /* Signup */,
@@ -336,8 +350,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5D0BE652ACCE1D20063A88B /* MatchesViewController.swift in Sources */,
 				A954FC5B2ACC73EF009E6708 /* SignupViewModel.swift in Sources */,
 				A954FC5D2ACC74BD009E6708 /* SignupViewController.swift in Sources */,
+				A5D0BE5D2ACCE1A90063A88B /* MatchesViewModel.swift in Sources */,
 				A954FC552ACC59E1009E6708 /* Header.swift in Sources */,
 				A5D0BE4B2ACCCBF00063A88B /* notificationsViewController.swift in Sources */,
 				A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */,
@@ -434,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -488,7 +504,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
