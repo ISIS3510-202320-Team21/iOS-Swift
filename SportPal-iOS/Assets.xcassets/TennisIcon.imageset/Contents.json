@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD
+      "filename" : "pelota (1).png",
+=======
       "filename" : "tenis 1.png",
+>>>>>>> origin/develop
       "idiom" : "universal",
       "scale" : "1x"
     },
