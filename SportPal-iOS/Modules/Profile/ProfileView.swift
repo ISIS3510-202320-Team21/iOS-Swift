@@ -62,7 +62,11 @@ struct ProfileViewModel: View {
                     }
                 }
                 Spacer()
-                Footer()
+                FooterView(viewModel: FooterViewModel(
+                    homeButtonAction: NavigateToHomeActionStrategy(),
+                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
+                    profileButtonAction: NavigateToProfileActionStrategy()
+                ))
             }
         }.navigationBarBackButtonHidden(true)
     }

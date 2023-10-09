@@ -34,6 +34,38 @@
             endingLineNumber = "16"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "69319FF0-33CA-4738-BC50-CC9327B35B4C - 113ea8799f302ac8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SportPal_iOS.MatchesViewModel.body.getter : some"
+                  moduleName = "SportPal-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/javierramirez/Documents/iOS-Swift/SportPal-iOS/Modules/Matches/MatchesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "336">
+               </Location>
+               <Location
+                  uuid = "69319FF0-33CA-4738-BC50-CC9327B35B4C - d3b04952a8b415ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.VStack&lt;SwiftUI.TupleView&lt;(SportPal_iOS.HeaderView, &lt;&lt;opaque return type of SwiftUI.View.background&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(_: &#x3c4;_1_0, alignment: SwiftUI.Alignment) -&gt; some&gt;&gt;.0)&gt;&gt; in SportPal_iOS.MatchesViewModel.body.getter : some"
+                  moduleName = "SportPal-iOS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/javierramirez/Documents/iOS-Swift/SportPal-iOS/Modules/Matches/MatchesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "332">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

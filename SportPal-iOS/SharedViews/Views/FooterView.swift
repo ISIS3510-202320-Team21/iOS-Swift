@@ -14,20 +14,32 @@ struct FooterView: View, AppComponent {
             Button(action: {
                 viewModel.homeButtonAction.performAction()
             }) {
-                Image("HomeButton")
-            }.padding()
+                Image(systemName: "house.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 30, height: 30) // Set a fixed size for the image if you want it to dictate the card's height
+                .foregroundColor(Color.black)
+            }.padding(.leading, 40)
             Spacer()
             Button(action: {
                 viewModel.newMatchButtonAction.performAction()
             }) {
-                Image("NewMatchButton")
+                Image(systemName: "plus.square.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 30, height: 30) // Set a fixed size for the image if you want it to dictate the card's height
+                .foregroundColor(Color.black)
             }.padding()
             Spacer()
             Button(action: {
                 viewModel.profileButtonAction.performAction()
             }) {
-                Image("ProfileButton")
-            }.padding()
+                Image(systemName: "person.crop.square.fill")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 30, height: 30) // Set a fixed size for the image if you want it to dictate the card's height
+                .foregroundColor(Color.black)
+            }.padding(.trailing, 40)
             
         }.background(Color.white)
     }

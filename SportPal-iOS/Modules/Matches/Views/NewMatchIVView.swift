@@ -72,7 +72,11 @@ struct NewMatchIVView: View {
                 Spacer()
             }.background(Color(red: 0.96, green: 0.96, blue: 0.96))
             Spacer()
-            Footer()
+            FooterView(viewModel: FooterViewModel(
+                homeButtonAction: NavigateToHomeActionStrategy(),
+                newMatchButtonAction: NavigateToNewMatchActionStrategy(),
+                profileButtonAction: NavigateToProfileActionStrategy()
+            ))
         }
     }
 }
