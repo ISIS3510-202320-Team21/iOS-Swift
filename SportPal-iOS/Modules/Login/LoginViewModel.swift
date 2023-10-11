@@ -13,8 +13,9 @@ struct LoginView: View {
     @State private var isSignup: Bool = false
     @State private var isCorrectLogin: Bool = false
 
+    
+    
     var body: some View {
-        
         NavigationView {
             VStack () {
                 HeaderView(title: "LOGIN", notifications: false, messages: false)
@@ -46,10 +47,10 @@ struct LoginView: View {
                     }.offset(y:100)                        .padding(.horizontal, 80)
                         .padding(.vertical, 10)
                     
-                    NavigationLink(destination: SignupView(), isActive: $isSignup) {
+                    NavigationLink(destination: SignupViewModel(), isActive: $isSignup) {
                         EmptyView()
                     }
-                    NavigationLink(destination: LandingView(), isActive: $isCorrectLogin) {
+                    NavigationLink(destination: LandingViewModel(), isActive: $isCorrectLogin) {
                         EmptyView()
                     }
                     VStack{
