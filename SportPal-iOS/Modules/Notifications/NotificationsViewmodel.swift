@@ -19,11 +19,7 @@ struct NotificationsViewmodel: View {
                 NotificationView(texto: "New people ready to match in tennis. All in your preffered hours")
                 }
                 Spacer()
-                FooterView(viewModel: FooterViewModel(
-                    homeButtonAction: NavigateToHomeActionStrategy(),
-                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-                    profileButtonAction: NavigateToProfileActionStrategy()
-                ))
+                Footer()
             }.background(Color(red: 0.961, green: 0.961, blue: 0.961))	
         }
                 
