@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5BF53C02AE01D3000D657E2 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF53B92AE01D3000D657E2 /* MatchesViewController.swift */; };
+		A5BF53C32AE01D3000D657E2 /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF53BC2AE01D3000D657E2 /* MatchesViewModel.swift */; };
+		A5BF53CD2AE01D6800D657E2 /* MatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF53CC2AE01D6800D657E2 /* MatchViewModel.swift */; };
+		A5BF53D22AE01D7B00D657E2 /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF53D12AE01D7B00D657E2 /* MatchViewController.swift */; };
 		A5D0BE432ACCCBDD0063A88B /* NotificationsViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE422ACCCBDD0063A88B /* NotificationsViewmodel.swift */; };
 		A5D0BE4B2ACCCBF00063A88B /* notificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE4A2ACCCBF00063A88B /* notificationsViewController.swift */; };
-		A5D0BE5D2ACCE1A90063A88B /* MatchesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE5C2ACCE1A90063A88B /* MatchesViewModel.swift */; };
-		A5D0BE652ACCE1D20063A88B /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D0BE642ACCE1D10063A88B /* MatchesViewController.swift */; };
 		A954FC512ACC563D009E6708 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */; };
 		A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC502ACC563C009E6708 /* LoginViewController.swift */; };
 		A954FC552ACC59E1009E6708 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = A954FC542ACC59E1009E6708 /* Header.swift */; };
@@ -46,10 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5BF53B92AE01D3000D657E2 /* MatchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		A5BF53BC2AE01D3000D657E2 /* MatchesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
+		A5BF53CC2AE01D6800D657E2 /* MatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewModel.swift; sourceTree = "<group>"; };
+		A5BF53D12AE01D7B00D657E2 /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		A5D0BE422ACCCBDD0063A88B /* NotificationsViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewmodel.swift; sourceTree = "<group>"; };
 		A5D0BE4A2ACCCBF00063A88B /* notificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsViewController.swift; sourceTree = "<group>"; };
-		A5D0BE5C2ACCE1A90063A88B /* MatchesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewModel.swift; sourceTree = "<group>"; };
-		A5D0BE642ACCE1D10063A88B /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		A954FC4F2ACC563C009E6708 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A954FC502ACC563C009E6708 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A954FC542ACC59E1009E6708 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -95,6 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5BF53B72AE01D3000D657E2 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				A5BF53B92AE01D3000D657E2 /* MatchesViewController.swift */,
+				A5BF53BC2AE01D3000D657E2 /* MatchesViewModel.swift */,
+				A5BF53CC2AE01D6800D657E2 /* MatchViewModel.swift */,
+				A5BF53D12AE01D7B00D657E2 /* MatchViewController.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
 		A5D0BE412ACCCBC30063A88B /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,19 +119,10 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		A5D0BE5B2ACCE1730063A88B /* Matches */ = {
-			isa = PBXGroup;
-			children = (
-				A5D0BE5C2ACCE1A90063A88B /* MatchesViewModel.swift */,
-				A5D0BE642ACCE1D10063A88B /* MatchesViewController.swift */,
-			);
-			path = Matches;
-			sourceTree = "<group>";
-		};
 		A954FC4D2ACC563C009E6708 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A5D0BE5B2ACCE1730063A88B /* Matches */,
+				A5BF53B72AE01D3000D657E2 /* Matches */,
 				A5D0BE412ACCCBC30063A88B /* Notifications */,
 				A9FBF0ED2ACC883D00F5729F /* Landing */,
 				A954FC592ACC73D4009E6708 /* Signup */,
@@ -350,16 +356,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5D0BE652ACCE1D20063A88B /* MatchesViewController.swift in Sources */,
 				A954FC5B2ACC73EF009E6708 /* SignupViewModel.swift in Sources */,
 				A954FC5D2ACC74BD009E6708 /* SignupViewController.swift in Sources */,
-				A5D0BE5D2ACCE1A90063A88B /* MatchesViewModel.swift in Sources */,
 				A954FC552ACC59E1009E6708 /* Header.swift in Sources */,
 				A5D0BE4B2ACCCBF00063A88B /* notificationsViewController.swift in Sources */,
 				A954FC522ACC563D009E6708 /* LoginViewController.swift in Sources */,
+				A5BF53D22AE01D7B00D657E2 /* MatchViewController.swift in Sources */,
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
+				A5BF53C02AE01D3000D657E2 /* MatchesViewController.swift in Sources */,
+				A5BF53CD2AE01D6800D657E2 /* MatchViewModel.swift in Sources */,
 				A9FBF0EC2ACC85DF00F5729F /* Footer.swift in Sources */,
+				A5BF53C32AE01D3000D657E2 /* MatchesViewModel.swift in Sources */,
 				A9FBF0EF2ACC885800F5729F /* LandingViewModel.swift in Sources */,
 				A5D0BE432ACCCBDD0063A88B /* NotificationsViewmodel.swift in Sources */,
 				A9FBF0F12ACC9AA700F5729F /* LandingViewController.swift in Sources */,
