@@ -12,7 +12,7 @@ struct HeaderView: View {
     
     var title: String
     var notifications: Bool
-    var messages: Bool
+    @State var messages: Bool
     
     var body: some View {
         HStack() {
@@ -21,9 +21,11 @@ struct HeaderView: View {
             Spacer()
             if(messages) {
                 //TODO: Connect to message view
-                Button(action:{}) {
-                    Image("MessagesIcon")
-                }.padding()
+                NavigationLink(destination: MessagesViewModel()) {
+                    Button(action:{}) {
+                        Image("MessagesIcon")
+                    }.padding()
+                }
             }
             if(notifications) {
                 //TODO: Connect to notifications view
