@@ -22,12 +22,10 @@ struct HeaderBack: View {
             }
             .padding()
             
-            Spacer()
             
             Text("**\(title)**")
                 .font(.title)
                 .foregroundColor(Color(red: 0, green: 0, blue: 0))
-                .frame(maxWidth: .infinity, alignment: .center)
                 .padding()
         
             Spacer()

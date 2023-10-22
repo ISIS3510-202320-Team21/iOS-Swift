@@ -19,10 +19,11 @@ struct LoginView: View {
             VStack () {
                 HeaderView(title: "LOGIN", notifications: false, messages: false)
                 VStack{
-                    Image(systemName: "person.circle").resizable().aspectRatio(contentMode: .fill)
+                    Image(systemName: "person.circle.fill").resizable().aspectRatio(contentMode: .fill)
                         .frame(width: 150, height: 150)
                         .imageScale(.small)
                         .offset(y:100)
+                        .foregroundColor(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
                     VStack{
                         CustomTextField(placeholder: "Email...", text: $username).padding(.horizontal)
                                     
