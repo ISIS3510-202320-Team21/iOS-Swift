@@ -54,7 +54,6 @@ struct LoginView: View {
                         Text("Or sign up using")                        .padding(.vertical, 7)
                         
                         Button("Sign Up", action: {
-                            //TODO: Connect with sign up
                             isSignup = true
                         })
                     }.offset(y:150)
