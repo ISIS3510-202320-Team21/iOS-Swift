@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MatchesViewModel: View {
+struct MatchesView: View {
     
     @State private var sport = "Tennis"
     @State private var user = "M. Diaz"
@@ -45,7 +45,7 @@ struct MatchesViewModel: View {
 
 struct MatchesView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchesViewModel()
+        MatchesView()
     }
 }
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfileViewModel: View {
+struct ProfileView: View {
     
     @State private var user: String = "CAMILO ESCOBAR"
 
@@ -74,6 +74,6 @@ struct ProfileViewModel: View {
 
 struct ProfileViewModel_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileViewModel()
+        ProfileView()
     }
 }
