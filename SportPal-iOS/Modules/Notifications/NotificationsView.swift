@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NotificationsViewmodel: View {
+struct NotificationsViewModel: View {
     var body: some View {
         NavigationView{
             VStack{
@@ -33,7 +33,7 @@ struct NotificationsViewmodel: View {
 
 struct NotificationsViewmodel_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationsViewmodel()
+        NotificationsViewModel()
     }
 }
 

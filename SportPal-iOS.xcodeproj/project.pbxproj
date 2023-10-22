@@ -28,6 +28,10 @@
 		A5DCF6D12ACE001D00081712 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6C52ACE001D00081712 /* NotificationsView.swift */; };
 		A5DCF6D22ACE001D00081712 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6C72ACE001D00081712 /* LoginView.swift */; };
 		A5DCF6D62ACE033400081712 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6D52ACE033400081712 /* LandingViewModel.swift */; };
+		A9120C672AE5B3990013B053 /* ChatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9120C662AE5B3990013B053 /* ChatsView.swift */; };
+		A9120C692AE5B46A0013B053 /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9120C682AE5B46A0013B053 /* ChatsViewModel.swift */; };
+		A9120C6C2AE5B6350013B053 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9120C6B2AE5B6350013B053 /* MessagesViewModel.swift */; };
+		A9120C6E2AE5B6540013B053 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9120C6D2AE5B6540013B053 /* MessagesView.swift */; };
 		A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */; };
 		A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0108C2ACB44FB0070E71F /* ContentView.swift */; };
 		A9A0108F2ACB44FD0070E71F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A0108E2ACB44FD0070E71F /* Assets.xcassets */; };
@@ -77,6 +81,10 @@
 		A5DCF6C52ACE001D00081712 /* NotificationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		A5DCF6C72ACE001D00081712 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A5DCF6D52ACE033400081712 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		A9120C662AE5B3990013B053 /* ChatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsView.swift; sourceTree = "<group>"; };
+		A9120C682AE5B46A0013B053 /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
+		A9120C6B2AE5B6350013B053 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
+		A9120C6D2AE5B6540013B053 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		A9A010872ACB44FB0070E71F /* SportPal-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SportPal-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSApp.swift; sourceTree = "<group>"; };
 		A9A0108C2ACB44FB0070E71F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +148,8 @@
 		A5DCF6B32ACE001D00081712 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A9120C6A2AE5B6020013B053 /* Messages */,
+				A9120C642AE5B3640013B053 /* Chats */,
 				A5DCF6B42ACE001D00081712 /* Landing */,
 				A5DCF6B62ACE001D00081712 /* Signup */,
 				A5DCF6B82ACE001D00081712 /* Matches */,
@@ -243,6 +253,24 @@
 				A53C56942ACD20160041477C /* FooterViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A9120C642AE5B3640013B053 /* Chats */ = {
+			isa = PBXGroup;
+			children = (
+				A9120C662AE5B3990013B053 /* ChatsView.swift */,
+				A9120C682AE5B46A0013B053 /* ChatsViewModel.swift */,
+			);
+			path = Chats;
+			sourceTree = "<group>";
+		};
+		A9120C6A2AE5B6020013B053 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				A9120C6B2AE5B6350013B053 /* MessagesViewModel.swift */,
+				A9120C6D2AE5B6540013B053 /* MessagesView.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 		A9A0107E2ACB44FB0070E71F = {
@@ -434,12 +462,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9120C692AE5B46A0013B053 /* ChatsViewModel.swift in Sources */,
+				A9120C672AE5B3990013B053 /* ChatsView.swift in Sources */,
+				A9120C6E2AE5B6540013B053 /* MessagesView.swift in Sources */,
 				A5DCF6CF2ACE001D00081712 /* NewMatchIView.swift in Sources */,
 				A5DCF6CB2ACE001D00081712 /* NewMatchIVView.swift in Sources */,
 				A53C56992ACD20160041477C /* ButtonActionStrategy.swift in Sources */,
 				A53C56972ACD20160041477C /* FooterView.swift in Sources */,
 				A53C56982ACD20160041477C /* NavigateToProfileActionStrategy.swift in Sources */,
 				A5DCF6CE2ACE001D00081712 /* NewMatchIIView.swift in Sources */,
+				A9120C6C2AE5B6350013B053 /* MessagesViewModel.swift in Sources */,
 				A53C569E2ACD20160041477C /* AppComponent.swift in Sources */,
 				A5DCF6CC2ACE001D00081712 /* MatchesView.swift in Sources */,
 				A5DCF6D22ACE001D00081712 /* LoginView.swift in Sources */,
