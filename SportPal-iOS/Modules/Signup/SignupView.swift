@@ -14,36 +14,39 @@ struct SignupView: View {
     
     
     var body: some View {
-        VStack () {
-            HeaderView(title: "SIGNUP", notifications: false, messages: false)
-            VStack{
-                Image("LoginImg").offset(y:100)
+        NavigationView {
+            VStack () {
+                HeaderBack(title: "SIGN UP") {
+                }
                 VStack{
+                    Image("LoginImg").offset(y:100)
+                    VStack{
+                        
+                        CustomTextField(placeholder: "Name...", text: $name).padding(.horizontal)
+                        
+                        CustomTextField(placeholder: "Email...", text: $username).padding(.horizontal)
+                                    
+                        CustomSecureField(placeholder: "Password...", text: $password).padding(.horizontal)
+                        
+                        Button(action: {
+                            // TODO: implement signup
+                        }) {
+                            Text("Sign Up")
+                                .font(.title2)
+                                .padding(.horizontal, 80)
+                                .padding(.vertical, 10)
+                                .background(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
+                                .foregroundColor(.white)
+                                .cornerRadius(40)
+                        }.offset(y:50)
+                    }.offset(y:100)                        .padding(.horizontal, 80)
+                        .padding(.vertical, 10)
                     
-                    CustomTextField(placeholder: "Name...", text: $name).padding(.horizontal)
-                    
-                    CustomTextField(placeholder: "Email...", text: $username).padding(.horizontal)
-                                
-                    CustomSecureField(placeholder: "Password...", text: $password).padding(.horizontal)
-                    
-                    Button(action: {
-                        // TODO: implement signup
-                    }) {
-                        Text("Sign Up")
-                            .font(.title2)
-                            .padding(.horizontal, 80)
-                            .padding(.vertical, 10)
-                            .background(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
-                            .foregroundColor(.white)
-                            .cornerRadius(40)
-                    }.offset(y:50)
-                }.offset(y:100)                        .padding(.horizontal, 80)
-                    .padding(.vertical, 10)
-                
-                Spacer()
-            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
+                    Spacer()
+                }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
 
-        }
+            }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

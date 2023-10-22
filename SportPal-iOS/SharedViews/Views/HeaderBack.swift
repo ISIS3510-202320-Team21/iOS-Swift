@@ -27,8 +27,9 @@ struct HeaderBack: View {
             Text("**\(title)**")
                 .font(.title)
                 .foregroundColor(Color(red: 0, green: 0, blue: 0))
+                .frame(maxWidth: .infinity, alignment: .center)
                 .padding()
-            
+        
             Spacer()
         }
         .background(Color.white)
@@ -37,6 +38,8 @@ struct HeaderBack: View {
 
 struct HeaderBack_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderBack(title: "SIGN UP", onBackAction: {})
+        HeaderBack(title: "SIGN UP") {
+            
+        }
     }
 }
