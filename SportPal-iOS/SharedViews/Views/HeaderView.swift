@@ -11,6 +11,8 @@ struct HeaderView: View, AppComponent {
     var title: String
     var notifications: Bool
     var messages: Bool
+    @State private var messagesClicked: Bool = false
+    @State private var notificationsClicked: Bool = false
         
     var body: some View {
         HStack() {
@@ -19,22 +21,27 @@ struct HeaderView: View, AppComponent {
                 .foregroundColor(Color(red: 0, green: 0, blue: 0))
             Spacer()
             if(messages) {
-                Button(action:{}) {
-                    Image(systemName: "envelope.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 21, height: 21) // Set a fixed size for the image if you want it to dictate the card's height
-                        .foregroundColor(Color.black)
-                }.padding()
+                NavigationLink(destination: MessagesView(), isActive: $messagesClicked){
+                    Button(action:{messagesClicked = true}) {
+                        Image(systemName: "envelope.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 21, height: 21) // Set a fixed size for the image if you want it to dictate the card's height
+                            .foregroundColor(Color.black)
+                    }.padding()
+                }
             }
             if(notifications) {
-                Button(action:{}) {
-                    Image(systemName: "bell.square.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 22, height: 22) // Set a fixed size for the image if you want it to dictate the card's height
-                        .foregroundColor(Color.black)
-                }.padding()
+                NavigationLink(destination: NotificationsView(), isActive: $notificationsClicked) {
+                    Button(action:{notificationsClicked = true}) {
+                        Image(systemName: "bell.square.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 22, height: 22) // Set a fixed size for the image if you want it to dictate the card's height
+                            .foregroundColor(Color.black)
+                    }.padding()
+                }
+                
             }
         }.background(Color.white)
     }
