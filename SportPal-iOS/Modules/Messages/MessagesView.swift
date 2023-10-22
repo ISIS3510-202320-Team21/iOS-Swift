@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct MessagesViewModel: View {
+
+struct MessagesView: View {
     var body: some View {
         NavigationView{
             VStack{
@@ -41,37 +42,45 @@ struct MessagesViewModel: View {
 
 struct MessagesViewModel_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesViewModel()
+        MessagesView()
     }
 }
+
+
 struct MessageView: View {
+    @State private var chatClicked: Bool = false
     
     var texto: String
     var persona: String
     var nombre: String
     
     var body: some View {
-        HStack() {
-            Image(persona == "hombre" ? "perfil": "perfilMujer")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 80, height: 80)
-            VStack(alignment: .leading, spacing: 1 ){
-                Text(nombre)
-                    .font(.system(size: 15, weight: .bold, design: .default)).padding(3)
-                    .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
-                Text(texto)
-                    .font(.system(size: 15, weight: .light, design: .default))
-                    .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+        NavigationLink(destination: ChatsView(), isActive: $chatClicked) {
+            Button(action:{chatClicked = true}){
+                HStack() {
+                    Image(persona == "hombre" ? "perfil": "perfilMujer")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 80, height: 80)
+                    VStack(alignment: .leading, spacing: 1 ){
+                        Text(nombre)
+                            .font(.system(size: 15, weight: .bold, design: .default)).padding(3)
+                            .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+                        Text(texto)
+                            .font(.system(size: 15, weight: .light, design: .default))
+                            .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+                    }
+                    
+                    Spacer()
+                    Image("Arrow")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                    
+                }.background(Color.white)
             }
             
-            Spacer()
-            Image("Arrow")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
-
-        }.background(Color.white)
+        }
     }
     
     
