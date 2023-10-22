@@ -46,7 +46,7 @@ struct SignupView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(40)
                         }.offset(y:80)
-                    }.offset(y:50)                        .padding(.horizontal, 80)
+                    }.offset(y:50)                        .padding(.horizontal, 20)
                         .padding(.vertical, 10)
                     
                     Spacer()

@@ -41,7 +41,7 @@ struct LoginView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(40)
                         }.offset(y:50)
-                    }.offset(y:100)                        .padding(.horizontal, 80)
+                    }.offset(y:100)                        .padding(.horizontal, 20)
                         .padding(.vertical, 10)
                     
                     NavigationLink(destination: SignupView(), isActive: $isSignup) {
