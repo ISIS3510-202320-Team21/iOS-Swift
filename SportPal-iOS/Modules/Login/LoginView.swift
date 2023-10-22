@@ -19,7 +19,9 @@ struct LoginView: View {
             VStack () {
                 HeaderView(title: "LOGIN", notifications: false, messages: false)
                 VStack{
-                    Image("LoginImg").offset(y:100)
+                    Image(systemName: "person.circle").resizable().aspectRatio(contentMode: .fill)
+                        .frame(width: 150, height: 150)
+                        .offset(y:100)
                     VStack{
                         TextField("Email...", text: $username)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
