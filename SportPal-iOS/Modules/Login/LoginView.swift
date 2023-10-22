@@ -21,17 +21,12 @@ struct LoginView: View {
                 VStack{
                     Image(systemName: "person.circle").resizable().aspectRatio(contentMode: .fill)
                         .frame(width: 150, height: 150)
+                        .imageScale(.small)
                         .offset(y:100)
                     VStack{
-                        TextField("Email...", text: $username)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding(.horizontal, 20)
-                            .padding(.bottom, 10)
-                        
-                        SecureField("Password...", text: $password)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding(.horizontal, 20)
-                            .padding(.bottom, 20)
+                        CustomTextField(placeholder: "Email...", text: $username).padding(.horizontal)
+                                    
+                        CustomSecureField(placeholder: "Password...", text: $password).padding(.horizontal)
                         
                         Button(action: {
                             // TODO: implement login
@@ -44,7 +39,7 @@ struct LoginView: View {
                                 .background(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
                                 .foregroundColor(.white)
                                 .cornerRadius(40)
-                        }
+                        }.offset(y:50)
                     }.offset(y:100)                        .padding(.horizontal, 80)
                         .padding(.vertical, 10)
                     
@@ -61,7 +56,7 @@ struct LoginView: View {
                             //TODO: Connect with sign up
                             isSignup = true
                         })
-                    }.offset(y:100)
+                    }.offset(y:150)
                     
                     Spacer()
                 }

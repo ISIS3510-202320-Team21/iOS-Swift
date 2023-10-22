@@ -19,33 +19,24 @@ struct SignupView: View {
             VStack{
                 Image("LoginImg").offset(y:100)
                 VStack{
-                    TextField("Name...", text: $name)
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .padding(.horizontal, 20)
-                                    .padding(.bottom, 10)
+                    
+                    CustomTextField(placeholder: "Name...", text: $name).padding(.horizontal)
+                    
+                    CustomTextField(placeholder: "Email...", text: $username).padding(.horizontal)
                                 
-                    TextField("Email...", text: $username)
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .padding(.horizontal, 20)
-                                    .padding(.bottom, 10)
-                                
-                    SecureField("Password...", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 20)
+                    CustomSecureField(placeholder: "Password...", text: $password).padding(.horizontal)
                     
                     Button(action: {
                         // TODO: implement signup
-
                     }) {
                         Text("Sign Up")
+                            .font(.title2)
                             .padding(.horizontal, 80)
                             .padding(.vertical, 10)
                             .background(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
                             .foregroundColor(.white)
                             .cornerRadius(40)
-                            .offset(y:50)
-                    }
+                    }.offset(y:50)
                 }.offset(y:100)                        .padding(.horizontal, 80)
                     .padding(.vertical, 10)
                 
