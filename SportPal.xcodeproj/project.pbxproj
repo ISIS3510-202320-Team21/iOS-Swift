@@ -16,6 +16,8 @@
 		A53C569D2ACD20160041477C /* FooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56942ACD20160041477C /* FooterViewModel.swift */; };
 		A53C569E2ACD20160041477C /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56952ACD20160041477C /* AppComponent.swift */; };
 		A53C569F2ACD20160041477C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56962ACD20160041477C /* HeaderView.swift */; };
+		A573E2582AE5BF15008C04F8 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573E2572AE5BF15008C04F8 /* FieldView.swift */; };
+		A573E25A2AE5C166008C04F8 /* HeaderBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573E2592AE5C166008C04F8 /* HeaderBack.swift */; };
 		A5DCF6C82ACE001D00081712 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6B52ACE001D00081712 /* LandingView.swift */; };
 		A5DCF6C92ACE001D00081712 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6B72ACE001D00081712 /* SignupView.swift */; };
 		A5DCF6CA2ACE001D00081712 /* NewMatchTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6BC2ACE001D00081712 /* NewMatchTimeView.swift */; };
@@ -68,6 +70,8 @@
 		A53C56942ACD20160041477C /* FooterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterViewModel.swift; sourceTree = "<group>"; };
 		A53C56952ACD20160041477C /* AppComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		A53C56962ACD20160041477C /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		A573E2572AE5BF15008C04F8 /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		A573E2592AE5C166008C04F8 /* HeaderBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBack.swift; sourceTree = "<group>"; };
 		A5DCF6B22ACDF88C00081712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A5DCF6B52ACE001D00081712 /* LandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		A5DCF6B72ACE001D00081712 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -85,14 +89,14 @@
 		A9120C682AE5B46A0013B053 /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
 		A9120C6B2AE5B6350013B053 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		A9120C6D2AE5B6540013B053 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
-		A9A010872ACB44FB0070E71F /* SportPal-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SportPal-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9A010872ACB44FB0070E71F /* SportPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSApp.swift; sourceTree = "<group>"; };
 		A9A0108C2ACB44FB0070E71F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9A0108E2ACB44FD0070E71F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9A010912ACB44FD0070E71F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A9A010972ACB44FD0070E71F /* SportPal-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SportPal-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9A010972ACB44FD0070E71F /* SportPalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportPalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A0109B2ACB44FD0070E71F /* SportPal_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSTests.swift; sourceTree = "<group>"; };
-		A9A010A12ACB44FD0070E71F /* SportPal-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SportPal-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9A010A12ACB44FD0070E71F /* SportPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITests.swift; sourceTree = "<group>"; };
 		A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +247,8 @@
 			children = (
 				A53C56962ACD20160041477C /* HeaderView.swift */,
 				A53C568D2ACD20160041477C /* FooterView.swift */,
+				A573E2572AE5BF15008C04F8 /* FieldView.swift */,
+				A573E2592AE5C166008C04F8 /* HeaderBack.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,9 +292,9 @@
 		A9A010882ACB44FB0070E71F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9A010872ACB44FB0070E71F /* SportPal-iOS.app */,
-				A9A010972ACB44FD0070E71F /* SportPal-iOSTests.xctest */,
-				A9A010A12ACB44FD0070E71F /* SportPal-iOSUITests.xctest */,
+				A9A010872ACB44FB0070E71F /* SportPal.app */,
+				A9A010972ACB44FD0070E71F /* SportPalTests.xctest */,
+				A9A010A12ACB44FD0070E71F /* SportPalUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -335,9 +341,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A9A010862ACB44FB0070E71F /* SportPal-iOS */ = {
+		A9A010862ACB44FB0070E71F /* SportPal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9A010AB2ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPal-iOS" */;
+			buildConfigurationList = A9A010AB2ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPal" */;
 			buildPhases = (
 				A9A010832ACB44FB0070E71F /* Sources */,
 				A9A010842ACB44FB0070E71F /* Frameworks */,
@@ -347,14 +353,14 @@
 			);
 			dependencies = (
 			);
-			name = "SportPal-iOS";
+			name = SportPal;
 			productName = "SportPal-iOS";
-			productReference = A9A010872ACB44FB0070E71F /* SportPal-iOS.app */;
+			productReference = A9A010872ACB44FB0070E71F /* SportPal.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A9A010962ACB44FD0070E71F /* SportPal-iOSTests */ = {
+		A9A010962ACB44FD0070E71F /* SportPalTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9A010AE2ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPal-iOSTests" */;
+			buildConfigurationList = A9A010AE2ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPalTests" */;
 			buildPhases = (
 				A9A010932ACB44FD0070E71F /* Sources */,
 				A9A010942ACB44FD0070E71F /* Frameworks */,
@@ -365,14 +371,14 @@
 			dependencies = (
 				A9A010992ACB44FD0070E71F /* PBXTargetDependency */,
 			);
-			name = "SportPal-iOSTests";
+			name = SportPalTests;
 			productName = "SportPal-iOSTests";
-			productReference = A9A010972ACB44FD0070E71F /* SportPal-iOSTests.xctest */;
+			productReference = A9A010972ACB44FD0070E71F /* SportPalTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A9A010A02ACB44FD0070E71F /* SportPal-iOSUITests */ = {
+		A9A010A02ACB44FD0070E71F /* SportPalUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9A010B12ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPal-iOSUITests" */;
+			buildConfigurationList = A9A010B12ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPalUITests" */;
 			buildPhases = (
 				A9A0109D2ACB44FD0070E71F /* Sources */,
 				A9A0109E2ACB44FD0070E71F /* Frameworks */,
@@ -383,9 +389,9 @@
 			dependencies = (
 				A9A010A32ACB44FD0070E71F /* PBXTargetDependency */,
 			);
-			name = "SportPal-iOSUITests";
+			name = SportPalUITests;
 			productName = "SportPal-iOSUITests";
-			productReference = A9A010A12ACB44FD0070E71F /* SportPal-iOSUITests.xctest */;
+			productReference = A9A010A12ACB44FD0070E71F /* SportPalUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -411,7 +417,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A9A010822ACB44FB0070E71F /* Build configuration list for PBXProject "SportPal-iOS" */;
+			buildConfigurationList = A9A010822ACB44FB0070E71F /* Build configuration list for PBXProject "SportPal" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -424,9 +430,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A9A010862ACB44FB0070E71F /* SportPal-iOS */,
-				A9A010962ACB44FD0070E71F /* SportPal-iOSTests */,
-				A9A010A02ACB44FD0070E71F /* SportPal-iOSUITests */,
+				A9A010862ACB44FB0070E71F /* SportPal */,
+				A9A010962ACB44FD0070E71F /* SportPalTests */,
+				A9A010A02ACB44FD0070E71F /* SportPalUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -475,10 +481,12 @@
 				A53C569E2ACD20160041477C /* AppComponent.swift in Sources */,
 				A5DCF6CC2ACE001D00081712 /* MatchesView.swift in Sources */,
 				A5DCF6D22ACE001D00081712 /* LoginView.swift in Sources */,
+				A573E2582AE5BF15008C04F8 /* FieldView.swift in Sources */,
 				A5DCF6C92ACE001D00081712 /* SignupView.swift in Sources */,
 				A53C569B2ACD20160041477C /* EmptyActionStrategy.swift in Sources */,
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
 				A5DCF6D62ACE033400081712 /* LandingViewModel.swift in Sources */,
+				A573E25A2AE5C166008C04F8 /* HeaderBack.swift in Sources */,
 				A5DCF6C82ACE001D00081712 /* LandingView.swift in Sources */,
 				A53C569A2ACD20160041477C /* NavigateToHomeActionStrategy.swift in Sources */,
 				A5DCF6D12ACE001D00081712 /* NotificationsView.swift in Sources */,
@@ -514,12 +522,12 @@
 /* Begin PBXTargetDependency section */
 		A9A010992ACB44FD0070E71F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A9A010862ACB44FB0070E71F /* SportPal-iOS */;
+			target = A9A010862ACB44FB0070E71F /* SportPal */;
 			targetProxy = A9A010982ACB44FD0070E71F /* PBXContainerItemProxy */;
 		};
 		A9A010A32ACB44FD0070E71F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A9A010862ACB44FB0070E71F /* SportPal-iOS */;
+			target = A9A010862ACB44FB0070E71F /* SportPal */;
 			targetProxy = A9A010A22ACB44FD0070E71F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -721,7 +729,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportPal-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SportPal-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportPal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SportPal";
 			};
 			name = Debug;
 		};
@@ -741,7 +749,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportPal-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SportPal-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SportPal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SportPal";
 			};
 			name = Release;
 		};
@@ -782,7 +790,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A9A010822ACB44FB0070E71F /* Build configuration list for PBXProject "SportPal-iOS" */ = {
+		A9A010822ACB44FB0070E71F /* Build configuration list for PBXProject "SportPal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9A010A92ACB44FD0070E71F /* Debug */,
@@ -791,7 +799,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9A010AB2ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPal-iOS" */ = {
+		A9A010AB2ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9A010AC2ACB44FD0070E71F /* Debug */,
@@ -800,7 +808,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9A010AE2ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPal-iOSTests" */ = {
+		A9A010AE2ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPalTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9A010AF2ACB44FD0070E71F /* Debug */,
@@ -809,7 +817,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9A010B12ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPal-iOSUITests" */ = {
+		A9A010B12ACB44FD0070E71F /* Build configuration list for PBXNativeTarget "SportPalUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9A010B22ACB44FD0070E71F /* Debug */,

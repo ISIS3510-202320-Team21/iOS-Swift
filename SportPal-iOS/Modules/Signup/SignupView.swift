@@ -11,48 +11,53 @@ struct SignupView: View {
     @State private var name: String = ""
     @State private var username: String = ""
     @State private var password: String = ""
+    @State private var isShowingSignupView: Bool = false
+    @State private var isNavigatingBack: Bool = false
     
     
     var body: some View {
-        VStack () {
-            HeaderView(title: "SIGNUP", notifications: false, messages: false)
-            VStack{
-                Image("LoginImg").offset(y:100)
+        NavigationView {
+            VStack () {
+                HeaderBack(title: "SIGN UP") {
+                    self.isNavigatingBack = true
+                }
                 VStack{
-                    TextField("Name...", text: $name)
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .padding(.horizontal, 20)
-                                    .padding(.bottom, 10)
-                                
-                    TextField("Email...", text: $username)
-                                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                                    .padding(.horizontal, 20)
-                                    .padding(.bottom, 10)
-                                
-                    SecureField("Password...", text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, 20)
+                    Image(systemName: "person.crop.circle.fill.badge.plus").resizable().aspectRatio(contentMode: .fill)
+                        .frame(width: 150, height: 150)
+                        .imageScale(.small)
+                        .offset(y:30)
+                        .foregroundColor(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
+                    VStack{
+                        
+                        CustomTextField(placeholder: "Name...", text: $name).padding(.horizontal)
+                        
+                        CustomTextField(placeholder: "Email...", text: $username).padding(.horizontal)
+                                    
+                        CustomSecureField(placeholder: "Password...", text: $password).padding(.horizontal)
+                        
+                        Button(action: {
+                            // TODO: implement signup
+                        }) {
+                            Text("Sign Up")
+                                .font(.title2)
+                                .padding(.horizontal, 80)
+                                .padding(.vertical, 10)
+                                .background(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
+                                .foregroundColor(.white)
+                                .cornerRadius(40)
+                        }.offset(y:80)
+                    }.offset(y:50)                        .padding(.horizontal, 80)
+                        .padding(.vertical, 10)
                     
-                    Button(action: {
-                        // TODO: implement signup
+                    Spacer()
+                }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
 
-                    }) {
-                        Text("Sign Up")
-                            .padding(.horizontal, 80)
-                            .padding(.vertical, 10)
-                            .background(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
-                            .foregroundColor(.white)
-                            .cornerRadius(40)
-                            .offset(y:50)
-                    }
-                }.offset(y:100)                        .padding(.horizontal, 80)
-                    .padding(.vertical, 10)
-                
-                Spacer()
-            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
-
-        }
+            }
+        }.navigationBarBackButtonHidden(true)
+        .background(NavigationLink(
+            destination: LoginView(),
+            isActive: $isNavigatingBack,
+            label: {EmptyView()}))
     }
 }
 
