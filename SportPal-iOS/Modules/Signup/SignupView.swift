@@ -13,6 +13,7 @@ struct SignupView: View {
     @State private var password: String = ""
     @State private var isShowingSignupView: Bool = false
     @State private var isNavigatingBack: Bool = false
+    @State private var isCorrectSignup: Bool = false
     
     
     var body: some View {
@@ -37,6 +38,7 @@ struct SignupView: View {
                         
                         Button(action: {
                             // TODO: implement signup
+                            isCorrectSignup = true
                         }) {
                             Text("Sign Up")
                                 .font(.title2)
@@ -46,7 +48,11 @@ struct SignupView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(40)
                         }.offset(y:80)
-                    }.offset(y:50)                        .padding(.horizontal, 80)
+                        
+                        NavigationLink(destination: LandingView(), isActive: $isCorrectSignup) {
+                            EmptyView()
+                        }
+                    }.offset(y:50)                        .padding(.horizontal, 20)
                         .padding(.vertical, 10)
                     
                     Spacer()

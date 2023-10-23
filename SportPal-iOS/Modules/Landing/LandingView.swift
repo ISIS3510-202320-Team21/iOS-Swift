@@ -29,7 +29,6 @@ struct LandingView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 130, height: 130) //Set your image size here
-                                .shadow(radius: 4)
                             // Text centered on the right
                             Spacer()
                             Text("Go to field reservation")
@@ -43,7 +42,6 @@ struct LandingView: View {
                         .contentShape(Rectangle())
                         .background(Color.white)
                         .cornerRadius(16)
-                        .shadow(radius: 4)
                     }
                     
                     NavigationLink(destination: MatchesView(), isActive: $manageMatchesClicked) {
@@ -59,7 +57,6 @@ struct LandingView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 130, height: 130) // Set your image size here
-                                    .shadow(radius: 4)
                                 // Text centered on the right
                                 Spacer()
                                 Text("Manage your matches")
@@ -73,7 +70,6 @@ struct LandingView: View {
                             .padding()
                             .background(Color.white)
                             .cornerRadius(16)
-                            .shadow(radius: 4)
                         }
                 }
                 Spacer()

@@ -41,7 +41,7 @@ struct LoginView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(40)
                         }.offset(y:50)
-                    }.offset(y:100)                        .padding(.horizontal, 80)
+                    }.offset(y:100)                        .padding(.horizontal, 20)
                         .padding(.vertical, 10)
                     
                     NavigationLink(destination: SignupView(), isActive: $isSignup) {
@@ -54,7 +54,6 @@ struct LoginView: View {
                         Text("Or sign up using")                        .padding(.vertical, 7)
                         
                         Button("Sign Up", action: {
-                            //TODO: Connect with sign up
                             isSignup = true
                         })
                     }.offset(y:150)

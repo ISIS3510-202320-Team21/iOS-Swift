@@ -18,13 +18,13 @@ struct MatchesView: View {
                 HeaderView(title: "MATCHES", notifications: true, messages: true)
                 
                 VStack{
-                    Image("Add")
+                    Image(systemName: "plus.app.fill")
                         .resizable()
-                        .background(Color.white)
-                        .frame(width: 40, height: 40)
+                        .foregroundColor(.black)
+                        .frame(width: 35, height: 35)
                         .cornerRadius(10)
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .padding([.top, .trailing], 10)
+                    
                         
                         
                     MatchView(texto: "\(sport) match with \(user)")
@@ -34,7 +34,7 @@ struct MatchesView: View {
                         newMatchButtonAction: NavigateToNewMatchActionStrategy(),
                         profileButtonAction: NavigateToProfileActionStrategy()
                     ))
-            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
+                }.padding().background(Color(red: 0.961, green: 0.961, blue: 0.961))
         }
         
         
@@ -54,32 +54,31 @@ struct MatchView: View {
     var texto: String
     
     var body: some View {
-        VStack{
-            HStack() {
-                    Text(texto)
-                        .font(.system(size: 25, weight: .light, design: .default)).padding()
-                        .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
-                        .multilineTextAlignment(.center)
-                    Spacer()
-                    Image("Arrow")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
+        HStack{
+            VStack(alignment: .center, spacing: 1 ){
+                Text(texto)
+                .font(.system(size: 20, design: .default))
+                .fontWeight(.thin)
+                .foregroundColor(Color.black)
+                HStack(){
+                    Text("Status:")
+                    Text("Approved")
+                        .foregroundColor(.green)
                 }
-            HStack{
-                Text("Status:")
-                    .padding([.leading], 20)
-                Text("Approved")
-                    .foregroundColor(.green)
-                Spacer()
-                    
-            }
-            .padding([.bottom], 10)
-
+            }.padding()
             
-        }
+            Spacer()
+            
+            Image(systemName: "chevron.right")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 25, height: 25)
+            .padding(10)
+            .foregroundColor(Color.black)
+
+        }.padding()
         .background(Color.white)
-        .padding([.bottom, .top], 10)
+        .cornerRadius(16)
     }
 }
     

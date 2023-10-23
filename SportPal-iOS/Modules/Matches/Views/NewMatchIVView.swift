@@ -35,15 +35,14 @@ struct NewMatchIVView: View {
                                 
                     Spacer() // Add Spacer to push content to the right
                                 
-                    Image(systemName: "checkmark.circle")
+                    Image(systemName: "checkmark.circle.fill")
                     .resizable()
-                    .frame(width: 50, height: 50)
-                    .foregroundColor(.green) // Set color for the checkmark icon
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.black) // Set color for the checkmark icon
                     .padding(.leading, 10)
-                    }
-                    .padding()
-                    .background(Color(red: 0.92, green: 0.92, blue: 0.92)) // Background color when the element is pressed
-                    .frame(maxWidth: .infinity, alignment: .leading) // Occupies the whole width
+                    }.padding()
+                    .background(Color.white)
+                    .cornerRadius(16)
                 VStack {
                     DatePicker(
                         "Match Date",
@@ -52,7 +51,9 @@ struct NewMatchIVView: View {
                     )
                     .padding(.horizontal, 20.0)
                     .frame(height: 50.0)
-                }.background(Color(red: 0.92, green: 0.92, blue: 0.92))
+                }.padding()
+                    .background(Color.white)
+                    .cornerRadius(16)
                 HStack {
                                 Image("TennisIcon")
                                     .resizable()
@@ -65,12 +66,11 @@ struct NewMatchIVView: View {
                                     .font(.headline)
                                     .foregroundColor(.primary)
                                 Spacer() // Add Spacer to push content to the right
-                            }
-                            .padding()
-                            .background(Color(red: 0.92, green: 0.92, blue: 0.92)) // Background color when the element is pressed
-                            .frame(maxWidth: .infinity, alignment: .leading) // Occupies the whole width
+                    }.padding()
+                    .background(Color.white)
+                    .cornerRadius(16)
                 Spacer()
-            }.background(Color(red: 0.96, green: 0.96, blue: 0.96))
+            }.padding().background(Color(red: 0.96, green: 0.96, blue: 0.96))
             Spacer()
             FooterView(viewModel: FooterViewModel(
                 homeButtonAction: NavigateToHomeActionStrategy(),
