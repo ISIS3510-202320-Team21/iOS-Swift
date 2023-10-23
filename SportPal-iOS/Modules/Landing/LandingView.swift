@@ -21,31 +21,28 @@ struct LandingView: View {
                     Text("Welcome back **\(user)**").font(.title3).foregroundColor(Color(red: 0.1568627450980392, green: 0.6862745098039216, blue: 0.6901960784313725, opacity: 100.0))
                     Text("What would you like to do today?").font(.title3)
                         .foregroundColor(Color(red: 0.1568627450980392, green: 0.6862745098039216, blue: 0.6901960784313725, opacity: 100.0))
-                    Link(destination: URL(string: "https://centrodeportivo.bookeau.com/#/login")!){
-                        Button(action: {})
-                        {
-                            HStack {
-                                // Image on the left with shadow
-                                Image("BookeauIcon")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 130, height: 130) // Set your image size here
-                                    .shadow(radius: 4)
-                                // Text centered on the right
-                                Spacer()
-                                Text("Go to field reservation")
-                                    .font(.title2)
-                                    .fontWeight(.thin)
-                                    .foregroundColor(.black)
-                                    .multilineTextAlignment(.center)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.horizontal, 50)
-                            }
+                    
+                    Link(destination: URL(string: "https://centrodeportivo.bookeau.com/#/login")!) {
+                        HStack {
+                            // Image on the left with shadow
+                            Image("BookeauIcon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 130, height: 130) //Set your image size here
+                            // Text centered on the right
+                            Spacer()
+                            Text("Go to field reservation")
+                                .font(.title2)
+                                .fontWeight(.thin)
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.center)
+                                    .frame(maxWidth: .infinity,alignment: .leading)
+                                .padding(.horizontal, 50)
                         }.padding()
+                        .contentShape(Rectangle())
                         .background(Color.white)
                         .cornerRadius(16)
-                        .shadow(radius: 4)
-                    }.padding()
+                    }
                     
                     NavigationLink(destination: MatchesView(), isActive: $manageMatchesClicked) {
                         Button(action: {
@@ -60,7 +57,6 @@ struct LandingView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: 130, height: 130) // Set your image size here
-                                    .shadow(radius: 4)
                                 // Text centered on the right
                                 Spacer()
                                 Text("Manage your matches")
@@ -74,13 +70,10 @@ struct LandingView: View {
                             .padding()
                             .background(Color.white)
                             .cornerRadius(16)
-                            .shadow(radius: 4)
-                            
                         }
-                        Spacer()
-                    }.padding()
                 }
                 Spacer()
+            }.padding()
                 FooterView(viewModel: FooterViewModel(
                     homeButtonAction: NavigateToHomeActionStrategy(),
                     newMatchButtonAction: NavigateToNewMatchActionStrategy(),
