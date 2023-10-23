@@ -9,34 +9,46 @@ import SwiftUI
 
 
 struct MessagesView: View {
+    
+    @State private var isNavigatingBack: Bool = false
+    
     var body: some View {
         NavigationView{
             VStack{
-                HeaderView(title: "MESSAGES", notifications: true, messages: false)
+                ZStack(alignment: .topTrailing) {
+                    VStack {
+                        HeaderBack(title: "MESSAGES") {
+                            self.isNavigatingBack = true
+                        }
+                    }
+                    VStack {
+                        Button(action:{}) {
+                            Image(systemName: "square.and.pencil")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 25, height: 25, alignment: .topLeading)
+                                .padding(.top, 4)
+                                .foregroundColor(Color.black)
+                        }.padding()
+                    }
+                }
                 
-                Button(action:{}) {
-                    Spacer()
-                    Image("enviar")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 38, alignment: .topLeading)
-                        .padding(5)
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
-                        
-                }.padding()
                 VStack{
                 MessageView(texto: "How fun was yesterday!", persona: "hombre", nombre: "Benito Martinez")
                 MessageView(texto: "Looking forward to meet you again!", persona: "mujer", nombre: "Karol. G")
                 }
                 Spacer()
-                FooterView(viewModel: FooterViewModel(
-                    homeButtonAction: NavigateToHomeActionStrategy(),
-                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-                    profileButtonAction: NavigateToProfileActionStrategy()
-                ))
+//                FooterView(viewModel: FooterViewModel(
+//                    homeButtonAction: NavigateToHomeActionStrategy(),
+//                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
+//                    profileButtonAction: NavigateToProfileActionStrategy()
+//                ))
             }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
-        }
+        }.navigationBarBackButtonHidden(true)
+        .background(NavigationLink(
+            destination: LandingView(),
+            isActive: $isNavigatingBack,
+            label: {EmptyView()}))
     }
 }
 
@@ -58,24 +70,30 @@ struct MessageView: View {
         NavigationLink(destination: ChatsView(), isActive: $chatClicked) {
             Button(action:{chatClicked = true}){
                 HStack() {
-                    Image(persona == "hombre" ? "perfil": "perfilMujer")
+                    Image(systemName: "person.circle.fill")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 80, height: 80)
+                        .frame(width: 60, height: 60)
+                        .padding(10)
+                        .foregroundColor(Color.gray)
                     VStack(alignment: .leading, spacing: 1 ){
                         Text(nombre)
-                            .font(.system(size: 15, weight: .bold, design: .default)).padding(3)
-                            .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+                            .font(.system(size: 16, weight: .bold, design: .default))
+                            .fontWeight(.regular)
+                            .padding(3)
+                            .foregroundColor(Color.black)
                         Text(texto)
-                            .font(.system(size: 15, weight: .light, design: .default))
-                            .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+                            .font(.system(size: 16, weight: .light, design: .default))
+                            .foregroundColor(Color.gray)
                     }
                     
                     Spacer()
-                    Image("Arrow")
+                    Image(systemName: "chevron.right")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
+                        .frame(width: 25, height: 25)
+                        .padding(10)
+                        .foregroundColor(Color.black)
                     
                 }.background(Color.white)
             }

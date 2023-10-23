@@ -37,7 +37,10 @@ struct NewMatchTimeView: View {
                     )
                     .padding(.horizontal, 20.0)
                     .frame(height: 50.0)
-                }.background(Color(red: 0.92, green: 0.92, blue: 0.92))
+                }.padding()
+                .background(Color.white)
+                .cornerRadius(16)
+
                 HStack {
                                 Image("TennisIcon")
                                     .resizable()
@@ -50,11 +53,10 @@ struct NewMatchTimeView: View {
                                     .font(.headline)
                                     .foregroundColor(.primary)
                                 Spacer() // Add Spacer to push content to the right
-                }
-                .padding()
-                .background(Color(red: 0.92, green: 0.92, blue: 0.92)) // Background color when the element is pressed
-                .frame(maxWidth: .infinity, alignment: .leading) // Occupies the whole width
-                
+                }.padding()
+                .background(Color.white)
+                .cornerRadius(16)
+
                 HStack {
                                 Spacer() // Add Spacer to push content to the left
                                 VStack {
@@ -65,10 +67,9 @@ struct NewMatchTimeView: View {
                                     }
                                 }
                                 Spacer() // Add Spacer to push content to the right
-                            }
-                            .padding()
-                            .background(Color.gray.opacity(0.1)) // Background color when the element is pressed
-                            .frame(maxWidth: .infinity) // Occupies the whole width
+                }.padding()
+                .background(Color.white)
+                .cornerRadius(16)
                 
                 HStack {
                                 Spacer() // Add Spacer to push content to the left
@@ -80,24 +81,23 @@ struct NewMatchTimeView: View {
                                     }
                                 }
                                 Spacer() // Add Spacer to push content to the right
-                            }
-                            .padding()
-                            .background(Color.gray.opacity(0.1)) // Background color when the element is pressed
-                            .frame(maxWidth: .infinity) // Occupies the whole width
+                }.padding()
+                .background(Color.white)
+                .cornerRadius(16)
                 Spacer()
                 Button(action: {
                                 // Handle the Create button action
                                 print("Create button tapped!")
                             }) {
-                                Text("Create")
+                                Text("CREATE")
                                     .font(.headline)
                                     .foregroundColor(.white)
                                     .padding()
-                                    .background(Color.blue)
-                                    .cornerRadius(10)
+                                    .background(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
+                                    .cornerRadius(40)
                             }
                             .padding()
-            }.background(Color(red: 0.96, green: 0.96, blue: 0.96))
+            }.padding().background(Color(red: 0.96, green: 0.96, blue: 0.96))
             
             Spacer()
             FooterView(viewModel: FooterViewModel(

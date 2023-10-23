@@ -38,7 +38,9 @@ struct NewMatchIIView: View {
                     )
                     .padding(.horizontal, 20.0)
                     .frame(height: 50.0)
-                }.background(Color(red: 0.92, green: 0.92, blue: 0.92))
+                }.padding()
+                .background(Color.white)
+                .cornerRadius(16)
                 VStack {
                     ForEach(elements, id: \.name) { element in
                         IndividualMatchViewButton(element: element)
@@ -46,10 +48,10 @@ struct NewMatchIIView: View {
                     }
                     
                     HStack {
-                        Image("NewIcon")
+                        Image(systemName: "plus.circle.fill")
                             .resizable()
                             .frame(width: 50, height: 50)
-                            .foregroundColor(.blue)
+                            .foregroundColor(.black)
                             .padding(.trailing, 10)
                         
                         VStack(alignment: .leading, spacing: 5) {
@@ -59,13 +61,12 @@ struct NewMatchIIView: View {
                                 .multilineTextAlignment(.center)
                         }
                         Spacer() // Add Spacer to push content to the left
-                    }
-                    .padding()
-                    .background(Color(red: 0.92, green: 0.92, blue: 0.92)) // Background color when the element is pressed
-                    .frame(maxWidth: .infinity, alignment: .leading) // Occupies the whole width
+                    }.padding()
+                    .background(Color.white)
+                    .cornerRadius(16)
                     Spacer()
                 }
-            }.background(Color(red: 0.96, green: 0.96, blue: 0.96))
+            }.padding().background(Color(red: 0.96, green: 0.96, blue: 0.96))
             Spacer()
             FooterView(viewModel: FooterViewModel(
                 homeButtonAction: NavigateToHomeActionStrategy(),
@@ -86,7 +87,7 @@ struct IndividualMatchViewButton: View {
         }) {
             HStack {
                 // Left side: Circular profile picture
-                Image("LoginImg")
+                Image(systemName: "person.circle.fill")
                     .resizable()
                     .frame(width: 50, height: 50)
                     .aspectRatio(contentMode: .fit)
@@ -107,8 +108,8 @@ struct IndividualMatchViewButton: View {
                 Spacer() // Add Spacer to push content to the left
             }
             .padding()
-            .background(Color(red: 0.92, green: 0.92, blue: 0.92)) // Background color when the element is pressed
-            .frame(maxWidth: .infinity, alignment: .leading) // Occupies the whole width
+            .background(Color.white)
+            .cornerRadius(16)
         }
         .buttonStyle(PlainButtonStyle()) // Remove button style to make it look like a regular HStack
     }
