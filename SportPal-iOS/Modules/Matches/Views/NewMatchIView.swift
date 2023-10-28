@@ -10,6 +10,8 @@ import SwiftUI
 struct NewMatchIView: View {
     
     @State private var user = "Camilo"
+    @State private var sportClicked: Bool = false
+    @State private var newClicked: Bool = false
     
     var body: some View {
         let images: [String] = ["TennisButton", "BaseballButton", "ChessButton", "BasketballButton", "VolleyballButton", "NewSportButton"]
@@ -36,10 +38,16 @@ struct NewMatchIView: View {
                     opacity: 100)).multilineTextAlignment(.center)
                     .padding(.horizontal,20)
                     .padding(.bottom, 20)
-                LazyVGrid(columns: [GridItem(), GridItem()], spacing: 10) {
-                                ForEach(images, id: \.self) { imageName in
+                    LazyVGrid(columns: [GridItem(), GridItem()], spacing: 10) {
+                                ForEach(0..<images.count, id: \.self) { index in
+                                    let imageName = images[index]
                                     Button(action: {
-                                        print("Image \(imageName) clicked!")
+                                        if index == images.count - 1 {
+                                            newClicked = true
+                                        } else {
+                                            sportClicked = true
+    
+                                        }
                                     }) {
                                         Image(imageName)
                                             .resizable()
@@ -48,8 +56,7 @@ struct NewMatchIView: View {
                                     }
                                 }
                             }
-                            .padding()  
-                
+                            .padding()
                 Spacer()
             }.background(Color(red: 0.96, green: 0.96, blue: 0.96))
             Spacer()

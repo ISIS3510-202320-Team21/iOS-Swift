@@ -11,11 +11,14 @@ struct MatchesView: View {
     
     @State private var sport = "Tennis"
     @State private var user = "M. Diaz"
+    @State private var isNavigatingBack: Bool = false
     
     var body: some View {   
         NavigationView{
             VStack{
-                HeaderView(title: "MATCHES", notifications: true, messages: true)
+                HeaderBack(title: "MATCHES") {
+                    self.isNavigatingBack = true
+                }
                 
                 VStack{
                     Image(systemName: "plus.app.fill")
@@ -24,23 +27,21 @@ struct MatchesView: View {
                         .frame(width: 35, height: 35)
                         .cornerRadius(10)
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                    
-                        
-                        
                     MatchView(texto: "\(sport) match with \(user)")
-                    Spacer()
-                    FooterView(viewModel: FooterViewModel(
-                        homeButtonAction: NavigateToHomeActionStrategy(),
-                        newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-                        profileButtonAction: NavigateToProfileActionStrategy()
-                    ))
                 }.padding().background(Color(red: 0.961, green: 0.961, blue: 0.961))
-        }
-        
-        
-        
-        
-    }
+                
+                Spacer()
+                FooterView(viewModel: FooterViewModel(
+                    homeButtonAction: NavigateToHomeActionStrategy(),
+                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
+                    profileButtonAction: NavigateToProfileActionStrategy()
+                ))
+        }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
+    }.navigationBarBackButtonHidden(true)
+            .background(NavigationLink(
+                destination: LandingView(),
+                isActive: $isNavigatingBack,
+                label: {EmptyView()}))
 }
 
 struct MatchesView_Previews: PreviewProvider {
