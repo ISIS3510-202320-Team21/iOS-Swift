@@ -25,7 +25,7 @@ struct FooterView: View, AppComponent {
                 }.padding(.leading, 40)
             }
             Spacer()
-            NavigationLink(destination: NewMatchTimeView(), isActive: $plusClicked) {
+            NavigationLink(destination: NewMatchIView(), isActive: $plusClicked) {
                 Button(action: {
                     plusClicked = true
                 }) {

@@ -18,6 +18,9 @@
 		A53C569F2ACD20160041477C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56962ACD20160041477C /* HeaderView.swift */; };
 		A573E2582AE5BF15008C04F8 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573E2572AE5BF15008C04F8 /* FieldView.swift */; };
 		A573E25A2AE5C166008C04F8 /* HeaderBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573E2592AE5C166008C04F8 /* HeaderBack.swift */; };
+		A5852A3C2AEC69FA00AF3CF5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5852A3B2AEC69FA00AF3CF5 /* NetworkService.swift */; };
+		A5852A3E2AEC705C00AF3CF5 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5852A3D2AEC705C00AF3CF5 /* SignupModel.swift */; };
+		A5852A402AEC719E00AF3CF5 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5852A3F2AEC719E00AF3CF5 /* SignupViewModel.swift */; };
 		A5DCF6C82ACE001D00081712 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6B52ACE001D00081712 /* LandingView.swift */; };
 		A5DCF6C92ACE001D00081712 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6B72ACE001D00081712 /* SignupView.swift */; };
 		A5DCF6CA2ACE001D00081712 /* NewMatchTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6BC2ACE001D00081712 /* NewMatchTimeView.swift */; };
@@ -72,6 +75,9 @@
 		A53C56962ACD20160041477C /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A573E2572AE5BF15008C04F8 /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		A573E2592AE5C166008C04F8 /* HeaderBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBack.swift; sourceTree = "<group>"; };
+		A5852A3B2AEC69FA00AF3CF5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A5852A3D2AEC705C00AF3CF5 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
+		A5852A3F2AEC719E00AF3CF5 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		A5DCF6B22ACDF88C00081712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A5DCF6B52ACE001D00081712 /* LandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		A5DCF6B72ACE001D00081712 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -177,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				A5DCF6B72ACE001D00081712 /* SignupView.swift */,
+				A5852A3D2AEC705C00AF3CF5 /* SignupModel.swift */,
+				A5852A3F2AEC719E00AF3CF5 /* SignupViewModel.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -304,6 +312,7 @@
 			children = (
 				A53C568C2ACD20160041477C /* SharedViews */,
 				A5DCF6B32ACE001D00081712 /* Modules */,
+				A5852A3B2AEC69FA00AF3CF5 /* NetworkService.swift */,
 				A9A0108C2ACB44FB0070E71F /* ContentView.swift */,
 				A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */,
 				A9A0108E2ACB44FD0070E71F /* Assets.xcassets */,
@@ -478,6 +487,7 @@
 				A53C56982ACD20160041477C /* NavigateToProfileActionStrategy.swift in Sources */,
 				A5DCF6CE2ACE001D00081712 /* NewMatchIIView.swift in Sources */,
 				A9120C6C2AE5B6350013B053 /* MessagesViewModel.swift in Sources */,
+				A5852A3C2AEC69FA00AF3CF5 /* NetworkService.swift in Sources */,
 				A53C569E2ACD20160041477C /* AppComponent.swift in Sources */,
 				A5DCF6CC2ACE001D00081712 /* MatchesView.swift in Sources */,
 				A5DCF6D22ACE001D00081712 /* LoginView.swift in Sources */,
@@ -485,12 +495,14 @@
 				A5DCF6C92ACE001D00081712 /* SignupView.swift in Sources */,
 				A53C569B2ACD20160041477C /* EmptyActionStrategy.swift in Sources */,
 				A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */,
+				A5852A402AEC719E00AF3CF5 /* SignupViewModel.swift in Sources */,
 				A5DCF6D62ACE033400081712 /* LandingViewModel.swift in Sources */,
 				A573E25A2AE5C166008C04F8 /* HeaderBack.swift in Sources */,
 				A5DCF6C82ACE001D00081712 /* LandingView.swift in Sources */,
 				A53C569A2ACD20160041477C /* NavigateToHomeActionStrategy.swift in Sources */,
 				A5DCF6D12ACE001D00081712 /* NotificationsView.swift in Sources */,
 				A5DCF6CD2ACE001D00081712 /* NewMatchIIIView.swift in Sources */,
+				A5852A3E2AEC705C00AF3CF5 /* SignupModel.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
 				A5DCF6D02ACE001D00081712 /* ProfileView.swift in Sources */,
 				A53C569D2ACD20160041477C /* FooterViewModel.swift in Sources */,

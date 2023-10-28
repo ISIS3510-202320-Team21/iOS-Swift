@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    
     @State private var username: String = ""
     @State private var password: String = ""
     @State private var isSignup: Bool = false
