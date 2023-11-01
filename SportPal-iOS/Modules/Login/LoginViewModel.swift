@@ -20,11 +20,20 @@ class LoginViewModel: ObservableObject {
     @Published var alertTitle: String = ""
     @Published var isCorrectLogin: Bool = false
     
+    init() {
+        self.showAlert = false
+        self.errorMessage = ""
+        self.alertTitle = ""
+        self.isCorrectLogin = false
+    }
+    
     func login(loginRequest: LoginRequest) {
         loginModel.login(loginData: loginRequest) { [weak self] result in
             switch result {
             case .success(let response):
+                GlobalParameters.shared.setUser(loginResponse: response)
                 DispatchQueue.main.async {
+                    print(response)
                     self?.loginResponse = response
                     self?.showAlert(title: "Success" ,message: "Logged in")
                     self?.handleSuccessfulLogin()

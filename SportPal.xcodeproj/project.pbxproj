@@ -50,6 +50,9 @@
 		A9A0109C2ACB44FD0070E71F /* SportPal_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0109B2ACB44FD0070E71F /* SportPal_iOSTests.swift */; };
 		A9A010A62ACB44FD0070E71F /* SportPal_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */; };
 		A9A010A82ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */; };
+		A9F86FC92AF2D1D600CF7EB4 /* GlobalParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FC82AF2D1D600CF7EB4 /* GlobalParameters.swift */; };
+		A9F86FCB2AF2F22A00CF7EB4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FCA2AF2F22A00CF7EB4 /* ProfileViewModel.swift */; };
+		A9F86FCD2AF3083C00CF7EB4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FCC2AF3083C00CF7EB4 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +120,9 @@
 		A9A010A12ACB44FD0070E71F /* SportPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITests.swift; sourceTree = "<group>"; };
 		A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A9F86FC82AF2D1D600CF7EB4 /* GlobalParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalParameters.swift; sourceTree = "<group>"; };
+		A9F86FCA2AF2F22A00CF7EB4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A9F86FCC2AF3083C00CF7EB4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A56C75712AF19D68008F535D /* UserModel.swift */,
+				A9F86FC82AF2D1D600CF7EB4 /* GlobalParameters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				A5DCF6C32ACE001D00081712 /* ProfileView.swift */,
+				A9F86FCA2AF2F22A00CF7EB4 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -344,6 +352,7 @@
 				A9A0108E2ACB44FD0070E71F /* Assets.xcassets */,
 				A5DCF6B22ACDF88C00081712 /* Info.plist */,
 				A9A010902ACB44FD0070E71F /* Preview Content */,
+				A9F86FCC2AF3083C00CF7EB4 /* ImagePicker.swift */,
 			);
 			path = "SportPal-iOS";
 			sourceTree = "<group>";
@@ -506,6 +515,7 @@
 			files = (
 				A9120C692AE5B46A0013B053 /* ChatsViewModel.swift in Sources */,
 				A9120C672AE5B3990013B053 /* ChatsView.swift in Sources */,
+				A9F86FC92AF2D1D600CF7EB4 /* GlobalParameters.swift in Sources */,
 				A56C756D2AF19564008F535D /* NavigationStackCoordinator.swift in Sources */,
 				A9120C6E2AE5B6540013B053 /* MessagesView.swift in Sources */,
 				A5DCF6CF2ACE001D00081712 /* NewMatchIView.swift in Sources */,
@@ -539,6 +549,8 @@
 				A53C569D2ACD20160041477C /* FooterViewModel.swift in Sources */,
 				A56C75722AF19D68008F535D /* UserModel.swift in Sources */,
 				A5DCF6CA2ACE001D00081712 /* NewMatchTimeView.swift in Sources */,
+				A9F86FCB2AF2F22A00CF7EB4 /* ProfileViewModel.swift in Sources */,
+				A9F86FCD2AF3083C00CF7EB4 /* ImagePicker.swift in Sources */,
 				A53C569F2ACD20160041477C /* HeaderView.swift in Sources */,
 				A53C569C2ACD20160041477C /* NavigateToNewMatchActionStrategy.swift in Sources */,
 			);

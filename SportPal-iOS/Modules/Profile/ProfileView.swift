@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    @State private var user: String = "CAMILO ESCOBAR"
+    @ObservedObject var profileViewModel = ProfileViewModel(user: UserModel())
     @State private var isNavigatingBack: Bool = false
+    @State private var showSheet: Bool = false
+    @State private var showImagePicker: Bool = false
+    @State private var sourceType: UIImagePickerController.SourceType = .camera
+    
+    @State private var image: UIImage?
     
     var body: some View {
         NavigationView {
@@ -18,14 +23,29 @@ struct ProfileView: View {
                 HeaderBack(title: "MY PROFILE") {
                     self.isNavigatingBack = true
                 }
-                
-                Image(systemName: "person.crop.circle.fill.badge.plus")
+                //systemName: "person.crop.circle.fill.badge.plus"
+                Image(uiImage: image ??  UIImage(named:"ProfileUser")!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 150, height: 150)
                     .foregroundColor(Color.black)
                     .offset(y:30)
-                Text("\(user)").font(.title).fontWeight(.regular).offset(y:30)
+                Button("Choose pic") {
+                    self.showSheet = true
+                }.padding()
+                    .actionSheet(isPresented: $showSheet) {
+                        ActionSheet(title: Text("Select Photos"), message: Text("Choose"), buttons: [
+                            .default(Text("Photo Library")){
+                                self.showImagePicker = true
+                                self.sourceType = .photoLibrary
+                                
+                            },.default(Text("Camera")){
+                                self.showImagePicker = true
+                                self.sourceType = .camera
+                            },.cancel()])
+                    }
+                
+                Text("\(profileViewModel.user.name)").font(.title).fontWeight(.regular).offset(y:30)
                 Spacer()
                 Spacer()
                 VStack (alignment:.leading){
@@ -85,6 +105,9 @@ struct ProfileView: View {
                 destination: LandingView(),
                 isActive: $isNavigatingBack,
                 label: {EmptyView()}))
+            .sheet(isPresented: $showImagePicker) {
+                ImagePicker(image: $image, isShown: self.$showImagePicker, sourceType: self.sourceType)
+            }
     }
 }
 

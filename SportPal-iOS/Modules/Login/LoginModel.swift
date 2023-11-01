@@ -21,11 +21,17 @@ struct LoginResponse: Decodable, Encodable {
     let university: String
     let bornDate: String
     let gender: String
-    let id: Int
-    let imageUrl: String?
-    let latitude: Double?
-    let longitude: Double?
-    let notifications: [String]
+    
+    init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            self.email = try container.decode(String.self, forKey: .email)
+            self.name = try container.decode(String.self, forKey: .name)
+            self.phoneNumber = try container.decode(String.self, forKey: .phoneNumber)
+            self.role = try container.decode(String.self, forKey: .role)
+            self.university = try container.decode(String.self, forKey: .university)
+            self.bornDate = try container.decode(String.self, forKey: .bornDate)
+            self.gender = try container.decode(String.self, forKey: .gender)
+        }
     
     func encode(to encoder: Encoder) throws {
             var container = encoder.container(keyedBy: CodingKeys.self)
@@ -36,11 +42,6 @@ struct LoginResponse: Decodable, Encodable {
             try container.encode(university, forKey: .university)
             try container.encode(bornDate, forKey: .bornDate)
             try container.encode(gender, forKey: .gender)
-            try container.encode(id, forKey: .id)
-            try container.encode(imageUrl, forKey: .imageUrl)
-            try container.encode(latitude, forKey: .latitude)
-            try container.encode(longitude, forKey: .longitude)
-            try container.encode(notifications, forKey: .notifications)
     }
 
     // CodingKeys enum to map properties to keys during encoding
