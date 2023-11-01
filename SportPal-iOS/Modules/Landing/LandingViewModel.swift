@@ -12,7 +12,7 @@ class LandingViewModel: ObservableObject {
     @Published var user: UserModel
     
     init(user: UserModel) {
-        self.user = user
+        self.user = GlobalParameters.shared.getUser()
     }
     
 }

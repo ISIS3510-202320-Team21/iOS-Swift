@@ -24,7 +24,7 @@ class UserModel: ObservableObject {
     @Published var longitude: Double? = 0
     @Published var notifications: [String] = []
     
-    func updateUser(with loginResponse: LoginResponse) {
+    public func updateUser(loginResponse: LoginResponse) {
         self.isLoggedIn = true
         self.email = loginResponse.email
         self.name = loginResponse.name
@@ -33,10 +33,10 @@ class UserModel: ObservableObject {
         self.university = loginResponse.university
         self.bornDate = loginResponse.bornDate
         self.gender = loginResponse.gender
-        self.id = loginResponse.id
-        self.imageUrl = loginResponse.imageUrl
-        self.latitude = loginResponse.latitude
-        self.longitude = loginResponse.longitude
-        self.notifications = loginResponse.notifications
+//        self.id = loginResponse.id
+//        self.imageUrl = loginResponse.imageUrl
+//        self.latitude = loginResponse.latitude
+//        self.longitude = loginResponse.longitude
+//        self.notifications = loginResponse.notifications
     }
 }
