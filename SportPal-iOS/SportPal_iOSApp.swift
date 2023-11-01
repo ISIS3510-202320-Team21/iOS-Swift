@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct SportPal_iOSApp: App {
+    
+//    @StateObject var user = UserModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

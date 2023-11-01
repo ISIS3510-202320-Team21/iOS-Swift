@@ -8,10 +8,11 @@
 import SwiftUI
 
 class LandingViewModel: ObservableObject {
-    // ... other properties and methods ...
-
-    func handleBookeauButtonTap() {
-        // Handle complex logic here
-        // For example, make a network request
+    
+    @Published var user: UserModel
+    
+    init(user: UserModel) {
+        self.user = user
     }
+    
 }

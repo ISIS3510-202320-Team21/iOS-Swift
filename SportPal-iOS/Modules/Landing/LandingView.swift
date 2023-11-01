@@ -9,7 +9,8 @@ import SwiftUI
 
 struct LandingView: View {
     
-    @State private var user = "Camilo"
+    @ObservedObject var landingViewModel = LandingViewModel(user: UserModel())
+    
     @State private var manageMatchesClicked: Bool = false
     @State private var bookeauClicked: Bool = false
     
@@ -18,7 +19,7 @@ struct LandingView: View {
             VStack () {
                 HeaderView(title: "SPORTPAL", notifications: true, messages: true)
                 VStack{
-                    Text("Welcome back **\(user)**").font(.title3).foregroundColor(Color(red: 0.1568627450980392, green: 0.6862745098039216, blue: 0.6901960784313725, opacity: 100.0))
+                    Text("Welcome back **\(landingViewModel.user.name)**").font(.title3).foregroundColor(Color(red: 0.1568627450980392, green: 0.6862745098039216, blue: 0.6901960784313725, opacity: 100.0))
                     Text("What would you like to do today?").font(.title3)
                         .foregroundColor(Color(red: 0.1568627450980392, green: 0.6862745098039216, blue: 0.6901960784313725, opacity: 100.0))
                     
