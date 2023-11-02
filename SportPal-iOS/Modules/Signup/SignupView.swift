@@ -136,7 +136,13 @@ struct SignupView: View {
                                 gender: selectedGender
                             )
                             
-                            signupViewModel.signup(signupRequest: signUpRequest)
+                            signupViewModel.signup(signupRequest: signUpRequest) { result in
+                                switch result {
+                                case true:
+                                    navPaths.append(.login)
+                                case false: break
+                                }
+                            }
                         }) {
                             Text("Sign Up")
                                 .font(.title)

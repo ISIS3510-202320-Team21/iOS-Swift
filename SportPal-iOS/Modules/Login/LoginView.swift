@@ -44,8 +44,13 @@ struct LoginView: View {
                                 email: email,
                                 password: password
                             )
-                            loginViewModel.login(loginRequest: loginRequest)
-                            navPaths.append(.landing)
+                            loginViewModel.login(loginRequest: loginRequest) { result in
+                                switch result {
+                                case true:
+                                    navPaths.append(.landing)
+                                case false: break
+                                }
+                            }
                         }) {
                             Text("Login")
                                 .font(.title)

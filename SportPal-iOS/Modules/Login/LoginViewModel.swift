@@ -11,9 +11,7 @@ import SwiftUI
 class LoginViewModel: ObservableObject {
     
     private let loginModel = LoginModel()
-    
-    @EnvironmentObject var user: UserModel
-    
+        
     @Published var loginResponse: LoginResponse?
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
@@ -27,29 +25,25 @@ class LoginViewModel: ObservableObject {
         self.isCorrectLogin = false
     }
     
-    func login(loginRequest: LoginRequest) {
+    func login(loginRequest: LoginRequest, completion: @escaping (Bool) -> Void ) {
         loginModel.login(loginData: loginRequest) { [weak self] result in
             switch result {
             case .success(let response):
                 GlobalParameters.shared.setUser(loginResponse: response)
-                DispatchQueue.main.async {
-                    print(response)
-                    self?.loginResponse = response
-                    self?.showAlert(title: "Success" ,message: "Logged in")
-                    self?.handleSuccessfulLogin()
-                }
+                completion(true)
+                self?.loginResponse = response
+                self?.showAlert(title: "Success" ,message: "Logged in")
             case .failure(let error):
-                DispatchQueue.main.async {
-                    switch error {
-                    case .HTTPError(_, let detail):
-                        self?.showAlert(title: "Error" ,message: detail)
-                    case .decodingFailed:
-                        self?.showAlert(title: "Error" ,message: "Decoding failed")
-                    case .noData:
-                        self?.showAlert(title: "Error" ,message: "No data")
-                    default:
-                        self?.showAlert(title: "Error" ,message: "An error occurred")
-                    }
+                completion(false)
+                switch error {
+                case .HTTPError(_, let detail):
+                    self?.showAlert(title: "Error" ,message: detail)
+                case .decodingFailed:
+                    self?.showAlert(title: "Error" ,message: "Decoding failed")
+                case .noData:
+                    self?.showAlert(title: "Error" ,message: "No data")
+                default:
+                    self?.showAlert(title: "Error" ,message: "An error occurred")
                 }
             }
         }
@@ -69,7 +63,7 @@ class LoginViewModel: ObservableObject {
     }
     
     func handleSuccessfulLogin() {
-        self.isCorrectLogin = true
+        isCorrectLogin = true
     }
         
     private func showAlert(title: String, message: String) {
