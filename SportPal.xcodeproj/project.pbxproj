@@ -16,6 +16,12 @@
 		A53C569D2ACD20160041477C /* FooterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56942ACD20160041477C /* FooterViewModel.swift */; };
 		A53C569E2ACD20160041477C /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56952ACD20160041477C /* AppComponent.swift */; };
 		A53C569F2ACD20160041477C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53C56962ACD20160041477C /* HeaderView.swift */; };
+		A56C75632AF145FE008F535D /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C75622AF145FD008F535D /* LoginModel.swift */; };
+		A56C75652AF14608008F535D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C75642AF14608008F535D /* LoginViewModel.swift */; };
+		A56C75672AF14DE4008F535D /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C75662AF14DE4008F535D /* ButtonStyle.swift */; };
+		A56C756D2AF19564008F535D /* NavigationStackCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C756C2AF19564008F535D /* NavigationStackCoordinator.swift */; };
+		A56C75722AF19D68008F535D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56C75712AF19D68008F535D /* UserModel.swift */; };
+		A56C75742AF1B6A1008F535D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56C75732AF1B6A1008F535D /* LaunchScreen.storyboard */; };
 		A573E2582AE5BF15008C04F8 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573E2572AE5BF15008C04F8 /* FieldView.swift */; };
 		A573E25A2AE5C166008C04F8 /* HeaderBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A573E2592AE5C166008C04F8 /* HeaderBack.swift */; };
 		A5852A3C2AEC69FA00AF3CF5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5852A3B2AEC69FA00AF3CF5 /* NetworkService.swift */; };
@@ -44,6 +50,9 @@
 		A9A0109C2ACB44FD0070E71F /* SportPal_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0109B2ACB44FD0070E71F /* SportPal_iOSTests.swift */; };
 		A9A010A62ACB44FD0070E71F /* SportPal_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */; };
 		A9A010A82ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */; };
+		A9F86FC92AF2D1D600CF7EB4 /* GlobalParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FC82AF2D1D600CF7EB4 /* GlobalParameters.swift */; };
+		A9F86FCB2AF2F22A00CF7EB4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FCA2AF2F22A00CF7EB4 /* ProfileViewModel.swift */; };
+		A9F86FCD2AF3083C00CF7EB4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FCC2AF3083C00CF7EB4 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +82,12 @@
 		A53C56942ACD20160041477C /* FooterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterViewModel.swift; sourceTree = "<group>"; };
 		A53C56952ACD20160041477C /* AppComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		A53C56962ACD20160041477C /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		A56C75622AF145FD008F535D /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		A56C75642AF14608008F535D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A56C75662AF14DE4008F535D /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		A56C756C2AF19564008F535D /* NavigationStackCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackCoordinator.swift; sourceTree = "<group>"; };
+		A56C75712AF19D68008F535D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		A56C75732AF1B6A1008F535D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A573E2572AE5BF15008C04F8 /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		A573E2592AE5C166008C04F8 /* HeaderBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBack.swift; sourceTree = "<group>"; };
 		A5852A3B2AEC69FA00AF3CF5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -105,6 +120,9 @@
 		A9A010A12ACB44FD0070E71F /* SportPalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportPalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A010A52ACB44FD0070E71F /* SportPal_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITests.swift; sourceTree = "<group>"; };
 		A9A010A72ACB44FD0070E71F /* SportPal_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A9F86FC82AF2D1D600CF7EB4 /* GlobalParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalParameters.swift; sourceTree = "<group>"; };
+		A9F86FCA2AF2F22A00CF7EB4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A9F86FCC2AF3083C00CF7EB4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +153,7 @@
 		A53C568C2ACD20160041477C /* SharedViews */ = {
 			isa = PBXGroup;
 			children = (
+				A56C75702AF19D4D008F535D /* Models */,
 				A5DCF6D42ACE00F300081712 /* ViewModels */,
 				A5DCF6D32ACE00EB00081712 /* Views */,
 				A53C568E2ACD20160041477C /* StrategyPatterns */,
@@ -155,6 +174,15 @@
 			path = StrategyPatterns;
 			sourceTree = "<group>";
 		};
+		A56C75702AF19D4D008F535D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A56C75712AF19D68008F535D /* UserModel.swift */,
+				A9F86FC82AF2D1D600CF7EB4 /* GlobalParameters.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A5DCF6B32ACE001D00081712 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +194,7 @@
 				A5DCF6C22ACE001D00081712 /* Profile */,
 				A5DCF6C42ACE001D00081712 /* Notifications */,
 				A5DCF6C62ACE001D00081712 /* Login */,
+				A56C75732AF1B6A1008F535D /* LaunchScreen.storyboard */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -230,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				A5DCF6C32ACE001D00081712 /* ProfileView.swift */,
+				A9F86FCA2AF2F22A00CF7EB4 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -246,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				A5DCF6C72ACE001D00081712 /* LoginView.swift */,
+				A56C75622AF145FD008F535D /* LoginModel.swift */,
+				A56C75642AF14608008F535D /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -257,6 +289,7 @@
 				A53C568D2ACD20160041477C /* FooterView.swift */,
 				A573E2572AE5BF15008C04F8 /* FieldView.swift */,
 				A573E2592AE5C166008C04F8 /* HeaderBack.swift */,
+				A56C75662AF14DE4008F535D /* ButtonStyle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,12 +345,14 @@
 			children = (
 				A53C568C2ACD20160041477C /* SharedViews */,
 				A5DCF6B32ACE001D00081712 /* Modules */,
+				A56C756C2AF19564008F535D /* NavigationStackCoordinator.swift */,
 				A5852A3B2AEC69FA00AF3CF5 /* NetworkService.swift */,
 				A9A0108C2ACB44FB0070E71F /* ContentView.swift */,
 				A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */,
 				A9A0108E2ACB44FD0070E71F /* Assets.xcassets */,
 				A5DCF6B22ACDF88C00081712 /* Info.plist */,
 				A9A010902ACB44FD0070E71F /* Preview Content */,
+				A9F86FCC2AF3083C00CF7EB4 /* ImagePicker.swift */,
 			);
 			path = "SportPal-iOS";
 			sourceTree = "<group>";
@@ -451,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A56C75742AF1B6A1008F535D /* LaunchScreen.storyboard in Resources */,
 				A9A010922ACB44FD0070E71F /* Preview Assets.xcassets in Resources */,
 				A9A0108F2ACB44FD0070E71F /* Assets.xcassets in Resources */,
 			);
@@ -479,6 +515,8 @@
 			files = (
 				A9120C692AE5B46A0013B053 /* ChatsViewModel.swift in Sources */,
 				A9120C672AE5B3990013B053 /* ChatsView.swift in Sources */,
+				A9F86FC92AF2D1D600CF7EB4 /* GlobalParameters.swift in Sources */,
+				A56C756D2AF19564008F535D /* NavigationStackCoordinator.swift in Sources */,
 				A9120C6E2AE5B6540013B053 /* MessagesView.swift in Sources */,
 				A5DCF6CF2ACE001D00081712 /* NewMatchIView.swift in Sources */,
 				A5DCF6CB2ACE001D00081712 /* NewMatchIVView.swift in Sources */,
@@ -487,8 +525,10 @@
 				A53C56982ACD20160041477C /* NavigateToProfileActionStrategy.swift in Sources */,
 				A5DCF6CE2ACE001D00081712 /* NewMatchIIView.swift in Sources */,
 				A9120C6C2AE5B6350013B053 /* MessagesViewModel.swift in Sources */,
+				A56C75652AF14608008F535D /* LoginViewModel.swift in Sources */,
 				A5852A3C2AEC69FA00AF3CF5 /* NetworkService.swift in Sources */,
 				A53C569E2ACD20160041477C /* AppComponent.swift in Sources */,
+				A56C75672AF14DE4008F535D /* ButtonStyle.swift in Sources */,
 				A5DCF6CC2ACE001D00081712 /* MatchesView.swift in Sources */,
 				A5DCF6D22ACE001D00081712 /* LoginView.swift in Sources */,
 				A573E2582AE5BF15008C04F8 /* FieldView.swift in Sources */,
@@ -502,11 +542,15 @@
 				A53C569A2ACD20160041477C /* NavigateToHomeActionStrategy.swift in Sources */,
 				A5DCF6D12ACE001D00081712 /* NotificationsView.swift in Sources */,
 				A5DCF6CD2ACE001D00081712 /* NewMatchIIIView.swift in Sources */,
+				A56C75632AF145FE008F535D /* LoginModel.swift in Sources */,
 				A5852A3E2AEC705C00AF3CF5 /* SignupModel.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
 				A5DCF6D02ACE001D00081712 /* ProfileView.swift in Sources */,
 				A53C569D2ACD20160041477C /* FooterViewModel.swift in Sources */,
+				A56C75722AF19D68008F535D /* UserModel.swift in Sources */,
 				A5DCF6CA2ACE001D00081712 /* NewMatchTimeView.swift in Sources */,
+				A9F86FCB2AF2F22A00CF7EB4 /* ProfileViewModel.swift in Sources */,
+				A9F86FCD2AF3083C00CF7EB4 /* ImagePicker.swift in Sources */,
 				A53C569F2ACD20160041477C /* HeaderView.swift in Sources */,
 				A53C569C2ACD20160041477C /* NavigateToNewMatchActionStrategy.swift in Sources */,
 			);
@@ -671,14 +715,18 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SportPal-iOS/Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = UIUserInterfaceStyle;
+				INFOPLIST_KEY_CFBundleDisplayName = SportPal;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -704,14 +752,18 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SportPal-iOS/Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = UIUserInterfaceStyle;
+				INFOPLIST_KEY_CFBundleDisplayName = SportPal;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UIUserInterfaceStyle = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

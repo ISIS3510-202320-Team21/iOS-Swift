@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SportPal_iOS
+@testable import SportPal
 
 final class SportPal_iOSTests: XCTestCase {
 

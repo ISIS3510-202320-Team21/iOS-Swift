@@ -22,45 +22,63 @@ class NetworkService {
     
     enum NetworkError: Error {
         case invalidURL
-        case noData
-        case encodingFailed
         case decodingFailed
+        case encodingFailed
+        case noData
+        case invalidResponse
+        case HTTPError(Int, String)
         case undefined
     }
     
-    func request<T: Decodable>(method: HTTPMethod, resource: String, body: Data? = nil, completion: @escaping (Result<T, NetworkError>) -> Void) {
-        guard let url = URL(string: "http://127.0.0.1:8000/\(resource)") else {
-                    completion(.failure(NetworkError.invalidURL))
-                    return
-                }
+    struct ErrorResponse: Decodable {
+        let detail: String
+    }
+    
+    func request(method: HTTPMethod, resource: String, body: Data? = nil, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        guard let url = URL(string: "http://172.20.10.4:8000/\(resource)/") else {
+            completion(.failure(NetworkError.invalidURL))
+            return
+        }
                 
-                var request = URLRequest(url: url)
-                request.httpMethod = method.rawValue
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
                 
-                // Add request body for POST and PUT requests
-                if let body = body {
-                    request.httpBody = body
-                }
+        // Add request body for POST and PUT requests
+        if let body = body {
+            request.httpBody = body
+        }
+        
+        // Header of body type
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                 
-                // Perform the network request
-                URLSession.shared.dataTask(with: request) { data, response, error in
-                    if let error = error {
-                        completion(.failure(NetworkError.undefined))
-                        return
-                    }
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(NetworkError.undefined))
+                return
+            }
                     
-                    // Handle response
-                    guard let data = data else {
-                        completion(.failure(NetworkError.noData))
-                        return
-                    }
-                    
-                    do {
-                        let decodedData = try JSONDecoder().decode(T.self, from: data)
-                        completion(.success(decodedData))
-                    } catch {
-                        completion(.failure(NetworkError.decodingFailed))
-                    }
-                }.resume()
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(NetworkError.invalidResponse))
+                return
+            }
+            
+            let statusCode = httpResponse.statusCode
+                       
+            guard let responseData = data else {
+                completion(.failure(NetworkError.noData))
+                return
+            }
+                       
+            if !(200...299).contains(statusCode) {
+                do {
+                    let errorResponse = try JSONDecoder().decode(ErrorResponse.self, from: responseData)
+                    completion(.failure(NetworkError.HTTPError(statusCode, errorResponse.detail)))
+                } catch {
+                    completion(.failure(NetworkError.decodingFailed))
+                }
+            } else {
+                completion(.success(responseData))
+            }
+        }.resume()
     }
 }

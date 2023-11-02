@@ -11,23 +11,57 @@ class SignupViewModel: ObservableObject {
     
     private let signupModel = SignupModel()
     
-    @Published var name: String = ""
-    @Published var email: String = ""
-    @Published var password: String = ""
-    @Published var phoneNumber: String = ""
-    @Published var selectedRole: String = ""
-    @Published var selectedUniversity: String = ""
-    @Published var birthDate: Date = Date()
-    @Published var selectedGender: String = ""
-        
     @Published var roles: [String] = []
     @Published var universities: [String] = []
     @Published var genders: [String] = []
     @Published var signupResponse: SignupResponse?
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
-    @Published var isNavigatingBack: Bool = false
-    @Published var isCorrectSignup: Bool = false
+    @Published var alertTitle: String = ""
+    
+    func isValidName(name: String) -> Bool {
+        return !name.isEmpty && name.count <= 15
+    }
+    
+    func isValidEmail(email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+    }
+    
+    func isValidPassword(password: String) -> Bool {
+        return password.count >= 8
+    }
+    
+    func isValidPhoneNumber(phoneNumber: String) -> Bool {
+        return !phoneNumber.isEmpty
+    }
+    
+    func isValidRole(role: String) -> Bool {
+        return role != ""
+    }
+    
+    func isValidUniversity(university: String) -> Bool {
+        return university != ""
+    }
+    
+    func isValidGender(gender: String) -> Bool {
+        return gender != ""
+    }
+    
+    func isValidBornDate(bornDate: Date) -> Bool {
+        let calendar = Calendar.current
+        let ageComponents = calendar.dateComponents([.year], from: bornDate, to: Date())
+        
+        if let age = ageComponents.year, age >= 18 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isSignupButtonEnabled(name: String, email: String, password: String, phoneNumber: String, role: String, university: String, bornDate: Date, gender: String) -> Bool {
+        return isValidName(name: name) && isValidEmail(email: email) && isValidPassword(password: password) && isValidPhoneNumber(phoneNumber: phoneNumber) && isValidRole(role: role) && isValidUniversity(university: university) && isValidGender(gender: gender) && isValidBornDate(bornDate: bornDate)
+    }
     
     func fetchRoles() {
             signupModel.fetchRoles { [weak self] result in
@@ -38,7 +72,7 @@ class SignupViewModel: ObservableObject {
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
-                        self?.showAlert(message: "Failed to fetch roles: \(error)")
+                        self?.showAlert(title: "Error" ,message: "Failed to fetch roles: \(error)")
                     }
                 }
             }
@@ -53,7 +87,7 @@ class SignupViewModel: ObservableObject {
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
-                        self?.showAlert(message: "Failed to fetch universities: \(error)")
+                        self?.showAlert(title: "Error" ,message: "Failed to fetch universities: \(error)")
                     }
                 }
             }
@@ -68,47 +102,38 @@ class SignupViewModel: ObservableObject {
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
-                        self?.showAlert(message: "Failed to fetch genders: \(error)")
+                        self?.showAlert(title: "Error" ,message: "Failed to fetch genders: \(error)")
                     }
                 }
             }
         }
     
-    func signup(signupRequest: SignupRequest) {
-        
+    func signup(signupRequest: SignupRequest, completion: @escaping (Bool) -> Void ) {
         signupModel.signup(signupData: signupRequest) { [weak self] result in
             switch result {
             case .success(let response):
-                DispatchQueue.main.async {
-                    self?.signupResponse = response
-                    // Handle the SignupResponse if needed
-                }
+                completion(true)
+                self?.signupResponse = response
+                self?.showAlert(title: "Success" ,message: "User created")
             case .failure(let error):
-                DispatchQueue.main.async {
-                    switch error {
-                    case .invalidURL:
-                        self?.errorMessage = "Invalid URL."
-                    case .noData:
-                        self?.errorMessage = "No data encountered."
-                    case .encodingFailed:
-                        self?.errorMessage = "Signup encoding failed."
-                    case .decodingFailed:
-                        self?.errorMessage = "Signup decoding failed."
-                    case .undefined:
-                        self?.errorMessage = "Undefined error"
-                    }
-                    self?.showAlert = true
+                completion(false)
+                switch error {
+                case .HTTPError(_, let detail):
+                    self?.showAlert(title: "Error" ,message: detail)
+                case .decodingFailed:
+                    self?.showAlert(title: "Error" ,message: "Decoding failed")
+                case .noData:
+                    self?.showAlert(title: "Error" ,message: "No data")
+                default:
+                    self?.showAlert(title: "Error" ,message: "An error occurred")
                 }
             }
         }
     }
-    
-    func goBack() {
-            isNavigatingBack = true
-        }
         
-        private func showAlert(message: String) {
+    private func showAlert(title: String, message: String) {
             errorMessage = message
             showAlert = true
+            alertTitle = title
         }
 }
