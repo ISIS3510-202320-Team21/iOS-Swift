@@ -21,7 +21,7 @@ struct HeaderView: View, AppComponent {
                 .foregroundColor(Color(red: 0, green: 0, blue: 0))
             Spacer()
             if(messages) {
-                NavigationLink(destination: MessagesView(), isActive: $messagesClicked){
+                NavigationLink(destination: MessagesView(navPaths: .constant([])), isActive: $messagesClicked){
                     Button(action:{messagesClicked = true}) {
                         Image(systemName: "envelope.fill")
                             .resizable()
@@ -32,7 +32,7 @@ struct HeaderView: View, AppComponent {
                 }
             }
             if(notifications) {
-                NavigationLink(destination: NotificationsView(), isActive: $notificationsClicked) {
+                NavigationLink(destination: NotificationsView(navPaths: .constant([])), isActive: $notificationsClicked) {
                     Button(action:{notificationsClicked = true}) {
                         Image(systemName: "bell.square.fill")
                             .resizable()

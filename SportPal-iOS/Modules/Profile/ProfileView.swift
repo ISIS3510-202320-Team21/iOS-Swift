@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @Binding var navPaths: [Routes]
+    
     @ObservedObject var profileViewModel = ProfileViewModel(user: UserModel())
-    @State private var isNavigatingBack: Bool = false
     @State private var showSheet: Bool = false
     @State private var showImagePicker: Bool = false
     @State private var sourceType: UIImagePickerController.SourceType = .camera
@@ -18,10 +19,9 @@ struct ProfileView: View {
     @State private var image: UIImage?
     
     var body: some View {
-        NavigationView {
             VStack {
                 HeaderBack(title: "MY PROFILE") {
-                    self.isNavigatingBack = true
+                    navPaths.removeLast()
                 }
                 //systemName: "person.crop.circle.fill.badge.plus"
                 Image(uiImage: image ??  UIImage(named:"ProfileUser")!)
@@ -99,12 +99,9 @@ struct ProfileView: View {
                     newMatchButtonAction: NavigateToNewMatchActionStrategy(),
                     profileButtonAction: NavigateToProfileActionStrategy()
                 ))
-            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
-        }.navigationBarBackButtonHidden(true)
-            .background(NavigationLink(
-                destination: LandingView(),
-                isActive: $isNavigatingBack,
-                label: {EmptyView()}))
+            }
+            .navigationBarBackButtonHidden(true)
+            .background(Color(red: 0.961, green: 0.961, blue: 0.961))
             .sheet(isPresented: $showImagePicker) {
                 ImagePicker(image: $image, isShown: self.$showImagePicker, sourceType: self.sourceType)
             }
@@ -113,6 +110,6 @@ struct ProfileView: View {
 
 struct ProfileViewModel_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(navPaths: .constant([]))
     }
 }

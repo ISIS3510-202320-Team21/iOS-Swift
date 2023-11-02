@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct NotificationsView: View {
-    
-    @State private var isNavigatingBack: Bool = false
+        
+    @Binding var navPaths: [Routes]
     
     var body: some View {
-        NavigationView{
             VStack{
                 HeaderBack(title: "NOTIFICATIONS") {
-                    self.isNavigatingBack = true
+                    navPaths.removeLast()
                 }
                 VStack{
                 NotificationView(texto: "Hi, please rate your match with David")
@@ -28,18 +27,15 @@ struct NotificationsView: View {
                     newMatchButtonAction: NavigateToNewMatchActionStrategy(),
                     profileButtonAction: NavigateToProfileActionStrategy()
                 ))
-            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))	
-        }.navigationBarBackButtonHidden(true)
-        .background(NavigationLink(
-            destination: LandingView(),
-            isActive: $isNavigatingBack,
-            label: {EmptyView()}))
+            }
+            .navigationBarBackButtonHidden(true)
+            .background(Color(red: 0.961, green: 0.961, blue: 0.961))
     }
 }
 
 struct NotificationsViewmodel_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationsView()
+        NotificationsView(navPaths: .constant([]))
     }
 }
 

@@ -10,15 +10,14 @@ import SwiftUI
 
 struct MessagesView: View {
     
-    @State private var isNavigatingBack: Bool = false
+    @Binding var navPaths: [Routes]
     
     var body: some View {
-        NavigationView{
             VStack{
                 ZStack(alignment: .topTrailing) {
                     VStack {
                         HeaderBack(title: "MESSAGES") {
-                            self.isNavigatingBack = true
+                            navPaths.removeLast()
                         }
                     }
                     VStack {
@@ -34,41 +33,32 @@ struct MessagesView: View {
                 }
                 
                 VStack{
-                MessageView(texto: "How fun was yesterday!", persona: "hombre", nombre: "Benito Martinez")
-                MessageView(texto: "Looking forward to meet you again!", persona: "mujer", nombre: "Karol. G")
+                MessageView(navPaths: .constant([]), texto: "How fun was yesterday!", persona: "hombre", nombre: "Benito Martinez")
+                MessageView(navPaths: .constant([]), texto: "Looking forward to meet you again!", persona: "mujer", nombre: "Karol. G")
                 }
                 Spacer()
-//                FooterView(viewModel: FooterViewModel(
-//                    homeButtonAction: NavigateToHomeActionStrategy(),
-//                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-//                    profileButtonAction: NavigateToProfileActionStrategy()
-//                ))
-            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
-        }.navigationBarBackButtonHidden(true)
-        .background(NavigationLink(
-            destination: LandingView(),
-            isActive: $isNavigatingBack,
-            label: {EmptyView()}))
+            }.navigationBarBackButtonHidden(true)
+            .background(Color(red: 0.961, green: 0.961, blue: 0.961))
     }
 }
 
 struct MessagesViewModel_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesView()
+        MessagesView(navPaths: .constant([]))
     }
 }
 
 
 struct MessageView: View {
-    @State private var chatClicked: Bool = false
+   
+    @Binding var navPaths: [Routes]
     
     var texto: String
     var persona: String
     var nombre: String
     
     var body: some View {
-        NavigationLink(destination: ChatsView(), isActive: $chatClicked) {
-            Button(action:{chatClicked = true}){
+            Button(action:{navPaths.append(.chats)}){
                 HStack() {
                     Image(systemName: "person.circle.fill")
                         .resizable()
@@ -97,9 +87,5 @@ struct MessageView: View {
                     
                 }.background(Color.white)
             }
-            
-        }
     }
-    
-    
 }

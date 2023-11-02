@@ -15,7 +15,7 @@ struct FooterView: View, AppComponent {
     
     var body: some View {
         HStack() {
-            NavigationLink(destination: LandingView(), isActive: $homeClicked) {
+            NavigationLink(destination: LandingView(navPaths: .constant([])), isActive: $homeClicked) {
                 Button(action:{homeClicked = true}) {
                     Image(systemName: "house.fill")
                     .resizable()
@@ -37,7 +37,7 @@ struct FooterView: View, AppComponent {
                 }.padding()
             }
             Spacer()
-            NavigationLink(destination: ProfileView(), isActive: $profileClicked) {
+            NavigationLink(destination: ProfileView(navPaths: .constant([])), isActive: $profileClicked) {
                 Button(action: {
                     profileClicked = true
                 }) {

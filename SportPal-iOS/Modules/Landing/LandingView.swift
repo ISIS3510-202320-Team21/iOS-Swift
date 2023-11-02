@@ -11,11 +11,12 @@ struct LandingView: View {
     
     @ObservedObject var landingViewModel = LandingViewModel(user: UserModel())
     
+    @Binding var navPaths: [Routes]
+    
     @State private var manageMatchesClicked: Bool = false
     @State private var bookeauClicked: Bool = false
     
     var body: some View {
-        NavigationView {
             VStack () {
                 HeaderView(title: "SPORTPAL", notifications: true, messages: true)
                 VStack{
@@ -44,12 +45,8 @@ struct LandingView: View {
                         .background(Color.white)
                         .cornerRadius(16)
                     }
-                    
-                    NavigationLink(destination: MatchesView(), isActive: $manageMatchesClicked) {
                         Button(action: {
-                            // TODO: implement matches
-                            manageMatchesClicked = true
-                            
+                            navPaths.append(.mymatches)
                         })
                         {
                             HStack {
@@ -72,7 +69,6 @@ struct LandingView: View {
                             .background(Color.white)
                             .cornerRadius(16)
                         }
-                }
                 Spacer()
             }.padding()
                 FooterView(viewModel: FooterViewModel(
@@ -81,13 +77,15 @@ struct LandingView: View {
                     profileButtonAction: NavigateToProfileActionStrategy()
                 ))
                 
-            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
-        }.navigationBarBackButtonHidden(true)
+            }
+            .navigationBarBackButtonHidden(true)
+            .background(Color(red: 0.961, green: 0.961, blue: 0.961))
+        
     }
 }
 
 struct LandingView_Previews: PreviewProvider {
     static var previews: some View {
-        LandingView()
+        LandingView(navPaths: .constant([]))
     }
 }

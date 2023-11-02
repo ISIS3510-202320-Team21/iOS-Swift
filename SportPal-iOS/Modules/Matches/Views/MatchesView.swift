@@ -9,15 +9,16 @@ import SwiftUI
 
 struct MatchesView: View {
     
+    @Binding var navPaths: [Routes]
+    
     @State private var sport = "Tennis"
     @State private var user = "M. Diaz"
     @State private var isNavigatingBack: Bool = false
     
-    var body: some View {   
-        NavigationView{
+    var body: some View {
             VStack{
                 HeaderBack(title: "MATCHES") {
-                    self.isNavigatingBack = true
+                    navPaths.removeLast()
                 }
                 
                 VStack{
@@ -36,17 +37,13 @@ struct MatchesView: View {
                     newMatchButtonAction: NavigateToNewMatchActionStrategy(),
                     profileButtonAction: NavigateToProfileActionStrategy()
                 ))
-        }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
-    }.navigationBarBackButtonHidden(true)
-            .background(NavigationLink(
-                destination: LandingView(),
-                isActive: $isNavigatingBack,
-                label: {EmptyView()}))
+        }.navigationBarBackButtonHidden(true)
+        .background(Color(red: 0.961, green: 0.961, blue: 0.961))
 }
 
 struct MatchesView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchesView()
+        MatchesView(navPaths: .constant([]))
     }
 }
 
