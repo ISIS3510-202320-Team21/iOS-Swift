@@ -88,7 +88,7 @@ struct ProfileView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .foregroundColor(Color.black)
                             Spacer()
-                            Text("Edit my profile").font(.title).fontWeight(.thin).foregroundColor(Color.black)
+                            Text("Sign Out").font(.title).fontWeight(.thin).foregroundColor(Color.black)
                             Spacer()
                         }.frame(height: 60).padding()
                     }

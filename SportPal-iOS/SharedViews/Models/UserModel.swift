@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class UserModel: ObservableObject {
     
-    @Published var isLoggedIn: Bool = false
+    @State var isLoggedIn: Bool = false
     // Add other user data properties as needed
     @Published var email: String = ""
     @Published var name: String = ""

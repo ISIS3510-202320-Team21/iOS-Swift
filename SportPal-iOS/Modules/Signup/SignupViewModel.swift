@@ -18,10 +18,9 @@ class SignupViewModel: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
     @Published var alertTitle: String = ""
-    @Published var isCorrectSignup: Bool = false
     
     func isValidName(name: String) -> Bool {
-        return !name.isEmpty
+        return !name.isEmpty && name.count <= 15
     }
     
     func isValidEmail(email: String) -> Bool {
@@ -109,34 +108,27 @@ class SignupViewModel: ObservableObject {
             }
         }
     
-    func signup(signupRequest: SignupRequest) {
+    func signup(signupRequest: SignupRequest, completion: @escaping (Bool) -> Void ) {
         signupModel.signup(signupData: signupRequest) { [weak self] result in
             switch result {
             case .success(let response):
-                DispatchQueue.main.async {
-                    self?.signupResponse = response
-                    self?.showAlert(title: "Success" ,message: "User created")
-                    self?.handleSuccessfulSignUp()
-                }
+                completion(true)
+                self?.signupResponse = response
+                self?.showAlert(title: "Success" ,message: "User created")
             case .failure(let error):
-                DispatchQueue.main.async {
-                    switch error {
-                    case .HTTPError(_, let detail):
-                        self?.showAlert(title: "Error" ,message: detail)
-                    case .decodingFailed:
-                        self?.showAlert(title: "Error" ,message: "Decoding failed")
-                    case .noData:
-                        self?.showAlert(title: "Error" ,message: "No data")
-                    default:
-                        self?.showAlert(title: "Error" ,message: "An error occurred")
-                    }
+                completion(false)
+                switch error {
+                case .HTTPError(_, let detail):
+                    self?.showAlert(title: "Error" ,message: detail)
+                case .decodingFailed:
+                    self?.showAlert(title: "Error" ,message: "Decoding failed")
+                case .noData:
+                    self?.showAlert(title: "Error" ,message: "No data")
+                default:
+                    self?.showAlert(title: "Error" ,message: "An error occurred")
                 }
             }
         }
-    }
-    
-    private func handleSuccessfulSignUp() {
-        self.isCorrectSignup = true
     }
         
     private func showAlert(title: String, message: String) {
