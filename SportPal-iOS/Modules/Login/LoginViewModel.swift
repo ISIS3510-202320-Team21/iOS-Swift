@@ -11,8 +11,7 @@ import SwiftUI
 class LoginViewModel: ObservableObject {
     
     private let loginModel = LoginModel()
-        
-    @Published var loginResponse: LoginResponse?
+    
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
     @Published var alertTitle: String = ""
@@ -31,13 +30,12 @@ class LoginViewModel: ObservableObject {
             case .success(let response):
                 GlobalParameters.shared.setUser(loginResponse: response)
                 completion(true)
-                self?.loginResponse = response
-                self?.showAlert(title: "Success" ,message: "Logged in")
+//                self?.showAlert(title: "Success" ,message: "Logged in")
             case .failure(let error):
                 completion(false)
                 switch error {
-                case .HTTPError(_, let detail):
-                    self?.showAlert(title: "Error" ,message: detail)
+                case .HTTPError(_, _):
+                    self?.showAlert(title: "Error" ,message: "Login Information Incorrect")
                 case .decodingFailed:
                     self?.showAlert(title: "Error" ,message: "Decoding failed")
                 case .noData:

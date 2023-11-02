@@ -42,7 +42,7 @@ struct SignupView: View {
                     VStack{
                         Group{
                             CustomTextField(
-                                placeholder: "Name...",
+                                placeholder: "First Name...",
                                 text: $name,
                                 isValid: signupViewModel.isValidName(name: name)
                             ).padding(.horizontal)

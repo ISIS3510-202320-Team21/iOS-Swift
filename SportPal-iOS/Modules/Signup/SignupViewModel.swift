@@ -20,7 +20,7 @@ class SignupViewModel: ObservableObject {
     @Published var alertTitle: String = ""
     
     func isValidName(name: String) -> Bool {
-        return !name.isEmpty
+        return !name.isEmpty && name.count <= 15
     }
     
     func isValidEmail(email: String) -> Bool {
