@@ -13,12 +13,15 @@ enum Routes {
     case landing
     case chats
     case profile
+    case editprofile
     case mymatches
     case notifications
     case messages
+    case newmatchi
 }
 
 struct NavigationStackCoordinator: View {
+    
     @State private var navPaths = [Routes]()
     
     var body: some View {
@@ -35,12 +38,16 @@ struct NavigationStackCoordinator: View {
                     ChatsView(navPaths: $navPaths)
                 case .profile:
                     ProfileView(navPaths: $navPaths)
+                case .editprofile:
+                    EditProfileView(navPaths: $navPaths)
                 case .mymatches:
                     MatchesView(navPaths: $navPaths)
                 case .notifications:
                     NotificationsView(navPaths: $navPaths)
                 case .messages:
                     MessagesView(navPaths: $navPaths)
+                case .newmatchi:
+                    NewMatchIView(navPaths: $navPaths)
                 }
             }
         }

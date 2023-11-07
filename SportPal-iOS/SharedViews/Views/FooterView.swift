@@ -8,57 +8,52 @@
 import SwiftUI
 
 struct FooterView: View, AppComponent {
-    var viewModel: FooterViewModel
-    @State private var homeClicked: Bool = false
-    @State private var plusClicked: Bool = false
-    @State private var profileClicked: Bool = false
     
+    @Binding var navPaths: [Routes]
+        
     var body: some View {
         HStack() {
-            NavigationLink(destination: LandingView(navPaths: .constant([])), isActive: $homeClicked) {
-                Button(action:{homeClicked = true}) {
+            Button(action:{
+                if navPaths.last != .landing {
+                    navPaths.append(.landing)
+                }
+            }) {
                     Image(systemName: "house.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 30, height: 30) // Set a fixed size for the image if you want it to dictate the card's height
+                    .frame(width: 30, height: 30)
                     .foregroundColor(Color.black)
                 }.padding(.leading, 40)
-            }
             Spacer()
-            NavigationLink(destination: NewMatchIView(), isActive: $plusClicked) {
                 Button(action: {
-                    plusClicked = true
+                    if navPaths.last != .newmatchi {
+                        navPaths.append(.newmatchi)
+                    }
                 }) {
                     Image(systemName: "plus.square.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 30, height: 30) // Set a fixed size for the image if you want it to dictate the card's height
+                    .frame(width: 30, height: 30)
                     .foregroundColor(Color.black)
                 }.padding()
-            }
             Spacer()
-            NavigationLink(destination: ProfileView(navPaths: .constant([])), isActive: $profileClicked) {
                 Button(action: {
-                    profileClicked = true
+                    if navPaths.last != .profile {
+                        navPaths.append(.profile)
+                    }
                 }) {
                     Image(systemName: "person.crop.square.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 30, height: 30) // Set a fixed size for the image if you want it to dictate the card's height
+                    .frame(width: 30, height: 30)
                     .foregroundColor(Color.black)
                 }.padding(.trailing, 40)
-            }
-            
         }.background(Color.white)
     }
 }
 
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
-        FooterView(viewModel: FooterViewModel(
-            homeButtonAction: NavigateToHomeActionStrategy(),
-            newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-            profileButtonAction: NavigateToProfileActionStrategy()
-        ))
+        FooterView(navPaths: .constant([]))
     }
 }

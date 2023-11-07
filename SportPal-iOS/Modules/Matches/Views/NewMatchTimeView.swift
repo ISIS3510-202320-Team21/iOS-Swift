@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewMatchTimeView: View {
+    
     @State private var selectedDate = Date()
     
     @State private var selectedTimeInterval = 0
@@ -26,7 +27,7 @@ struct NewMatchTimeView: View {
     var body: some View {
         
         VStack () {
-            HeaderView(title: "NEW MATCH", notifications: true, messages: true)
+            HeaderView(navPaths: .constant([]), title: "NEW MATCH", notifications: true, messages: true)
             Spacer()
             VStack() {
                 VStack {
@@ -100,11 +101,7 @@ struct NewMatchTimeView: View {
             }.padding().background(Color(red: 0.96, green: 0.96, blue: 0.96))
             
             Spacer()
-            FooterView(viewModel: FooterViewModel(
-                homeButtonAction: NavigateToHomeActionStrategy(),
-                newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-                profileButtonAction: NavigateToProfileActionStrategy()
-            ))
+            FooterView(navPaths: .constant([]))
         }
     }
 }

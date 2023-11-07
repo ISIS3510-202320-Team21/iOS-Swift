@@ -1,21 +1,20 @@
 //
-//  SignupViewModel.swift
-//  SportPal-iOS
+//  EditProfileView.swift
+//  SportPal
 //
-//  Created by Alejandro Tovar on 3/10/23.
+//  Created by Javier Ramírez Silva on 4/11/23.
 //
 
 import SwiftUI
 
-struct SignupView: View {
+struct EditProfileView: View {
     
-    @ObservedObject private var signupViewModel = SignupViewModel()
+    @ObservedObject private var profileViewModel = ProfileViewModel()
     
     @Binding var navPaths: [Routes]
-
+    
     @State private var name: String = ""
     @State private var email: String = ""
-    @State private var password: String = ""
     @State private var phoneNumber: String = ""
     @State private var selectedRole: String = ""
     @State private var selectedUniversity: String = ""
@@ -26,45 +25,30 @@ struct SignupView: View {
     var body: some View {
         ScrollView {
             LazyVStack () {
-                HeaderBack(title: "SIGN UP") {
+                HeaderBack(title: "EDIT PROFILE") {
                     navPaths.removeLast()
                 }
                 VStack{
-                    Image(systemName: "person.crop.circle.fill")
-                        .resizable().aspectRatio(contentMode: .fill)
-                        .frame(width: 150, height: 150)
-                        .imageScale(.small)
-                        .offset(y:30)
-                        .foregroundColor(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
                     VStack{
                         Group{
                             CustomTextField(
                                 placeholder: "First Name...",
                                 text: $name,
-                                isValid: signupViewModel.isValidName(name: name)
+                                isValid: profileViewModel.isValidName(name: name)
                             ).padding(.horizontal)
                             
                             CustomTextField(
                                 placeholder: "Email...",
                                 text: $email,
-                                isValid: signupViewModel.isValidEmail(email: email)
+                                isValid: profileViewModel.isValidEmail(email: email)
                             ).padding(.horizontal)
                             
                             CustomTextField(
                                 placeholder: "Phone Number...",
                                 text:$phoneNumber,
-                                isValid: signupViewModel.isValidPhoneNumber(phoneNumber: phoneNumber)
+                                isValid: profileViewModel.isValidPhoneNumber(phoneNumber: phoneNumber)
                             ).padding(.horizontal).keyboardType(.phonePad)
-                            
-                            CustomSecureField(
-                                placeholder: "Password...",
-                                text: $password,
-                                isValid: signupViewModel.isValidPassword(password: password)
-                            ).padding(.horizontal)
-                            
-                            if !signupViewModel.isValidPassword(password: password) {
-                                Text("Password must be at least 8 characters long").foregroundColor(Color.gray).padding(.bottom, 20)
-                            }
+
                         }
                         
                         Group {
@@ -72,46 +56,46 @@ struct SignupView: View {
                             DatePicker("Birth Date", selection: $bornDate, displayedComponents: .date)
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidBornDate(bornDate: bornDate) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(profileViewModel.isValidBornDate(bornDate: bornDate) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
                             
-                            if !signupViewModel.isValidBornDate(bornDate: bornDate) {
+                            if !profileViewModel.isValidBornDate(bornDate: bornDate) {
                                 Text("You must be at least 18 to register").foregroundColor(Color.gray).padding(.bottom, 20)
                             }
                             Picker("Gender", selection: $selectedGender) {
                                 Text("Select Gender").tag("")
-                                ForEach(signupViewModel.genders, id: \.self) { gender in
+                                ForEach(profileViewModel.genders, id: \.self) { gender in
                                     Text(gender).tag(gender)
                                 }
                             }.pickerStyle(MenuPickerStyle())
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidGender(gender: selectedGender) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(profileViewModel.isValidGender(gender: selectedGender) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
                             
                             Picker("University", selection: $selectedUniversity) {
                                 Text("Select University").tag("")
-                                ForEach(signupViewModel.universities, id: \.self) { university in
+                                ForEach(profileViewModel.universities, id: \.self) { university in
                                     Text(university).tag(university)
                                 }
                             }.pickerStyle(MenuPickerStyle())
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidUniversity(university: selectedUniversity) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(profileViewModel.isValidUniversity(university: selectedUniversity) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
                             
                             Picker("Role", selection: $selectedRole) {
                                 Text("Select Role").tag("")
-                                ForEach(signupViewModel.roles, id: \.self) { role in
+                                ForEach(profileViewModel.roles, id: \.self) { role in
                                     Text(role).tag(role)
                                 }
                             }.pickerStyle(MenuPickerStyle())
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidRole(role: selectedRole) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(profileViewModel.isValidRole(role: selectedRole) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
                         }
@@ -122,9 +106,8 @@ struct SignupView: View {
                             dateFormatter.dateFormat = "dd/MM/yyyy"
                             let formattedBornDate = dateFormatter.string(from: bornDate)
                             
-                            let signUpRequest =  SignupRequest(
+                            let editData =  ProfileEditRequest(
                                 email: email,
-                                password: password,
                                 name: name,
                                 phoneNumber: phoneNumber,
                                 role: selectedRole,
@@ -133,7 +116,7 @@ struct SignupView: View {
                                 gender: selectedGender
                             )
                             
-                            signupViewModel.signup(signupRequest: signUpRequest) { result in
+                            profileViewModel.editProfile(editData: editData) { result in
                                 switch result {
                                 case true:
                                     navPaths.append(.login)
@@ -141,15 +124,15 @@ struct SignupView: View {
                                 }
                             }
                         }) {
-                            Text("Sign Up")
+                            Text("Confirm")
                                 .font(.title)
                                 .padding(.horizontal, 80)
                                 .padding(.vertical, 10)
                         }
-                        .buttonStyle(CustomButtonStyle(isEnabled: signupViewModel.isSignupButtonEnabled(name: name, email: email, password: password, phoneNumber: phoneNumber, role: selectedRole, university: selectedUniversity, bornDate: bornDate, gender: selectedGender)))
+                        .buttonStyle(CustomButtonStyle(isEnabled: profileViewModel.isConfirmButtonEnabled(name: name, email: email, phoneNumber: phoneNumber, role: selectedRole, university: selectedUniversity, bornDate: bornDate, gender: selectedGender)))
                         .padding(.horizontal)
                         .padding(.vertical, 20)
-                        .disabled(!signupViewModel.isSignupButtonEnabled(name: name, email: email, password: password, phoneNumber: phoneNumber, role: selectedRole, university: selectedUniversity, bornDate: bornDate, gender: selectedGender))
+                        .disabled(!profileViewModel.isConfirmButtonEnabled(name: name, email: email, phoneNumber: phoneNumber, role: selectedRole, university: selectedUniversity, bornDate: bornDate, gender: selectedGender))
                     }
                     .padding(.horizontal, 20)
                     .padding(.top, 50.0)
@@ -158,15 +141,37 @@ struct SignupView: View {
                 
             }
             .navigationBarBackButtonHidden(true)
-            .alert(isPresented: $signupViewModel.showAlert) {
-                Alert(title: Text(signupViewModel.alertTitle), message: Text(signupViewModel.errorMessage), dismissButton: .default(Text("OK")))
+            .alert(isPresented: $profileViewModel.showAlert) {
+                Alert(title: Text(profileViewModel.alertTitle), message: Text(profileViewModel.errorMessage), dismissButton: .default(Text("OK")))
+            }
+            .onAppear {
+                name = profileViewModel.getUser().name
+                email = profileViewModel.getUser().email
+                phoneNumber = profileViewModel.getUser().phoneNumber
+                bornDate = convertStringToDate(dateString: profileViewModel.getUser().bornDate)!
+                selectedGender = profileViewModel.getUser().gender
+                selectedUniversity = profileViewModel.getUser().university
+                selectedRole = profileViewModel.getUser().role
             }
         }
     }
 }
 
-struct SignupView_Previews: PreviewProvider {
+func convertStringToDate(dateString: String) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd/MM/yyyy"
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // Set locale if needed
+    
+    if let date = dateFormatter.date(from: dateString) {
+        return date
+    } else {
+        print("Invalid date format or value: \(dateString)")
+        return nil
+    }
+}
+
+struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        SignupView(navPaths: .constant([]))
+        EditProfileView(navPaths: .constant([]))
     }
 }
