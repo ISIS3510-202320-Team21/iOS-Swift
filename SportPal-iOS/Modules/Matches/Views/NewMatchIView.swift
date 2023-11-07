@@ -9,18 +9,19 @@ import SwiftUI
 
 struct NewMatchIView: View {
     
-    @State private var user = "Camilo"
-    @State private var sportClicked: Bool = false
-    @State private var newClicked: Bool = false
+    @Binding var navPaths: [Routes]
+    
+    @ObservedObject var matchesViewModel = MatchesViewModel()
     
     var body: some View {
-        let images: [String] = ["TennisButton", "BaseballButton", "ChessButton", "BasketballButton", "VolleyballButton", "NewSportButton"]
             
         VStack () {
-            HeaderView(title: "NEW MATCH", notifications: true, messages: true)
+            HeaderBack(title: "NEW MATCH") {
+                navPaths.removeLast()
+            }
             Spacer()
             VStack{
-                Text ("**\(user)**, please choose one of your")
+                Text ("**\(matchesViewModel.getUser().name)**, please choose one")
                     .font(.title3)
                     .foregroundColor (Color (
                     red: 0.1568627450980392,
@@ -29,7 +30,7 @@ struct NewMatchIView: View {
                     opacity: 100)).multilineTextAlignment(.center)
                     .padding(.horizontal,20)
                     .padding(.top, 20)
-                Text ("sports or add a new one:")
+                Text ("of your sports or add a new one:")
                     .font(.title3)
                     .foregroundColor (Color (
                     red: 0.1568627450980392,
@@ -39,39 +40,109 @@ struct NewMatchIView: View {
                     .padding(.horizontal,20)
                     .padding(.bottom, 20)
                     LazyVGrid(columns: [GridItem(), GridItem()], spacing: 10) {
-                                ForEach(0..<images.count, id: \.self) { index in
-                                    let imageName = images[index]
-                                    Button(action: {
-                                        if index == images.count - 1 {
-                                            newClicked = true
-                                        } else {
-                                            sportClicked = true
-    
+                        ForEach(matchesViewModel.sports, id: \.self) { sport in
+                            Button(action: {
+                                
+                            })
+                            {
+                                VStack {
+                                    VStack {
+                                        Text(sport.name)
+                                            .font(.title3)
+                                            .fontWeight(.thin)
+                                            .foregroundColor(.black)
+                                            .frame(maxWidth: .infinity, alignment: .trailing)
+                                            .multilineTextAlignment(.center)
+                                    }
+                                    HStack {
+                                        VStack{
+                                            AsyncImage(url: URL(string: sport.imageUrl)) { phase in
+                                                switch phase {
+                                                case .empty:
+                                                    ProgressView()
+                                                case .success(let image):
+                                                    image
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fit)
+                                                        .frame(width: 100, height: 100)
+                                                case .failure:
+                                                    Image(systemName: "exclamationmark.triangle.fill")
+                                                        .foregroundColor(.red)
+                                                        .frame(width: 100, height: 100)
+                                                @unknown default:
+                                                    EmptyView()
+                                                }
+                                            }
                                         }
-                                    }) {
-                                        Image(imageName)
+                                        Spacer()
+                                        VStack{
+                                            Image(systemName: "chevron.right")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .foregroundColor(.black)
+                                                .frame(width: 30, height: 30)
+                                                .padding(.top, 60)
+                                                .font(Font.title.weight(.thin))
+                                        }
+                                    }
+                                }
+                                .padding()
+                                .background(Color.white)
+                                .cornerRadius(16)
+                            }
+                        }
+                        Button(action: {
+                            
+                        })
+                        {
+                            VStack {
+                                VStack {
+                                    Text("Add sport")
+                                        .font(.title3)
+                                        .fontWeight(.thin)
+                                        .foregroundColor(.black)
+                                        .frame(maxWidth: .infinity, alignment: .trailing)
+                                        .multilineTextAlignment(.center)
+                                }
+                                HStack {
+                                    VStack{
+                                        Image(systemName: "plus.circle.fill")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                            .foregroundColor(.green)
+                                            .frame(width: 100, height: 100)
+                                            
+                                    }
+                                    Spacer()
+                                    VStack{
+                                        Image(systemName: "chevron.right")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .foregroundColor(.black)
+                                            .frame(width: 30, height: 30)
+                                            .padding(.top, 60)
+                                            .font(Font.title.weight(.thin))
                                     }
                                 }
                             }
                             .padding()
+                            .background(Color.white)
+                            .cornerRadius(16)
+                        }
+                    }
+                    .padding()
                 Spacer()
             }.background(Color(red: 0.96, green: 0.96, blue: 0.96))
             Spacer()
-            FooterView(viewModel: FooterViewModel(
-                homeButtonAction: NavigateToHomeActionStrategy(),
-                newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-                profileButtonAction: NavigateToProfileActionStrategy()
-            ))
+            FooterView(navPaths: $navPaths)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct NewMatchIView_Previews: PreviewProvider {
     static var previews: some View {
-        NewMatchIView()
+        NewMatchIView(navPaths: .constant([]))
     }
 }
 

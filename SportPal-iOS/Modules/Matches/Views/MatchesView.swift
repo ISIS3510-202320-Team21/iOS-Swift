@@ -9,44 +9,45 @@ import SwiftUI
 
 struct MatchesView: View {
     
+    @Binding var navPaths: [Routes]
+    
     @State private var sport = "Tennis"
     @State private var user = "M. Diaz"
     @State private var isNavigatingBack: Bool = false
     
-    var body: some View {   
-        NavigationView{
+    var body: some View {
             VStack{
-                HeaderBack(title: "MATCHES") {
-                    self.isNavigatingBack = true
+                ZStack(alignment: .topTrailing) {
+                    VStack {
+                        HeaderBack(title: "MATCHES") {
+                            navPaths.removeLast()
+                        }
+                    }
+                    VStack {
+                        Button(action:{navPaths.append(.newmatchi)}) {
+                            Image(systemName: "plus.app.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 25, height: 25, alignment: .topLeading)
+                                .padding(.top, 4)
+                                .foregroundColor(Color.black)
+                        }.padding()
+                    }
                 }
                 
                 VStack{
-                    Image(systemName: "plus.app.fill")
-                        .resizable()
-                        .foregroundColor(.black)
-                        .frame(width: 35, height: 35)
-                        .cornerRadius(10)
-                        .frame(maxWidth: .infinity, alignment: .trailing)
                     MatchView(texto: "\(sport) match with \(user)")
                 }.padding().background(Color(red: 0.961, green: 0.961, blue: 0.961))
                 
                 Spacer()
-                FooterView(viewModel: FooterViewModel(
-                    homeButtonAction: NavigateToHomeActionStrategy(),
-                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-                    profileButtonAction: NavigateToProfileActionStrategy()
-                ))
-        }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
-    }.navigationBarBackButtonHidden(true)
-            .background(NavigationLink(
-                destination: LandingView(),
-                isActive: $isNavigatingBack,
-                label: {EmptyView()}))
+                FooterView(navPaths: $navPaths)
+        }.navigationBarBackButtonHidden(true)
+        .background(Color(red: 0.961, green: 0.961, blue: 0.961))
 }
 
 struct MatchesView_Previews: PreviewProvider {
     static var previews: some View {
-        MatchesView()
+        MatchesView(navPaths: .constant([]))
     }
 }
 

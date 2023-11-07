@@ -8,13 +8,12 @@ import SwiftUI
 
 struct ChatsView: View {
     
-    @State private var isNavigatingBack: Bool = false
+    @Binding var navPaths: [Routes]
 
     var body: some View {
-        NavigationView{
             VStack( spacing: 0){
                 HeaderBack(title: "CHAT") {
-                    self.isNavigatingBack = true
+                    navPaths.removeLast()
                 }
                 ContactView(name: "J Ramirez", level: "Intermediate", title: "Trainer")
                 VStack{
@@ -24,23 +23,15 @@ struct ChatsView: View {
                 }.padding(.top, 30)
                 Spacer()
                 TextView()
-//                FooterView(viewModel: FooterViewModel(
-//                    homeButtonAction: NavigateToHomeActionStrategy(),
-//                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-//                    profileButtonAction: NavigateToProfileActionStrategy()
-//                ))
-            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
-        }.navigationBarBackButtonHidden(true)
-            .background(NavigationLink(
-                destination: MessagesView(),
-                isActive: $isNavigatingBack,
-                label: {EmptyView()}))
+            }
+            .navigationBarBackButtonHidden(true)
+            .background(Color(red: 0.961, green: 0.961, blue: 0.961))
     }
 }
 
 struct ChatsViewModel_Previews: PreviewProvider {
     static var previews: some View {
-        ChatsView()
+        ChatsView(navPaths: .constant([]))
     }
 }
 

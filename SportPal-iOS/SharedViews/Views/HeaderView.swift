@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct HeaderView: View, AppComponent {
+    
+    @Binding var navPaths: [Routes]
+    
     var title: String
     var notifications: Bool
     var messages: Bool
-    @State private var messagesClicked: Bool = false
-    @State private var notificationsClicked: Bool = false
         
     var body: some View {
         HStack() {
@@ -21,27 +22,22 @@ struct HeaderView: View, AppComponent {
                 .foregroundColor(Color(red: 0, green: 0, blue: 0))
             Spacer()
             if(messages) {
-                NavigationLink(destination: MessagesView(), isActive: $messagesClicked){
-                    Button(action:{messagesClicked = true}) {
+                Button(action:{navPaths.append(.messages)}) {
                         Image(systemName: "envelope.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 21, height: 21) // Set a fixed size for the image if you want it to dictate the card's height
+                            .frame(width: 21, height: 21)
                             .foregroundColor(Color.black)
                     }.padding()
-                }
             }
             if(notifications) {
-                NavigationLink(destination: NotificationsView(), isActive: $notificationsClicked) {
-                    Button(action:{notificationsClicked = true}) {
+                Button(action:{navPaths.append(.notifications)}) {
                         Image(systemName: "bell.square.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 22, height: 22) // Set a fixed size for the image if you want it to dictate the card's height
+                            .frame(width: 22, height: 22)
                             .foregroundColor(Color.black)
                     }.padding()
-                }
-                
             }
         }.background(Color.white)
     }
@@ -49,6 +45,6 @@ struct HeaderView: View, AppComponent {
 
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(title: "SPORTPAL", notifications: true, messages: true)
+        HeaderView(navPaths: .constant([]), title: "SPORTPAL", notifications: true, messages: true)
     }
 }

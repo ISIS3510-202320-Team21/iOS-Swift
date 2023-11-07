@@ -34,10 +34,15 @@ class UserModel: ObservableObject {
         self.university = loginResponse.university
         self.bornDate = loginResponse.bornDate
         self.gender = loginResponse.gender
-//        self.id = loginResponse.id
+        self.id = loginResponse.id
 //        self.imageUrl = loginResponse.imageUrl
 //        self.latitude = loginResponse.latitude
 //        self.longitude = loginResponse.longitude
 //        self.notifications = loginResponse.notifications
+    }
+    
+    public func updateLocation(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }

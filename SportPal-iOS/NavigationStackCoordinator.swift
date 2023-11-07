@@ -13,11 +13,17 @@ enum Routes {
     case landing
     case chats
     case profile
+    case editprofile
+    case mymatches
+    case notifications
+    case messages
+    case newmatchi
 }
 
 struct NavigationStackCoordinator: View {
+    
     @State private var navPaths = [Routes]()
-
+    
     var body: some View {
         NavigationStack(path: $navPaths) {
             LoginView(navPaths: $navPaths).navigationDestination(for: Routes.self) { r in
@@ -27,11 +33,21 @@ struct NavigationStackCoordinator: View {
                 case .signup:
                     SignupView(navPaths: $navPaths)
                 case .landing:
-                    LandingView()
+                    LandingView(navPaths: $navPaths)
                 case .chats:
-                    ChatsView()
+                    ChatsView(navPaths: $navPaths)
                 case .profile:
-                    ProfileView()
+                    ProfileView(navPaths: $navPaths)
+                case .editprofile:
+                    EditProfileView(navPaths: $navPaths)
+                case .mymatches:
+                    MatchesView(navPaths: $navPaths)
+                case .notifications:
+                    NotificationsView(navPaths: $navPaths)
+                case .messages:
+                    MessagesView(navPaths: $navPaths)
+                case .newmatchi:
+                    NewMatchIView(navPaths: $navPaths)
                 }
             }
         }

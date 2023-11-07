@@ -19,7 +19,7 @@ struct LoginView: View {
     var body: some View {
         
             VStack () {
-                HeaderView(title: "LOGIN", notifications: false, messages: false)
+                HeaderView(navPaths: .constant([]), title: "LOGIN", notifications: false, messages: false)
                 VStack{
                     Image(systemName: "person.circle.fill").resizable().aspectRatio(contentMode: .fill)
                         .frame(width: 150, height: 150)

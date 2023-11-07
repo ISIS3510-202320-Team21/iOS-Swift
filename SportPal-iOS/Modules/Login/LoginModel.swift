@@ -21,6 +21,7 @@ struct LoginResponse: Decodable, Encodable {
     let university: String
     let bornDate: String
     let gender: String
+    let id: Int
     
     init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -31,6 +32,7 @@ struct LoginResponse: Decodable, Encodable {
             self.university = try container.decode(String.self, forKey: .university)
             self.bornDate = try container.decode(String.self, forKey: .bornDate)
             self.gender = try container.decode(String.self, forKey: .gender)
+            self.id = try container.decode(Int.self, forKey: .id)
         }
     
     func encode(to encoder: Encoder) throws {
@@ -42,6 +44,7 @@ struct LoginResponse: Decodable, Encodable {
             try container.encode(university, forKey: .university)
             try container.encode(bornDate, forKey: .bornDate)
             try container.encode(gender, forKey: .gender)
+            try container.encode(id, forKey: .id)
     }
 
     // CodingKeys enum to map properties to keys during encoding

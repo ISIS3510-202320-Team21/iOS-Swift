@@ -15,13 +15,11 @@ class LoginViewModel: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
     @Published var alertTitle: String = ""
-    @Published var isCorrectLogin: Bool = false
     
     init() {
         self.showAlert = false
         self.errorMessage = ""
         self.alertTitle = ""
-        self.isCorrectLogin = false
     }
     
     func login(loginRequest: LoginRequest, completion: @escaping (Bool) -> Void ) {
@@ -58,10 +56,6 @@ class LoginViewModel: ObservableObject {
     
     func isLoginButtonEnabled(email: String, password: String) -> Bool {
         return isValidPassword(password: password) && isValidEmail(email: email)
-    }
-    
-    func handleSuccessfulLogin() {
-        isCorrectLogin = true
     }
         
     private func showAlert(title: String, message: String) {

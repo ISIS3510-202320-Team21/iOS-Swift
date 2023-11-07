@@ -19,6 +19,12 @@ class SignupViewModel: ObservableObject {
     @Published var errorMessage: String = ""
     @Published var alertTitle: String = ""
     
+    private var dataLoadGroup = DispatchGroup()
+    
+    init() {
+        fetchData()
+    }
+    
     func isValidName(name: String) -> Bool {
         return !name.isEmpty && name.count <= 15
     }
@@ -63,12 +69,33 @@ class SignupViewModel: ObservableObject {
         return isValidName(name: name) && isValidEmail(email: email) && isValidPassword(password: password) && isValidPhoneNumber(phoneNumber: phoneNumber) && isValidRole(role: role) && isValidUniversity(university: university) && isValidGender(gender: gender) && isValidBornDate(bornDate: bornDate)
     }
     
-    func fetchRoles() {
+    func fetchData() {
+        dataLoadGroup.enter()
+        fetchRoles {
+            self.dataLoadGroup.leave()
+        }
+        
+        dataLoadGroup.enter()
+        fetchUniversities {
+            self.dataLoadGroup.leave()
+        }
+        
+        dataLoadGroup.enter()
+        fetchGenders {
+            self.dataLoadGroup.leave()
+        }
+        
+        dataLoadGroup.notify(queue: .main) {
+        }
+    }
+    
+    func fetchRoles(completion: @escaping () -> Void) {
             signupModel.fetchRoles { [weak self] result in
                 switch result {
                 case .success(let roles):
                     DispatchQueue.main.async {
                         self?.roles = roles
+                        completion()
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
@@ -78,12 +105,13 @@ class SignupViewModel: ObservableObject {
             }
         }
         
-        func fetchUniversities() {
+        func fetchUniversities(completion: @escaping () -> Void) {
             signupModel.fetchUniversities { [weak self] result in
                 switch result {
                 case .success(let universities):
                     DispatchQueue.main.async {
                         self?.universities = universities
+                        completion()
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
@@ -93,12 +121,13 @@ class SignupViewModel: ObservableObject {
             }
         }
         
-        func fetchGenders() {
+        func fetchGenders(completion: @escaping () -> Void) {
             signupModel.fetchGenders { [weak self] result in
                 switch result {
                 case .success(let genders):
                     DispatchQueue.main.async {
                         self?.genders = genders
+                        completion()
                     }
                 case .failure(let error):
                     DispatchQueue.main.async {
