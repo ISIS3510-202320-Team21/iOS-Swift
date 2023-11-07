@@ -12,7 +12,7 @@ struct LandingView: View {
     @Binding var navPaths: [Routes]
     
     @ObservedObject var landingViewModel = LandingViewModel()
-
+    
     var body: some View {
         VStack () {
             HeaderView(navPaths: $navPaths, title: "SPORTPAL", notifications: true, messages: true)
@@ -116,7 +116,7 @@ struct LandingView: View {
                                             .foregroundColor(.black)
                                             .frame(maxWidth: .infinity, alignment: .center)
                                             .multilineTextAlignment(.center)
-                                            
+                                        
                                     }
                                 }
                                 .padding()
@@ -131,8 +131,8 @@ struct LandingView: View {
             Spacer()
             FooterView(navPaths: $navPaths)
         }
-            .navigationBarBackButtonHidden(true)
-            .background(Color(red: 0.961, green: 0.961, blue: 0.961))
+        .navigationBarBackButtonHidden(true)
+        .background(Color(red: 0.961, green: 0.961, blue: 0.961))
     }
 }
 
