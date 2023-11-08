@@ -156,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				A56C75702AF19D4D008F535D /* Models */,
-				A5DCF6D42ACE00F300081712 /* ViewModels */,
 				A5DCF6D32ACE00EB00081712 /* Views */,
 				A53C56952ACD20160041477C /* AppComponent.swift */,
 			);
@@ -310,13 +309,6 @@
 				A56C75662AF14DE4008F535D /* ButtonStyle.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		A5DCF6D42ACE00F300081712 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		A9120C642AE5B3640013B053 /* Chats */ = {

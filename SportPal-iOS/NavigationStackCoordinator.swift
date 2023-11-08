@@ -18,6 +18,7 @@ enum Routes {
     case notifications
     case messages
     case newmatchi
+    case newmatchii
 }
 
 struct NavigationStackCoordinator: View {
@@ -48,6 +49,8 @@ struct NavigationStackCoordinator: View {
                     MessagesView(navPaths: $navPaths)
                 case .newmatchi:
                     NewMatchIView(navPaths: $navPaths)
+                case .newmatchii:
+                    NewMatchIIView(navPaths: $navPaths)
                 }
             }
         }

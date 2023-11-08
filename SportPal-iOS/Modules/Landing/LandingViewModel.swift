@@ -16,7 +16,7 @@ class LandingViewModel: ObservableObject {
     
     private var dataLoadGroup = DispatchGroup()
     
-    @Published var recentSports: [RecentSport] = []
+    @Published var recentSports: [Sport] = []
     @Published var errorMessage: String = ""
     @Published var temperature: Double = 0
     @Published var weatherDescription: String = ""
@@ -51,8 +51,8 @@ class LandingViewModel: ObservableObject {
         landingModel.fetchRecentSports { [weak self] result in
             switch result {
             case .success(let sports):
+                self?.recentSports = sports
                 DispatchQueue.main.async {
-                    self?.recentSports = sports
                     self?.errorMessage = ""
                     completion()
                 }
@@ -84,6 +84,10 @@ class LandingViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func manageRecentSportClicked(sport: Sport) {
+        GlobalParameters.shared.setSelectedSport(sport: sport)
     }
 
 }
