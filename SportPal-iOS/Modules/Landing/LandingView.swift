@@ -68,8 +68,13 @@ struct LandingView: View {
                     HStack{
                         ForEach(landingViewModel.recentSports, id: \.self) { sport in
                             Button(action: {
-                                landingViewModel.manageRecentSportClicked(sport: sport)
-                                navPaths.append(.newmatchii)
+                                landingViewModel.manageRecentSportClicked(sport: sport) { result in
+                                    switch result {
+                                    case true:
+                                        navPaths.append(.newmatchii)
+                                    case false: break
+                                    }
+                                }
                             })
                             {
                                 VStack {

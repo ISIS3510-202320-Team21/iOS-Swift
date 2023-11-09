@@ -16,6 +16,8 @@ class LandingViewModel: ObservableObject {
     
     private var dataLoadGroup = DispatchGroup()
     
+    private let matchesModel = MatchesModel(user: UserModel())
+    
     @Published var recentSports: [Sport] = []
     @Published var errorMessage: String = ""
     @Published var temperature: Double = 0
@@ -43,7 +45,7 @@ class LandingViewModel: ObservableObject {
             }
         }
         dataLoadGroup.notify(queue: .main) {
-    
+            
         }
     }
     
@@ -67,7 +69,7 @@ class LandingViewModel: ObservableObject {
     func fetchWeatherData(completion: @escaping () -> Void) {
         let latitude = locationManager.latitude
         let longitude = locationManager.longitude
-                
+        
         weatherService.fetchWeatherData(latitude: latitude, longitude: longitude) { [weak self] result in
             switch result {
             case .success(let weatherResponse):
@@ -86,8 +88,23 @@ class LandingViewModel: ObservableObject {
         }
     }
     
-    func manageRecentSportClicked(sport: Sport) {
+    func manageRecentSportClicked(sport: Sport, completion: @escaping (Bool) -> Void) {
         GlobalParameters.shared.setSelectedSport(sport: sport)
+        matchesModel.fetchMatchesSport { [weak self] result in
+            switch result {
+            case .success(let matches):
+                GlobalParameters.shared.setMatches(matches: matches)
+                DispatchQueue.main.async {
+                    self?.errorMessage = ""
+                    completion(true)
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    completion(false)
+                    self?.errorMessage = "Failed to fetch matches: \(error)"
+                }
+            }
+        }
     }
-
+    
 }

@@ -59,7 +59,6 @@ class MatchesViewModel: ObservableObject {
                 GlobalParameters.shared.setMatches(matches: matches)
                 DispatchQueue.main.async {
                     self?.errorMessage = ""
-                    print(GlobalParameters.shared.getMatches())
                     completion(true)
                 }
             case .failure(let error):

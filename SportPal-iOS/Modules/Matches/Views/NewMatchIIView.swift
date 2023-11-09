@@ -91,7 +91,7 @@ struct NewMatchIIView: View {
                 }
             }.padding().background(Color(red: 0.96, green: 0.96, blue: 0.96))
             Spacer()
-            FooterView(navPaths: .constant([]))
+            FooterView(navPaths: $navPaths)
         }.navigationBarBackButtonHidden(true)
     }
 }

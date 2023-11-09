@@ -42,7 +42,8 @@ struct Match: Identifiable, Decodable, Hashable {
     let court: String
     let city: String
     let creationDate: String
-    let rate: Int?
+    let rate1: String?
+    let rate2: String?
     let user_created_id: Int
     let sport: Sport
     let level: Level

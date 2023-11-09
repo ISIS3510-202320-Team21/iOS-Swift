@@ -101,16 +101,15 @@ struct ProfileView: View {
                             .cornerRadius(16).frame(height: 80)
                     }
                     Button(action: {
-                        // TODO: implement signup
-                        
+                        navPaths.append(.claim)
                     }) {
                         HStack {
-                            Image(systemName: "gearshape.fill")
+                            Image(systemName: "questionmark.circle.fill")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .foregroundColor(Color.black)
                             Spacer()
-                            Text("Settings").font(.title).fontWeight(.thin).foregroundColor(Color.black)
+                            Text("Help").font(.title).fontWeight(.thin).foregroundColor(Color.black)
                             Spacer()
                         }.padding()
                             .background(Color.white)

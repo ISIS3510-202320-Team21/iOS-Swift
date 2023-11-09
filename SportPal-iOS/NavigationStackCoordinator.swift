@@ -14,6 +14,7 @@ enum Routes {
     case chats
     case profile
     case editprofile
+    case claim
     case mymatches
     case notifications
     case messages
@@ -41,6 +42,8 @@ struct NavigationStackCoordinator: View {
                     ProfileView(navPaths: $navPaths)
                 case .editprofile:
                     EditProfileView(navPaths: $navPaths)
+                case .claim:
+                    ClaimView(navPaths: $navPaths)
                 case .mymatches:
                     MatchesView(navPaths: $navPaths)
                 case .notifications:

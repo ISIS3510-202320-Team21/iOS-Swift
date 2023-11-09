@@ -50,7 +50,6 @@ struct NewMatchIView: View {
                                 case false: break
                                 }
                             }
-                            navPaths.append(.newmatchii)
                         })
                         {
                             VStack {
