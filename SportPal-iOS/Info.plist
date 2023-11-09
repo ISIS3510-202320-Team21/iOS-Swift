@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Please allow acess to choose a profile picture</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Please allow access to take a profile picture</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app uses your location to personalize your app experience</string>
-</dict>
+<dict/>
 </plist>

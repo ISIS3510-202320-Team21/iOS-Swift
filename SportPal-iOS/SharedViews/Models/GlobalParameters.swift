@@ -72,6 +72,8 @@ class GlobalParameters {
     
     private var selectedSport: Sport?
     
+    private var userSavedAnImage = false
+    
     public func setUser(loginResponse: LoginResponse) {
         print("This is the user to be stored:")
         print(loginResponse)
@@ -96,6 +98,14 @@ class GlobalParameters {
     
     public func getSelectedSport() -> Sport {
         return self.selectedSport!
+    }
+    
+    public func setUserSavedAnImage(saved: Bool) {
+        self.userSavedAnImage = saved
+    }
+    
+    public func getUserSavedAnImage() -> Bool {
+        return self.userSavedAnImage
     }
     
 }
