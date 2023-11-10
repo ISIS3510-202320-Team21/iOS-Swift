@@ -15,11 +15,13 @@ enum Routes {
     case profile
     case editprofile
     case claim
-    case mymatches
+    case usermatches
     case notifications
     case messages
-    case newmatchi
-    case newmatchii
+    case sportsmatch
+    case matchessport
+    case matchdetail
+    case creatematch
 }
 
 struct NavigationStackCoordinator: View {
@@ -44,16 +46,20 @@ struct NavigationStackCoordinator: View {
                     EditProfileView(navPaths: $navPaths)
                 case .claim:
                     ClaimView(navPaths: $navPaths)
-                case .mymatches:
-                    MatchesView(navPaths: $navPaths)
+                case .usermatches:
+                    UserMatchesView(navPaths: $navPaths)
                 case .notifications:
                     NotificationsView(navPaths: $navPaths)
                 case .messages:
                     MessagesView(navPaths: $navPaths)
-                case .newmatchi:
-                    NewMatchIView(navPaths: $navPaths)
-                case .newmatchii:
-                    NewMatchIIView(navPaths: $navPaths)
+                case .sportsmatch:
+                    SportsMatchView(navPaths: $navPaths)
+                case .matchessport:
+                    MatchesSportView(navPaths: $navPaths)
+                case .matchdetail:
+                    MatchDetailView(navPaths: $navPaths)
+                case .creatematch:
+                    CreateMatchView(navPaths: $navPaths)
                 }
             }
         }

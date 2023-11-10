@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewMatchIView: View {
+struct SportsMatchView: View {
     
     @Binding var navPaths: [Routes]
     
@@ -46,7 +46,7 @@ struct NewMatchIView: View {
                             matchesViewModel.fetchMatchesSport { result in
                                 switch result {
                                 case true:
-                                    navPaths.append(.newmatchii)
+                                    navPaths.append(.matchessport)
                                 case false: break
                                 }
                             }
@@ -98,44 +98,6 @@ struct NewMatchIView: View {
                             .cornerRadius(16)
                         }
                     }
-                    Button(action: {
-                        
-                    })
-                    {
-                        VStack {
-                            VStack {
-                                Text("Add sport")
-                                    .font(.title3)
-                                    .fontWeight(.thin)
-                                    .foregroundColor(.black)
-                                    .frame(maxWidth: .infinity, alignment: .trailing)
-                                    .multilineTextAlignment(.center)
-                            }
-                            HStack {
-                                VStack{
-                                    Image(systemName: "plus.circle.fill")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .foregroundColor(.green)
-                                        .frame(width: 100, height: 100)
-                                    
-                                }
-                                Spacer()
-                                VStack{
-                                    Image(systemName: "chevron.right")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .foregroundColor(.black)
-                                        .frame(width: 30, height: 30)
-                                        .padding(.top, 60)
-                                        .font(Font.title.weight(.thin))
-                                }
-                            }
-                        }
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(16)
-                    }
                 }
                 .padding()
                 Spacer()
@@ -147,9 +109,9 @@ struct NewMatchIView: View {
     }
 }
 
-struct NewMatchIView_Previews: PreviewProvider {
+struct SportsMatchView_Previews: PreviewProvider {
     static var previews: some View {
-        NewMatchIView(navPaths: .constant([]))
+        SportsMatchView(navPaths: .constant([]))
     }
 }
 

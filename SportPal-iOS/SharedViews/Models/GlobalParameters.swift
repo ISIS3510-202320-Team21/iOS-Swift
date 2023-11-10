@@ -73,6 +73,10 @@ class GlobalParameters {
     
     private var selectedSport: Sport?
     
+    private var selectedMatch: Match?
+    
+    private var userMatches: [Match] = []
+    
     private var userSavedAnImage = false
     
     public func setUser(loginResponse: LoginResponse) {
@@ -93,12 +97,28 @@ class GlobalParameters {
         return self.matches
     }
     
+    public func setUserMatches(matches: [Match]) {
+        self.userMatches = matches
+    }
+    
+    public func getUserMatches() -> [Match] {
+        return self.userMatches
+    }
+    
     public func setSelectedSport(sport: Sport) {
         self.selectedSport = sport
     }
     
     public func getSelectedSport() -> Sport {
         return self.selectedSport!
+    }
+    
+    public func setSelectedMatch(match: Match) {
+        self.selectedMatch = match
+    }
+    
+    public func getSelectedMatch() -> Match {
+        return self.selectedMatch!
     }
     
     public func setUserSavedAnImage(saved: Bool) {
@@ -109,4 +129,17 @@ class GlobalParameters {
         return self.userSavedAnImage
     }
     
+}
+
+func convertStringToDate(dateString: String) -> Date? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd/MM/yyyy"
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // Set locale if needed
+    
+    if let date = dateFormatter.date(from: dateString) {
+        return date
+    } else {
+        print("Invalid date format or value: \(dateString)")
+        return nil
+    }
 }

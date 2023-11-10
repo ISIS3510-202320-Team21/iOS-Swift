@@ -30,12 +30,12 @@
 		A5852A402AEC719E00AF3CF5 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5852A3F2AEC719E00AF3CF5 /* SignupViewModel.swift */; };
 		A5DCF6C82ACE001D00081712 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6B52ACE001D00081712 /* LandingView.swift */; };
 		A5DCF6C92ACE001D00081712 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6B72ACE001D00081712 /* SignupView.swift */; };
-		A5DCF6CA2ACE001D00081712 /* NewMatchTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6BC2ACE001D00081712 /* NewMatchTimeView.swift */; };
+		A5DCF6CA2ACE001D00081712 /* CreateMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6BC2ACE001D00081712 /* CreateMatchView.swift */; };
 		A5DCF6CB2ACE001D00081712 /* NewMatchIVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6BD2ACE001D00081712 /* NewMatchIVView.swift */; };
-		A5DCF6CC2ACE001D00081712 /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6BE2ACE001D00081712 /* MatchesView.swift */; };
-		A5DCF6CD2ACE001D00081712 /* NewMatchIIIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6BF2ACE001D00081712 /* NewMatchIIIView.swift */; };
-		A5DCF6CE2ACE001D00081712 /* NewMatchIIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6C02ACE001D00081712 /* NewMatchIIView.swift */; };
-		A5DCF6CF2ACE001D00081712 /* NewMatchIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6C12ACE001D00081712 /* NewMatchIView.swift */; };
+		A5DCF6CC2ACE001D00081712 /* UserMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6BE2ACE001D00081712 /* UserMatchesView.swift */; };
+		A5DCF6CD2ACE001D00081712 /* MatchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6BF2ACE001D00081712 /* MatchDetailView.swift */; };
+		A5DCF6CE2ACE001D00081712 /* MatchesSportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6C02ACE001D00081712 /* MatchesSportView.swift */; };
+		A5DCF6CF2ACE001D00081712 /* SportsMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6C12ACE001D00081712 /* SportsMatchView.swift */; };
 		A5DCF6D02ACE001D00081712 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6C32ACE001D00081712 /* ProfileView.swift */; };
 		A5DCF6D12ACE001D00081712 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6C52ACE001D00081712 /* NotificationsView.swift */; };
 		A5DCF6D22ACE001D00081712 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6C72ACE001D00081712 /* LoginView.swift */; };
@@ -100,12 +100,12 @@
 		A5DCF6B22ACDF88C00081712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A5DCF6B52ACE001D00081712 /* LandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		A5DCF6B72ACE001D00081712 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		A5DCF6BC2ACE001D00081712 /* NewMatchTimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchTimeView.swift; sourceTree = "<group>"; };
+		A5DCF6BC2ACE001D00081712 /* CreateMatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateMatchView.swift; sourceTree = "<group>"; };
 		A5DCF6BD2ACE001D00081712 /* NewMatchIVView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchIVView.swift; sourceTree = "<group>"; };
-		A5DCF6BE2ACE001D00081712 /* MatchesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
-		A5DCF6BF2ACE001D00081712 /* NewMatchIIIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchIIIView.swift; sourceTree = "<group>"; };
-		A5DCF6C02ACE001D00081712 /* NewMatchIIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchIIView.swift; sourceTree = "<group>"; };
-		A5DCF6C12ACE001D00081712 /* NewMatchIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchIView.swift; sourceTree = "<group>"; };
+		A5DCF6BE2ACE001D00081712 /* UserMatchesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMatchesView.swift; sourceTree = "<group>"; };
+		A5DCF6BF2ACE001D00081712 /* MatchDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchDetailView.swift; sourceTree = "<group>"; };
+		A5DCF6C02ACE001D00081712 /* MatchesSportView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesSportView.swift; sourceTree = "<group>"; };
+		A5DCF6C12ACE001D00081712 /* SportsMatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsMatchView.swift; sourceTree = "<group>"; };
 		A5DCF6C32ACE001D00081712 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A5DCF6C52ACE001D00081712 /* NotificationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		A5DCF6C72ACE001D00081712 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -266,12 +266,12 @@
 		A5DCF6BB2ACE001D00081712 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A5DCF6BC2ACE001D00081712 /* NewMatchTimeView.swift */,
+				A5DCF6BC2ACE001D00081712 /* CreateMatchView.swift */,
 				A5DCF6BD2ACE001D00081712 /* NewMatchIVView.swift */,
-				A5DCF6BE2ACE001D00081712 /* MatchesView.swift */,
-				A5DCF6BF2ACE001D00081712 /* NewMatchIIIView.swift */,
-				A5DCF6C02ACE001D00081712 /* NewMatchIIView.swift */,
-				A5DCF6C12ACE001D00081712 /* NewMatchIView.swift */,
+				A5DCF6BE2ACE001D00081712 /* UserMatchesView.swift */,
+				A5DCF6BF2ACE001D00081712 /* MatchDetailView.swift */,
+				A5DCF6C02ACE001D00081712 /* MatchesSportView.swift */,
+				A5DCF6C12ACE001D00081712 /* SportsMatchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -536,10 +536,10 @@
 				A55ABE682AF5E3F800659240 /* LandingModel.swift in Sources */,
 				A56C756D2AF19564008F535D /* NavigationStackCoordinator.swift in Sources */,
 				A9120C6E2AE5B6540013B053 /* MessagesView.swift in Sources */,
-				A5DCF6CF2ACE001D00081712 /* NewMatchIView.swift in Sources */,
+				A5DCF6CF2ACE001D00081712 /* SportsMatchView.swift in Sources */,
 				A5DCF6CB2ACE001D00081712 /* NewMatchIVView.swift in Sources */,
 				A53C56972ACD20160041477C /* FooterView.swift in Sources */,
-				A5DCF6CE2ACE001D00081712 /* NewMatchIIView.swift in Sources */,
+				A5DCF6CE2ACE001D00081712 /* MatchesSportView.swift in Sources */,
 				A9120C6C2AE5B6350013B053 /* MessagesViewModel.swift in Sources */,
 				A56C75652AF14608008F535D /* LoginViewModel.swift in Sources */,
 				A55ABE662AF5E0FD00659240 /* MatchesViewModel.swift in Sources */,
@@ -547,7 +547,7 @@
 				A53C569E2ACD20160041477C /* AppComponent.swift in Sources */,
 				A55ABE732AF72B0100659240 /* ProfileModel.swift in Sources */,
 				A56C75672AF14DE4008F535D /* ButtonStyle.swift in Sources */,
-				A5DCF6CC2ACE001D00081712 /* MatchesView.swift in Sources */,
+				A5DCF6CC2ACE001D00081712 /* UserMatchesView.swift in Sources */,
 				A5DCF6D22ACE001D00081712 /* LoginView.swift in Sources */,
 				A573E2582AE5BF15008C04F8 /* FieldView.swift in Sources */,
 				A5DCF6C92ACE001D00081712 /* SignupView.swift in Sources */,
@@ -560,14 +560,14 @@
 				A56418F02AFB39B1009BD9C1 /* ClaimView.swift in Sources */,
 				A5DCF6D12ACE001D00081712 /* NotificationsView.swift in Sources */,
 				A9C97AEB2AFC7385006BD0C2 /* ProfileImageMod.swift in Sources */,
-				A5DCF6CD2ACE001D00081712 /* NewMatchIIIView.swift in Sources */,
+				A5DCF6CD2ACE001D00081712 /* MatchDetailView.swift in Sources */,
 				A56C75632AF145FE008F535D /* LoginModel.swift in Sources */,
 				A5852A3E2AEC705C00AF3CF5 /* SignupModel.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
 				A55ABE6C2AF71AB300659240 /* WeatherService.swift in Sources */,
 				A5DCF6D02ACE001D00081712 /* ProfileView.swift in Sources */,
 				A56C75722AF19D68008F535D /* UserModel.swift in Sources */,
-				A5DCF6CA2ACE001D00081712 /* NewMatchTimeView.swift in Sources */,
+				A5DCF6CA2ACE001D00081712 /* CreateMatchView.swift in Sources */,
 				A5FA4BE42AF9E602008AB8C9 /* MatchesModel.swift in Sources */,
 				A9F86FCB2AF2F22A00CF7EB4 /* ProfileViewModel.swift in Sources */,
 				A9F86FCD2AF3083C00CF7EB4 /* ImagePicker.swift in Sources */,
@@ -735,7 +735,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SportPal-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = T3ZTCMX84P;
+				DEVELOPMENT_TEAM = HF22MP6896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SportPal-iOS/Info.plist";
@@ -759,7 +759,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tovar.SportPal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOS.SportPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -775,7 +775,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SportPal-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = T3ZTCMX84P;
+				DEVELOPMENT_TEAM = HF22MP6896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SportPal-iOS/Info.plist";
@@ -799,7 +799,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tovar.SportPal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iOS.SportPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

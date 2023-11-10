@@ -157,19 +157,6 @@ struct EditProfileView: View {
     }
 }
 
-func convertStringToDate(dateString: String) -> Date? {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd/MM/yyyy"
-    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // Set locale if needed
-    
-    if let date = dateFormatter.date(from: dateString) {
-        return date
-    } else {
-        print("Invalid date format or value: \(dateString)")
-        return nil
-    }
-}
-
 struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
         EditProfileView(navPaths: .constant([]))
