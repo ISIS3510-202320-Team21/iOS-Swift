@@ -56,6 +56,8 @@
 		A9F86FC92AF2D1D600CF7EB4 /* GlobalParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FC82AF2D1D600CF7EB4 /* GlobalParameters.swift */; };
 		A9F86FCB2AF2F22A00CF7EB4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FCA2AF2F22A00CF7EB4 /* ProfileViewModel.swift */; };
 		A9F86FCD2AF3083C00CF7EB4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FCC2AF3083C00CF7EB4 /* ImagePicker.swift */; };
+		CCD15EED2AFDAD4000008563 /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD15EEC2AFDAD3F00008563 /* NotificationsModel.swift */; };
+		CCD15EEF2AFDB22000008563 /* NotificationCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD15EEE2AFDB21F00008563 /* NotificationCenterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +131,8 @@
 		A9F86FC82AF2D1D600CF7EB4 /* GlobalParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalParameters.swift; sourceTree = "<group>"; };
 		A9F86FCA2AF2F22A00CF7EB4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A9F86FCC2AF3083C00CF7EB4 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		CCD15EEC2AFDAD3F00008563 /* NotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
+		CCD15EEE2AFDB21F00008563 /* NotificationCenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				A5DCF6C52ACE001D00081712 /* NotificationsView.swift */,
+				CCD15EEC2AFDAD3F00008563 /* NotificationsModel.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				A53C568C2ACD20160041477C /* SharedViews */,
 				A5DCF6B32ACE001D00081712 /* Modules */,
 				A56C756C2AF19564008F535D /* NavigationStackCoordinator.swift */,
+				CCD15EEE2AFDB21F00008563 /* NotificationCenterService.swift */,
 				A55ABE6B2AF71AB300659240 /* WeatherService.swift */,
 				A55ABE692AF717F200659240 /* LocationManager.swift */,
 				A5852A3B2AEC69FA00AF3CF5 /* NetworkService.swift */,
@@ -540,9 +546,11 @@
 				A5DCF6CB2ACE001D00081712 /* NewMatchIVView.swift in Sources */,
 				A53C56972ACD20160041477C /* FooterView.swift in Sources */,
 				A5DCF6CE2ACE001D00081712 /* NewMatchIIView.swift in Sources */,
+				CCD15EED2AFDAD4000008563 /* NotificationsModel.swift in Sources */,
 				A9120C6C2AE5B6350013B053 /* MessagesViewModel.swift in Sources */,
 				A56C75652AF14608008F535D /* LoginViewModel.swift in Sources */,
 				A55ABE662AF5E0FD00659240 /* MatchesViewModel.swift in Sources */,
+				CCD15EEF2AFDB22000008563 /* NotificationCenterService.swift in Sources */,
 				A5852A3C2AEC69FA00AF3CF5 /* NetworkService.swift in Sources */,
 				A53C569E2ACD20160041477C /* AppComponent.swift in Sources */,
 				A55ABE732AF72B0100659240 /* ProfileModel.swift in Sources */,
