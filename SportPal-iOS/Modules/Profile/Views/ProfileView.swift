@@ -145,6 +145,17 @@ struct ProfileView: View {
                 if let imageData = imageSelected.jpegData(compressionQuality: 1.0) {
                     UserDefaults.standard.set(imageData, forKey: "selectedImage")
                     GlobalParameters.shared.setUserSavedAnImage(saved: true)
+                    var base64 = imageData.base64EncodedString()
+                    let loginRequest =  ImagePostRequest(
+                        imageUrl: base64
+                    )
+                    profileViewModel.updateProfileImg(editData:loginRequest) {
+                        result in
+                            switch result {
+                            case true: break
+                            case false: break
+                            }
+                    }
                 }
             }
         

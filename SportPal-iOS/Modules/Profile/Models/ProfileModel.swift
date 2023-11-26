@@ -18,6 +18,10 @@ struct ProfileEditRequest: Encodable {
     let gender: String
 }
 
+struct ImagePostRequest: Encodable {
+    let imageUrl: String
+}
+
 struct ProfileEditResponse: Decodable, Encodable {
     let email: String
     let name: String
@@ -63,6 +67,27 @@ class ProfileModel {
     }
     
     private let networkService = NetworkService.shared
+    
+    func updateProfileImg(editData: ImagePostRequest, completion: @escaping (Result<ProfileEditResponse, NetworkService.NetworkError>) -> Void) {
+        do {
+            let encodedData = try JSONEncoder().encode(editData)
+            networkService.request(method: .post, resource: "users/\(user.id)/image/", body: encodedData) { result in
+                switch result {
+                case .success(let data):
+                    do {
+                        let response = try JSONDecoder().decode(ProfileEditResponse.self, from: data)
+                        completion(.success(response))
+                    } catch {
+                        completion(.failure(.decodingFailed))
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+        } catch {
+            completion(.failure(.encodingFailed))
+        }
+    }
     
     func editProfile(editData: ProfileEditRequest, completion: @escaping (Result<ProfileEditResponse, NetworkService.NetworkError>) -> Void) {
         do {

@@ -161,6 +161,29 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    func updateProfileImg(editData: ImagePostRequest, completion: @escaping (Bool) -> Void ) {
+        profileModel.updateProfileImg(editData: editData) { [weak self] result in
+            switch result {
+            case .success(let response):
+                completion(true)
+                self?.profileEditResponse = response
+                self?.showAlert(title: "Success" ,message: "Image saved.")
+            case .failure(let error):
+                completion(false)
+                switch error {
+                case .HTTPError(_, let detail):
+                    self?.showAlert(title: "Error" ,message: detail)
+                case .decodingFailed:
+                    self?.showAlert(title: "Error" ,message: "Decoding failed")
+                case .noData:
+                    self?.showAlert(title: "Error" ,message: "No data")
+                default:
+                    self?.showAlert(title: "Error" ,message: "An error occurred")
+                }
+            }
+        }
+    }
+    
     func didTapChangeProfilePic() {
         print("Clicked")
     }
