@@ -11,6 +11,7 @@ import SwiftUI
 class LoginViewModel: ObservableObject {
     
     private let loginModel = LoginModel()
+    private let noti = NotificationCenterService()
     
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
@@ -23,6 +24,7 @@ class LoginViewModel: ObservableObject {
     }
     
     func login(loginRequest: LoginRequest, completion: @escaping (Bool) -> Void ) {
+        noti.checkPermison()
         loginModel.login(loginData: loginRequest) { [weak self] result in
             switch result {
             case .success(let response):
