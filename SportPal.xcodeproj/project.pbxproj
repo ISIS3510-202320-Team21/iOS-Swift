@@ -45,6 +45,8 @@
 		A9120C692AE5B46A0013B053 /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9120C682AE5B46A0013B053 /* ChatsViewModel.swift */; };
 		A9120C6C2AE5B6350013B053 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9120C6B2AE5B6350013B053 /* MessagesViewModel.swift */; };
 		A9120C6E2AE5B6540013B053 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9120C6D2AE5B6540013B053 /* MessagesView.swift */; };
+		A91E7DB72B15012F008F26C0 /* NotificationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E7DB62B15012F008F26C0 /* NotificationsModel.swift */; };
+		A91E7DB92B15016F008F26C0 /* NotificationCenterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91E7DB82B15016F008F26C0 /* NotificationCenterService.swift */; };
 		A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */; };
 		A9A0108D2ACB44FB0070E71F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A0108C2ACB44FB0070E71F /* ContentView.swift */; };
 		A9A0108F2ACB44FD0070E71F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A0108E2ACB44FD0070E71F /* Assets.xcassets */; };
@@ -115,6 +117,8 @@
 		A9120C682AE5B46A0013B053 /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
 		A9120C6B2AE5B6350013B053 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		A9120C6D2AE5B6540013B053 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		A91E7DB62B15012F008F26C0 /* NotificationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsModel.swift; sourceTree = "<group>"; };
+		A91E7DB82B15016F008F26C0 /* NotificationCenterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterService.swift; sourceTree = "<group>"; };
 		A9A010872ACB44FB0070E71F /* SportPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A0108A2ACB44FB0070E71F /* SportPal_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPal_iOSApp.swift; sourceTree = "<group>"; };
 		A9A0108C2ACB44FB0070E71F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -290,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				A5DCF6C52ACE001D00081712 /* NotificationsView.swift */,
+				A91E7DB62B15012F008F26C0 /* NotificationsModel.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				A9A010902ACB44FD0070E71F /* Preview Content */,
 				A9F86FCC2AF3083C00CF7EB4 /* ImagePicker.swift */,
 				A9C97AEA2AFC7385006BD0C2 /* ProfileImageMod.swift */,
+				A91E7DB82B15016F008F26C0 /* NotificationCenterService.swift */,
 			);
 			path = "SportPal-iOS";
 			sourceTree = "<group>";
@@ -540,9 +546,11 @@
 				A5DCF6CB2ACE001D00081712 /* NewMatchIVView.swift in Sources */,
 				A53C56972ACD20160041477C /* FooterView.swift in Sources */,
 				A5DCF6CE2ACE001D00081712 /* MatchesSportView.swift in Sources */,
+				A91E7DB72B15012F008F26C0 /* NotificationsModel.swift in Sources */,
 				A9120C6C2AE5B6350013B053 /* MessagesViewModel.swift in Sources */,
 				A56C75652AF14608008F535D /* LoginViewModel.swift in Sources */,
 				A55ABE662AF5E0FD00659240 /* MatchesViewModel.swift in Sources */,
+				A91E7DB92B15016F008F26C0 /* NotificationCenterService.swift in Sources */,
 				A5852A3C2AEC69FA00AF3CF5 /* NetworkService.swift in Sources */,
 				A53C569E2ACD20160041477C /* AppComponent.swift in Sources */,
 				A55ABE732AF72B0100659240 /* ProfileModel.swift in Sources */,
