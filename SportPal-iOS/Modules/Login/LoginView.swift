@@ -32,12 +32,20 @@ struct LoginView: View {
                             text: $email,
                             isValid: loginViewModel.isValidEmail(email: email)
                         ).padding(.horizontal)
+                        
+                        if !loginViewModel.isValidEmail(email: email) {
+                            Text("Invalid Email").foregroundColor(Color.gray).padding(.bottom, 20)
+                        }
                                     
                         CustomSecureField(
                             placeholder: "Password...",
                             text: $password,
                             isValid: loginViewModel.isValidPassword(password: password)
                         ).padding(.horizontal)
+                        
+                        if !loginViewModel.isValidPassword(password: password) {
+                            Text("Password should be at least 8 characters long").foregroundColor(Color.gray).padding(.bottom, 20)
+                        }
                         
                         Button(action: {
                             let loginRequest =  LoginRequest(

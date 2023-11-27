@@ -50,11 +50,19 @@ struct SignupView: View {
                                 isValid: signupViewModel.isValidEmail(email: email)
                             ).padding(.horizontal)
                             
+                            if !signupViewModel.isValidEmail(email: email) {
+                                Text("Invalid Email").foregroundColor(Color.gray).padding(.bottom, 20)
+                            }
+                            
                             CustomTextField(
                                 placeholder: "Phone Number...",
                                 text:$phoneNumber,
                                 isValid: signupViewModel.isValidPhoneNumber(phoneNumber: phoneNumber)
                             ).padding(.horizontal).keyboardType(.phonePad)
+                            
+                            if !signupViewModel.isValidPhoneNumber(phoneNumber: phoneNumber) {
+                                Text("Phone should have 10 digits").foregroundColor(Color.gray).padding(.bottom, 20)
+                            }
                             
                             CustomSecureField(
                                 placeholder: "Password...",

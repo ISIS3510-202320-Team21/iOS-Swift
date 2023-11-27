@@ -39,7 +39,7 @@ class SignupViewModel: ObservableObject {
     }
     
     func isValidPhoneNumber(phoneNumber: String) -> Bool {
-        return !phoneNumber.isEmpty
+        return phoneNumber.count == 10
     }
     
     func isValidRole(role: String) -> Bool {
