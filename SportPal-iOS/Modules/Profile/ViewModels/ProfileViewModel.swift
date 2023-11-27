@@ -70,6 +70,10 @@ class ProfileViewModel: ObservableObject {
         return isValidName(name: name) && isValidEmail(email: email) && isValidPhoneNumber(phoneNumber: phoneNumber) && isValidRole(role: role) && isValidUniversity(university: university) && isValidGender(gender: gender) && isValidBornDate(bornDate: bornDate)
     }
     
+    func isValidClaim(claim: String) -> Bool {
+        return !claim.isEmpty && claim.count <= 200
+    }
+    
     func fetchData() {
         dataLoadGroup.enter()
         fetchRoles {
@@ -157,6 +161,17 @@ class ProfileViewModel: ObservableObject {
                 default:
                     self?.showAlert(title: "Error" ,message: "An error occurred")
                 }
+            }
+        }
+    }
+    
+    func sendClaim(claimData: ClaimRequest, completion: @escaping (Bool) -> Void ) {
+        profileModel.sendClaim(claimData: claimData) { [weak self] result in
+            switch result {
+            case true:
+                self?.showAlert(title: "Success" ,message: "Claim Sent")
+            case false:
+                self?.showAlert(title: "Error" ,message: "Error sending claim")
             }
         }
     }

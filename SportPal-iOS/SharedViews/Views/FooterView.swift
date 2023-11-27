@@ -26,8 +26,8 @@ struct FooterView: View, AppComponent {
                 }.padding(.leading, 40)
             Spacer()
                 Button(action: {
-                    if navPaths.last != .newmatchi {
-                        navPaths.append(.newmatchi)
+                    if navPaths.last != .sportsmatch {
+                        navPaths.append(.sportsmatch)
                     }
                 }) {
                     Image(systemName: "plus.square.fill")

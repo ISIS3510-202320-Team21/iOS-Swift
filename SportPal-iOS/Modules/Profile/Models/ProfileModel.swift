@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+struct ClaimRequest: Encodable {
+    let user_created_id: Int
+    let content: String
+}
+
 struct ProfileEditRequest: Encodable {
     let email: String
     let name: String
@@ -82,6 +87,22 @@ class ProfileModel {
             }
         } catch {
             completion(.failure(.encodingFailed))
+        }
+    }
+    
+    func sendClaim(claimData: ClaimRequest, completion: @escaping (Bool) -> Void) {
+        do {
+            let encodedData = try JSONEncoder().encode(claimData)
+            networkService.request(method: .post, resource: "claims", body: encodedData) { result in
+                switch result {
+                case .success(_):
+                    completion(true)
+                case .failure(_):
+                    completion(false)
+                }
+            }
+        } catch {
+            completion(false)
         }
     }
     

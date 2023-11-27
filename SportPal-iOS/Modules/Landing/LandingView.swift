@@ -44,7 +44,14 @@ struct LandingView: View {
                             .cornerRadius(16)
                     }
                     Button(action: {
-                        navPaths.append(.mymatches)
+                        landingViewModel.manageUserMatchesClicked {
+                            result in
+                            switch result {
+                            case true:
+                                navPaths.append(.usermatches)
+                            case false: break
+                            }
+                        }
                     })
                     {
                         HStack {
@@ -71,7 +78,7 @@ struct LandingView: View {
                                 landingViewModel.manageRecentSportClicked(sport: sport) { result in
                                     switch result {
                                     case true:
-                                        navPaths.append(.newmatchii)
+                                        navPaths.append(.matchessport)
                                     case false: break
                                     }
                                 }
@@ -139,6 +146,9 @@ struct LandingView: View {
         }
         .navigationBarBackButtonHidden(true)
         .background(Color(red: 0.961, green: 0.961, blue: 0.961))
+        .onAppear {
+            LandingViewModel.init()
+        }
     }
 }
 

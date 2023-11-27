@@ -35,7 +35,7 @@ class LandingViewModel: ObservableObject {
         return landingModel.user
     }
     
-    private func fetchData() {
+    public func fetchData() {
         dataLoadGroup.enter()
         fetchRecentSports {
             self.dataLoadGroup.leave()
@@ -54,14 +54,10 @@ class LandingViewModel: ObservableObject {
             switch result {
             case .success(let sports):
                 self?.recentSports = sports
-                DispatchQueue.main.async {
                     self?.errorMessage = ""
                     completion()
-                }
             case .failure(let error):
-                DispatchQueue.main.async {
                     self?.errorMessage = "Failed to fetch recent sports: \(error)"
-                }
             }
         }
     }
@@ -94,15 +90,25 @@ class LandingViewModel: ObservableObject {
             switch result {
             case .success(let matches):
                 GlobalParameters.shared.setMatches(matches: matches)
-                DispatchQueue.main.async {
-                    self?.errorMessage = ""
-                    completion(true)
-                }
+                self?.errorMessage = ""
+                completion(true)
             case .failure(let error):
-                DispatchQueue.main.async {
+                completion(false)
+                self?.errorMessage = "Failed to fetch matches: \(error)"
+            }
+        }
+    }
+    
+    func manageUserMatchesClicked(completion: @escaping (Bool) -> Void) {
+        matchesModel.fetchUserMatches { [weak self] result in
+            switch result {
+            case .success(let matches):
+                GlobalParameters.shared.setUserMatches(matches: matches)
+                self?.errorMessage = ""
+                completion(true)
+            case .failure(let error):
                     completion(false)
-                    self?.errorMessage = "Failed to fetch matches: \(error)"
-                }
+                    self?.errorMessage = "Failed to fetch user matches: \(error)"
             }
         }
     }
