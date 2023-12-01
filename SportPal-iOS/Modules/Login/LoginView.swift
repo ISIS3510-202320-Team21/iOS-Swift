@@ -15,9 +15,12 @@ struct LoginView: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
+    
+    @StateObject var networkMonitor = NetworkMonitor()
 
     var body: some View {
         
+
             VStack () {
                 HeaderView(navPaths: .constant([]), title: "LOGIN", notifications: false, messages: false)
                 VStack{
@@ -32,6 +35,8 @@ struct LoginView: View {
                             text: $email,
                             isValid: loginViewModel.isValidEmail(email: email)
                         ).padding(.horizontal)
+                        
+                            
                         
                         if !loginViewModel.isValidEmail(email: email) {
                             Text("Invalid Email").foregroundColor(Color.gray).padding(.bottom, 20)
