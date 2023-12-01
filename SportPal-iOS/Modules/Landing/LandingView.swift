@@ -24,8 +24,10 @@ struct LandingView: View {
                         Text("**\(landingViewModel.locationName)**, \(landingViewModel.country )").font(.title3).foregroundColor(Color(red: 0, green: 0.37, blue: 0.65, opacity: 100.0))
                         Text("**\(String(format: "%.0f", landingViewModel.temperature))°C** - \(landingViewModel.weatherDescription )").font(.body).foregroundColor(Color(red: 0, green: 0.37, blue: 0.65, opacity: 100.0)).padding(.bottom, 8)
                     } else {
-                        Text("**Weather information is unavailable without internet connection.**").font(.title3).foregroundColor(Color(red: 0, green: 0.37, blue: 0.65, opacity: 100.0))
+                        Text("Weather information is unavailable").font(.title3).foregroundColor(Color(red: 0, green: 0.37, blue: 0.65, opacity: 100.0))
                             .multilineTextAlignment(.center)
+                        Text("without internet connection").font(.title3).foregroundColor(Color(red: 0, green: 0.37, blue: 0.65, opacity: 100.0))
+                            .multilineTextAlignment(.center).padding(.bottom, 8)
                     }
                     Text("Welcome back **\(landingViewModel.getUser().name)**").font(.title3).foregroundColor(Color(red: 0.1568627450980392, green: 0.6862745098039216, blue: 0.6901960784313725, opacity: 100.0))
                     Text("What would you like to do today?").font(.body)
