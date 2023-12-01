@@ -14,6 +14,7 @@ struct ClaimView: View {
     @Binding var navPaths: [Routes]
     
     @State private var claim: String = ""
+    @State private var claims: [ClaimRequest]?
     
     var body: some View {
         VStack {
@@ -57,6 +58,14 @@ struct ClaimView: View {
                 .padding(.top, 50.0)
                 
                 
+                VStack {
+                    Text("User claims:")
+                    ForEach(0..<profileViewModel.getClaims().count, id: \.self) { index in
+                            Text(profileViewModel.getClaims()[index].content)
+                        }
+                }
+                
+                
             }.padding()
                 .background(Color(red: 0.961, green: 0.961, blue: 0.961))
                 .navigationBarBackButtonHidden(true)
@@ -66,6 +75,18 @@ struct ClaimView: View {
             Spacer()
             FooterView(navPaths: $navPaths)
         }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
+            .onAppear() {
+                print("VStack appeared")
+//                profileViewModel.fetchClaims() {
+//                    result in
+//                    switch result {
+//                    case true:
+//                        print("Claims fethed")
+//                    case false:
+//                        print("Claims failed")
+//                    }
+//                }
+            }
         
     }
 }
