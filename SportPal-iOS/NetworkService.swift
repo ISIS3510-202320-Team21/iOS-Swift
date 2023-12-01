@@ -35,7 +35,7 @@ class NetworkService {
     }
     
     func request(method: HTTPMethod, resource: String, body: Data? = nil, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-        guard let url = URL(string: "http://34.125.85.147:8000/\(resource)/") else {
+        guard let url = URL(string: "http://35.196.145.7:8000/\(resource)/") else {
             completion(.failure(NetworkError.invalidURL))
             return
         }
