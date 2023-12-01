@@ -51,6 +51,13 @@ struct Match: Identifiable, Decodable, Hashable {
     let user_joined: User?
 }
 
+struct Claim: Identifiable, Decodable, Hashable {
+    let user_created_id: Int
+    let content: String
+    let id: Int
+    let user_created: User
+}
+
 struct Notification: Identifiable, Decodable, Hashable {
     let name: String
     let type: String

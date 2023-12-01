@@ -8,9 +8,16 @@
 import Foundation
 import UIKit
 
-struct ClaimRequest: Encodable {
+struct ClaimRequest: Decodable, Encodable, Hashable {
     let user_created_id: Int
     let content: String
+}
+struct ClaimResponse: Decodable {
+    
+    let user_created_id: Int
+    let content: String
+    let id: Int
+    let user_created: LoginResponse
 }
 
 struct ProfileEditRequest: Encodable {
@@ -103,6 +110,23 @@ class ProfileModel {
             }
         } catch {
             completion(false)
+        }
+    }
+    
+    func fetchClaims(completion: @escaping (Result<[Claim], NetworkService.NetworkError>) -> Void) {
+        networkService.request(method: .get, resource: "claims") { (result: Result<Data, NetworkService.NetworkError>) in
+            switch result {
+            case .success(let data):
+                do {
+                    let claims = try JSONDecoder().decode([Claim].self, from: data)
+                    print(String(data: data, encoding: .utf8)!)
+                    completion(.success(claims))
+                } catch {
+                    completion(.failure(.decodingFailed))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
     
