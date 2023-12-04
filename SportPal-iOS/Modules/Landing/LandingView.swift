@@ -58,7 +58,8 @@ struct LandingView: View {
                             switch result {
                             case true:
                                 navPaths.append(.usermatches)
-                            case false: break
+                            case false:
+                                navPaths.append(.usermatches)
                             }
                         }
                     })
