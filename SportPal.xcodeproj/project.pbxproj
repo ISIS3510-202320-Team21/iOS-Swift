@@ -28,6 +28,9 @@
 		A5852A3C2AEC69FA00AF3CF5 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5852A3B2AEC69FA00AF3CF5 /* NetworkService.swift */; };
 		A5852A3E2AEC705C00AF3CF5 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5852A3D2AEC705C00AF3CF5 /* SignupModel.swift */; };
 		A5852A402AEC719E00AF3CF5 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5852A3F2AEC719E00AF3CF5 /* SignupViewModel.swift */; };
+		A592649C2B1E5B7D00F9D8C2 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592649B2B1E5B7D00F9D8C2 /* AnalyticsView.swift */; };
+		A592649E2B1E5B8B00F9D8C2 /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592649D2B1E5B8B00F9D8C2 /* AnalyticsViewModel.swift */; };
+		A59264A02B1E5B9A00F9D8C2 /* AnalyticsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A592649F2B1E5B9A00F9D8C2 /* AnalyticsModel.swift */; };
 		A5DCF6C82ACE001D00081712 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6B52ACE001D00081712 /* LandingView.swift */; };
 		A5DCF6C92ACE001D00081712 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6B72ACE001D00081712 /* SignupView.swift */; };
 		A5DCF6CA2ACE001D00081712 /* CreateMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DCF6BC2ACE001D00081712 /* CreateMatchView.swift */; };
@@ -101,6 +104,9 @@
 		A5852A3B2AEC69FA00AF3CF5 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A5852A3D2AEC705C00AF3CF5 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
 		A5852A3F2AEC719E00AF3CF5 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		A592649B2B1E5B7D00F9D8C2 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		A592649D2B1E5B8B00F9D8C2 /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
+		A592649F2B1E5B9A00F9D8C2 /* AnalyticsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsModel.swift; sourceTree = "<group>"; };
 		A5DCF6B22ACDF88C00081712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A5DCF6B52ACE001D00081712 /* LandingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		A5DCF6B72ACE001D00081712 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -209,9 +215,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A592649A2B1E5B6A00F9D8C2 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				A592649B2B1E5B7D00F9D8C2 /* AnalyticsView.swift */,
+				A592649D2B1E5B8B00F9D8C2 /* AnalyticsViewModel.swift */,
+				A592649F2B1E5B9A00F9D8C2 /* AnalyticsModel.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		A5DCF6B32ACE001D00081712 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A592649A2B1E5B6A00F9D8C2 /* Analytics */,
 				A9120C6A2AE5B6020013B053 /* Messages */,
 				A9120C642AE5B3640013B053 /* Chats */,
 				A5DCF6B42ACE001D00081712 /* Landing */,
@@ -575,10 +592,13 @@
 				A5DCF6C82ACE001D00081712 /* LandingView.swift in Sources */,
 				A56418F02AFB39B1009BD9C1 /* ClaimView.swift in Sources */,
 				A5DCF6D12ACE001D00081712 /* NotificationsView.swift in Sources */,
+				A592649C2B1E5B7D00F9D8C2 /* AnalyticsView.swift in Sources */,
 				A9C97AEB2AFC7385006BD0C2 /* ProfileImageMod.swift in Sources */,
 				A5DCF6CD2ACE001D00081712 /* MatchDetailView.swift in Sources */,
+				A59264A02B1E5B9A00F9D8C2 /* AnalyticsModel.swift in Sources */,
 				A56C75632AF145FE008F535D /* LoginModel.swift in Sources */,
 				A5852A3E2AEC705C00AF3CF5 /* SignupModel.swift in Sources */,
+				A592649E2B1E5B8B00F9D8C2 /* AnalyticsViewModel.swift in Sources */,
 				A9A0108B2ACB44FB0070E71F /* SportPal_iOSApp.swift in Sources */,
 				A55ABE6C2AF71AB300659240 /* WeatherService.swift in Sources */,
 				A5DCF6D02ACE001D00081712 /* ProfileView.swift in Sources */,
@@ -751,7 +771,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SportPal-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = T3ZTCMX84P;
+				DEVELOPMENT_TEAM = HF22MP6896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SportPal-iOS/Info.plist";
@@ -775,7 +795,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TovarIndustries.SportPal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RamirezIndustries.SportPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -791,7 +811,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SportPal-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = T3ZTCMX84P;
+				DEVELOPMENT_TEAM = HF22MP6896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SportPal-iOS/Info.plist";
@@ -815,7 +835,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TovarIndustries.SportPal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RamirezIndustries.SportPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

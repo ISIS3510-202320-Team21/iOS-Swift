@@ -22,6 +22,7 @@ enum Routes {
     case matchessport
     case matchdetail
     case creatematch
+    case analytics
 }
 
 struct NavigationStackCoordinator: View {
@@ -60,6 +61,8 @@ struct NavigationStackCoordinator: View {
                     MatchDetailView(navPaths: $navPaths)
                 case .creatematch:
                     CreateMatchView(navPaths: $navPaths)
+                case .analytics:
+                    AnalyticsView(navPaths: $navPaths)
                 }
             }
         }

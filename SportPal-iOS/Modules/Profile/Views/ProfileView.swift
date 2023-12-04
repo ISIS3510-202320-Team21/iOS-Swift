@@ -98,7 +98,7 @@ struct ProfileView: View {
                             Spacer()
                         }.padding()
                             .background(Color.white)
-                            .cornerRadius(16).frame(height: 80)
+                            .cornerRadius(16).frame(height: 60)
                     }
                     Button(action: {
                         navPaths.append(.claim)
@@ -113,7 +113,22 @@ struct ProfileView: View {
                             Spacer()
                         }.padding()
                             .background(Color.white)
-                            .cornerRadius(16).frame(height: 80)
+                            .cornerRadius(16).frame(height: 60)
+                    }
+                    Button(action: {
+                        navPaths.append(.analytics)
+                    }) {
+                        HStack {
+                            Image(systemName: "doc.text.below.ecg.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundColor(Color.black)
+                            Spacer()
+                            Text("Analytics").font(.title).fontWeight(.thin).foregroundColor(Color.black)
+                            Spacer()
+                        }.padding()
+                            .background(Color.white)
+                            .cornerRadius(16).frame(height: 60)
                     }
                     Button(action: {
                         navPaths.append(.login)
@@ -128,7 +143,7 @@ struct ProfileView: View {
                             Spacer()
                         }.padding()
                             .background(Color.white)
-                            .cornerRadius(16).frame(height: 80)
+                            .cornerRadius(16).frame(height: 60)
                     }
                 }
                 .padding(.vertical)
