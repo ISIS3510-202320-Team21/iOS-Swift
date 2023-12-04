@@ -19,6 +19,7 @@ class ProfileViewModel: ObservableObject {
     @Published var showAlert: Bool = false
     @Published var errorMessage: String = ""
     @Published var alertTitle: String = ""
+    @Published var claims: [Claim] = []
     
     private var dataLoadGroup = DispatchGroup()
     
@@ -28,6 +29,10 @@ class ProfileViewModel: ObservableObject {
     
     func getUser() -> UserModel {
         return profileModel.user
+    }
+    
+    func getClaims() -> [Claim] {
+        return claims
     }
     
     func isValidName(name: String) -> Bool {
@@ -79,7 +84,10 @@ class ProfileViewModel: ObservableObject {
         fetchRoles {
             self.dataLoadGroup.leave()
         }
-        
+        dataLoadGroup.enter()
+        fetchClaims {
+            self.dataLoadGroup.leave()
+        }
         dataLoadGroup.enter()
         fetchUniversities {
             self.dataLoadGroup.leave()
@@ -175,6 +183,28 @@ class ProfileViewModel: ObservableObject {
             }
         }
     }
+    
+    func fetchClaims(completion: @escaping () -> Void) {
+        
+        profileModel.fetchClaims { [weak self] result in
+            switch result {
+            case .success(let claims):
+                self?.claims = claims
+                completion()
+            
+//                DispatchQueue.main.async {
+//                    self?.errorMessage = ""
+//                    
+//                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    completion()
+                    self?.errorMessage = "Failed to fetch claims: \(error)"
+                }
+            }
+        }
+    }
+    
     
     func didTapChangeProfilePic() {
         print("Clicked")
