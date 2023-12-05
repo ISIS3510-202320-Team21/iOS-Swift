@@ -22,6 +22,8 @@ struct SignupView: View {
     @State private var bornDate: Date = Date()
     @State private var selectedGender: String = ""
     
+    private let mainColor = Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0)
+    
     
     var body: some View {
         ScrollView {
@@ -35,7 +37,7 @@ struct SignupView: View {
                         .frame(width: 150, height: 150)
                         .imageScale(.small)
                         .offset(y:30)
-                        .foregroundColor(Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0))
+                        .foregroundColor(mainColor)
                     VStack{
                         Group{
                             CustomTextField(
@@ -80,7 +82,7 @@ struct SignupView: View {
                             DatePicker("Birth Date", selection: $bornDate, displayedComponents: .date)
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidBornDate(bornDate: bornDate) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidBornDate(bornDate: bornDate) ? mainColor : Color.red, lineWidth: 1))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
                             
@@ -95,7 +97,7 @@ struct SignupView: View {
                             }.pickerStyle(MenuPickerStyle())
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidGender(gender: selectedGender) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidGender(gender: selectedGender) ? mainColor : Color.red, lineWidth: 1))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
                             
@@ -107,7 +109,7 @@ struct SignupView: View {
                             }.pickerStyle(MenuPickerStyle())
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidUniversity(university: selectedUniversity) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidUniversity(university: selectedUniversity) ? mainColor : Color.red, lineWidth: 1))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
                             
@@ -119,7 +121,7 @@ struct SignupView: View {
                             }.pickerStyle(MenuPickerStyle())
                                 .padding()
                                 .frame(maxWidth: .infinity)
-                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidRole(role: selectedRole) ? Color(red: 0.175, green: 0.411, blue: 0.457, opacity: 100.0) : Color.red, lineWidth: 1))
+                                .background(RoundedRectangle(cornerRadius: 10).stroke(signupViewModel.isValidRole(role: selectedRole) ? mainColor : Color.red, lineWidth: 1))
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
                         }
