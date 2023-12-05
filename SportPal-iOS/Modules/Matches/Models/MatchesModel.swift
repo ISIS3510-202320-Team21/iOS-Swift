@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 struct MatchRequest: Encodable {
     let date: String
@@ -143,5 +144,32 @@ class MatchesModel {
     
     func getUserMatches() -> [Match] {
         return GlobalParameters.shared.getUserMatches()
+    }
+}
+
+
+class ImageCache {
+    static let shared = ImageCache()
+
+    private var cache = NSCache<NSString, UIImage>()
+    
+    public func convert(image: Image, callback: @escaping ((UIImage?) -> Void)) {
+        DispatchQueue.main.async {
+            let renderer = ImageRenderer(content: image)
+
+            // to adjust the size, you can use this (or set a frame to get precise output size)
+            // renderer.scale = 0.25
+            
+            // for CGImage use renderer.cgImage
+            callback(renderer.uiImage)
+        }
+    }
+
+    func getImage(url: URL) -> UIImage? {
+        return cache.object(forKey: url.absoluteString as NSString)
+    }
+
+    func setImage(image: UIImage, forURL url: URL) {
+        cache.setObject(image, forKey: url.absoluteString as NSString)
     }
 }
