@@ -8,24 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State private var isLoading = false
+    @StateObject private var networkMonitor = NetworkMonitor()
+    @State private var showAlert = false
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Image("LoadingScreen")
-            }.onAppear {                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    isLoading = true
-                }
+        NavigationStackCoordinator()
+            .onChange(of: networkMonitor.isActive) { newValue in
+                showAlert = !newValue}
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("No Internet Connection"),
+                    message: Text("Limited features on the app."),
+                    dismissButton: .default(Text("OK"))
+                )
             }
-            .background(
-                        NavigationLink(destination: LoginView(), isActive: $isLoading) {
-                            EmptyView()
-                        }
-            )
-        }
-        
     }
 }
 

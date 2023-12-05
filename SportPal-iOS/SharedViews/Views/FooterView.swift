@@ -8,49 +8,52 @@
 import SwiftUI
 
 struct FooterView: View, AppComponent {
-    var viewModel: FooterViewModel
+    
+    @Binding var navPaths: [Routes]
+        
     var body: some View {
         HStack() {
-            Button(action: {
-                viewModel.homeButtonAction.performAction()
+            Button(action:{
+                if navPaths.last != .landing {
+                    navPaths.append(.landing)
+                }
             }) {
-                Image(systemName: "house.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 30, height: 30) // Set a fixed size for the image if you want it to dictate the card's height
-                .foregroundColor(Color.black)
-            }.padding(.leading, 40)
+                    Image(systemName: "house.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(Color.black)
+                }.padding(.leading, 40)
             Spacer()
-            Button(action: {
-                viewModel.newMatchButtonAction.performAction()
-            }) {
-                Image(systemName: "plus.square.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 30, height: 30) // Set a fixed size for the image if you want it to dictate the card's height
-                .foregroundColor(Color.black)
-            }.padding()
+                Button(action: {
+                    if navPaths.last != .sportsmatch {
+                        navPaths.append(.sportsmatch)
+                    }
+                }) {
+                    Image(systemName: "plus.square.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(Color.black)
+                }.padding()
             Spacer()
-            Button(action: {
-                viewModel.profileButtonAction.performAction()
-            }) {
-                Image(systemName: "person.crop.square.fill")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 30, height: 30) // Set a fixed size for the image if you want it to dictate the card's height
-                .foregroundColor(Color.black)
-            }.padding(.trailing, 40)
-            
+                Button(action: {
+                    if navPaths.last != .profile {
+                        navPaths.append(.profile)
+                    }
+                }) {
+                    Image(systemName: "person.crop.square.fill")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(Color.black)
+                }.padding(.trailing, 40)
         }.background(Color.white)
     }
 }
 
 struct FooterView_Previews: PreviewProvider {
     static var previews: some View {
-        FooterView(viewModel: FooterViewModel(
-            homeButtonAction: NavigateToHomeActionStrategy(),
-            newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-            profileButtonAction: NavigateToProfileActionStrategy()
-        ))
+        FooterView(navPaths: .constant([]))
     }
 }

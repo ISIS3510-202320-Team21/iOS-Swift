@@ -7,33 +7,31 @@
 
 import SwiftUI
 
-struct NotificationsViewModel: View {
+struct NotificationsView: View {
+        
+    @Binding var navPaths: [Routes]
+    
     var body: some View {
-        NavigationView{
             VStack{
-                HeaderView(title: "NOTIFICATIONS", notifications: false, messages: true)
-                
+                HeaderBack(title: "NOTIFICATIONS") {
+                    navPaths.removeLast()
+                }
                 VStack{
                 NotificationView(texto: "Hi, please rate your match with David")
                 NotificationView(texto: "Mr Lòpez wants to see you in a match. Check here for more details")
                 NotificationView(texto: "New people ready to match in tennis. All in your preffered hours")
                 }
                 Spacer()
-                FooterView(viewModel: FooterViewModel(
-                    homeButtonAction: NavigateToHomeActionStrategy(),
-                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-                    profileButtonAction: NavigateToProfileActionStrategy()
-                ))
-            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))	
-        }
-                
-        
+                FooterView(navPaths: $navPaths)
+            }
+            .navigationBarBackButtonHidden(true)
+            .background(Color(red: 0.961, green: 0.961, blue: 0.961))
     }
 }
 
 struct NotificationsViewmodel_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationsViewModel()
+        NotificationsView(navPaths: .constant([]))
     }
 }
 
@@ -44,13 +42,18 @@ struct NotificationView: View {
     var body: some View {
         HStack() {
             Text(texto)
-                .font(.system(size: 25, weight: .light, design: .default)).padding()
-                .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+                .font(.system(size: 20, weight: .light, design: .default))
+                .fontWeight(.thin)
+                .multilineTextAlignment(.center)
+                .padding()
+                .foregroundColor(Color.black)
             Spacer()
-            Image("Arrow")
+            Image(systemName: "chevron.right")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
+                .frame(width: 25, height: 25)
+                .padding(10)
+                .foregroundColor(Color.black)
 
         }.background(Color.white)
     }

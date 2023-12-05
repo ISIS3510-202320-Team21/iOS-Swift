@@ -7,72 +7,85 @@
 
 import SwiftUI
 
-struct MessagesViewModel: View {
+
+struct MessagesView: View {
+    
+    @Binding var navPaths: [Routes]
+    
     var body: some View {
-        NavigationView{
             VStack{
-                HeaderView(title: "MESSAGES", notifications: true, messages: false)
+                ZStack(alignment: .topTrailing) {
+                    VStack {
+                        HeaderBack(title: "MESSAGES") {
+                            navPaths.removeLast()
+                        }
+                    }
+                    VStack {
+                        Button(action:{}) {
+                            Image(systemName: "square.and.pencil")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 25, height: 25, alignment: .topLeading)
+                                .padding(.top, 4)
+                                .foregroundColor(Color.black)
+                        }.padding()
+                    }
+                }
                 
-                Button(action:{}) {
-                    Spacer()
-                    Image("enviar")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 38, alignment: .topLeading)
-                        .padding(5)
-                        .background(Color.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
-                        
-                }.padding()
                 VStack{
-                MessageView(texto: "How fun was yesterday!", persona: "hombre", nombre: "Benito Martinez")
-                MessageView(texto: "Looking forward to meet you again!", persona: "mujer", nombre: "Karol. G")
+                MessageView(navPaths: .constant([]), texto: "How fun was yesterday!", persona: "hombre", nombre: "Benito Martinez")
+                MessageView(navPaths: .constant([]), texto: "Looking forward to meet you again!", persona: "mujer", nombre: "Karol. G")
                 }
                 Spacer()
-                FooterView(viewModel: FooterViewModel(
-                    homeButtonAction: NavigateToHomeActionStrategy(),
-                    newMatchButtonAction: NavigateToNewMatchActionStrategy(),
-                    profileButtonAction: NavigateToProfileActionStrategy()
-                ))
-            }.background(Color(red: 0.961, green: 0.961, blue: 0.961))
-        }
+            }.navigationBarBackButtonHidden(true)
+            .background(Color(red: 0.961, green: 0.961, blue: 0.961))
     }
 }
 
 struct MessagesViewModel_Previews: PreviewProvider {
     static var previews: some View {
-        MessagesViewModel()
+        MessagesView(navPaths: .constant([]))
     }
 }
+
+
 struct MessageView: View {
+   
+    @Binding var navPaths: [Routes]
     
     var texto: String
     var persona: String
     var nombre: String
     
     var body: some View {
-        HStack() {
-            Image(persona == "hombre" ? "perfil": "perfilMujer")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 80, height: 80)
-            VStack(alignment: .leading, spacing: 1 ){
-                Text(nombre)
-                    .font(.system(size: 15, weight: .bold, design: .default)).padding(3)
-                    .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
-                Text(texto)
-                    .font(.system(size: 15, weight: .light, design: .default))
-                    .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+            Button(action:{navPaths.append(.chats)}){
+                HStack() {
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 60, height: 60)
+                        .padding(10)
+                        .foregroundColor(Color.gray)
+                    VStack(alignment: .leading, spacing: 1 ){
+                        Text(nombre)
+                            .font(.system(size: 16, weight: .bold, design: .default))
+                            .fontWeight(.regular)
+                            .padding(3)
+                            .foregroundColor(Color.black)
+                        Text(texto)
+                            .font(.system(size: 16, weight: .light, design: .default))
+                            .foregroundColor(Color.gray)
+                    }
+                    
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 25, height: 25)
+                        .padding(10)
+                        .foregroundColor(Color.black)
+                    
+                }.background(Color.white)
             }
-            
-            Spacer()
-            Image("Arrow")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 50, height: 50)
-
-        }.background(Color.white)
     }
-    
-    
 }
