@@ -136,13 +136,21 @@ struct CreateMatchView: View {
                         let dateFormatterHour = DateFormatter()
                         dateFormatterHour.dateFormat = "HH:mm"
                         
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss"
+                        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+                        
+                        let stringDate = dateFormatter.string(from: selectedDate)
+                        
                         let startTimeString = dateFormatterHour.string(from: selectedStartTime)
                         let endTimeString = dateFormatterHour.string(from: selectedEndTime)
                         
                         let formattedMatchTime = "\(startTimeString) - \(endTimeString)"
                         
+                        print(stringDate + "mira la fecha")
+                        
                         let matchRequest =  MatchRequest(
-                            date: selectedDate,
+                            date: stringDate+"T"+startTimeString,
                             time: formattedMatchTime,
                             status: "Pending",
                             court: court,
