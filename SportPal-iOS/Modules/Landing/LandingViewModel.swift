@@ -38,8 +38,6 @@ class LandingViewModel: ObservableObject {
     public func fetchData() {
         dataLoadGroup.enter()
         fetchRecentSports {
-            self.dataLoadGroup.leave()
-            self.dataLoadGroup.enter()
             self.fetchWeatherData {
                 self.dataLoadGroup.leave()
             }
