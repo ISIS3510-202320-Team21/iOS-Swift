@@ -133,10 +133,6 @@ struct CreateMatchView: View {
                     
                     Button(action: {
                         
-                        let dateFormatterDate = DateFormatter()
-                        dateFormatterDate.dateFormat = "dd/MM/yyyy"
-                        let formattedMatchDate = dateFormatterDate.string(from: selectedDate)
-                        
                         let dateFormatterHour = DateFormatter()
                         dateFormatterHour.dateFormat = "HH:mm"
                         
@@ -146,7 +142,7 @@ struct CreateMatchView: View {
                         let formattedMatchTime = "\(startTimeString) - \(endTimeString)"
                         
                         let matchRequest =  MatchRequest(
-                            date: formattedMatchDate,
+                            date: selectedDate,
                             time: formattedMatchTime,
                             status: "Pending",
                             court: court,

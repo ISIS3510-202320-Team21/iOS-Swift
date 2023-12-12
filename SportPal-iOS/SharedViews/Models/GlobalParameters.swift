@@ -140,7 +140,7 @@ class GlobalParameters {
 
 func convertStringToDate(dateString: String) -> Date? {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd/MM/yyyy"
+    dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss"
     dateFormatter.locale = Locale(identifier: "en_US_POSIX") // Set locale if needed
     
     if let date = dateFormatter.date(from: dateString) {

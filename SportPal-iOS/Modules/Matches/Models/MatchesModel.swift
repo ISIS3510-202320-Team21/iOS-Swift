@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 
 struct MatchRequest: Encodable {
-    let date: String
+    let date: Date
     let time: String
     let status: String
     let court: String
