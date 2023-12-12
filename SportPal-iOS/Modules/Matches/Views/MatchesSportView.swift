@@ -24,17 +24,6 @@ struct MatchesSportView: View {
             Spacer()
             VStack() {
                 VStack {
-                    DatePicker(
-                        "Match Date",
-                        selection: $selectedMatchDate,
-                        displayedComponents: [.date]
-                    )
-                    .padding(.horizontal, 20.0)
-                    .frame(height: 50.0)
-                }.padding()
-                    .background(Color.white)
-                    .cornerRadius(16)
-                VStack {
                     ForEach(matchesViewModel.getSportMatches(), id: \.self) { match in
                         if match.status == "Pending" && match.user_created_id != matchesViewModel.getUser().id {
                             Button(action: {
