@@ -11,6 +11,8 @@ class AnalyticsViewModel: ObservableObject {
     
     private let analyticsModel = AnalyticsModel(user: UserModel())
     
+    private let matchesModel = MatchesModel(user: UserModel())
+    
     private var dataLoadGroup = DispatchGroup()
     
     @Published var favoriteSports: [Sport] = []
@@ -39,6 +41,7 @@ class AnalyticsViewModel: ObservableObject {
             switch result {
             case .success(let sports):
                 self?.favoriteSports = sports
+                print(self?.favoriteSports)
                 self?.errorMessage = ""
                 completion()
             case .failure(let error):
@@ -46,13 +49,4 @@ class AnalyticsViewModel: ObservableObject {
             }
         }
     }
-    
-    func getFavoriteSport1() -> Sport {
-        return favoriteSports[0];
-    }
-    
-    func getFavoriteSport2() -> Sport {
-        return favoriteSports[1];
-    }
-    
 }

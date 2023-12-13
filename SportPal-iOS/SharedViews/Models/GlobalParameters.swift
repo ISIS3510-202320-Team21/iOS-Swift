@@ -11,7 +11,7 @@ struct Sport: Identifiable, Decodable, Hashable {
     let id: Int
     let name: String
     let imageUrl: String
-    let count: Int?
+    let count: Int
 }
 
 struct Level: Identifiable, Decodable, Hashable {
