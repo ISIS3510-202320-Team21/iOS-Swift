@@ -15,7 +15,7 @@ class NotificationCenterService: UIViewController{
 
     }
 
-    func checkPermison(){
+    func checkPermison(title: String, body: String, identifier: String ){
         let fechaAct = Date()
         let fechaNoti = fechaAct.addingTimeInterval(-5*60)
         let notificationCenter = UNUserNotificationCenter.current()
@@ -24,10 +24,10 @@ class NotificationCenterService: UIViewController{
             case .denied:
                 return
             case .authorized:
-                self.dispatchNotification(title: "xD", body: "Sirvio", detalle: fechaNoti, identifier: "si")
+                self.dispatchNotification(title: title, body: "Match at \(body)", identifier: "si")
             case .notDetermined:
                 notificationCenter.requestAuthorization(options: [.alert, .sound]) {didAllow, error in if didAllow {
-                    self.dispatchNotification(title: "xD", body: "Sirvio", detalle: fechaNoti, identifier: "si")
+                    self.dispatchNotification(title: title, body: "Match at \(body)", identifier: "si")
                 }}
             default:
                 return
@@ -37,7 +37,7 @@ class NotificationCenterService: UIViewController{
         }
     }
 
-    func dispatchNotification(title: String, body: String, detalle: Date, identifier: String ){
+    func dispatchNotification(title: String, body: String, identifier: String ){
 
         let notificationCenter = UNUserNotificationCenter.current()
 
@@ -45,8 +45,8 @@ class NotificationCenterService: UIViewController{
         content.title = title
         content.body = body
         content.sound = .default
-        let hour = 21
-        let minute = 17
+        let hour = Int(body.prefix(2))
+        let minute = Int(body.dropFirst(3).prefix(2))
 
         let calendar = Calendar.current
         // var dateComponents = calendar.dateComponents( [.year, .month, .day, .hour, .minute], from: detalle)

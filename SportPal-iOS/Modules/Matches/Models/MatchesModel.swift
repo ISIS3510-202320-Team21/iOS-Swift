@@ -22,6 +22,8 @@ struct MatchRequest: Encodable {
 class MatchesModel {
     
     @Published var user: UserModel
+    
+    private let noti = NotificationCenterService()
         
     init(user: UserModel) {
         self.user = GlobalParameters.shared.getUser()
@@ -82,6 +84,7 @@ class MatchesModel {
             (result: Result<Data, NetworkService.NetworkError>) in
             switch result {
             case .success( _):
+                self.noti.checkPermison(title: GlobalParameters.shared.getSelectedMatch().sport.name, body: GlobalParameters.shared.getSelectedMatch().time, identifier: "1")
                 completion(true)
             case .failure( _):
                 completion(false)
