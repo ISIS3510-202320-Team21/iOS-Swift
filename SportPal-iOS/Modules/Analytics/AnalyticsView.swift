@@ -50,80 +50,80 @@ struct AnalyticsView: View {
                             .padding(.bottom, 20)
                         Spacer()
                     }.background(Color(red: 0.96, green: 0.96, blue: 0.96))
-//                    ScrollView{
-//                        VStack {
-//                            HStack {
-//                                AsyncImage(url: URL(string: analyticsViewModel.getFavoriteSport1().imageUrl)) { phase in
-//                                    switch phase {
-//                                    case .empty:
-//                                        ProgressView()
-//                                    case .success(let image):
-//                                        image
-//                                            .resizable()
-//                                            .frame(width: 50, height: 50)
-//                                            .aspectRatio(contentMode: .fit)
-//                                            .clipShape(Circle())
-//                                            .overlay(Circle().stroke(Color.white, lineWidth: 2))
-//                                            .padding(.trailing, 10)
-//                                    case .failure:
-//                                        Image(systemName: "exclamationmark.triangle.fill")
-//                                            .foregroundColor(.red)
-//                                            .frame(width: 100, height: 100)
-//                                    @unknown default:
-//                                        EmptyView()
-//                                    }
-//                                }
-//                                
-//                                Spacer()
-//                                
-//                                VStack(alignment: .center, spacing: 5) {
-//                                    Text("Your most favorite sport is \(analyticsViewModel.getFavoriteSport1().name) with \(analyticsViewModel.getFavoriteSport1().count!) matches.")
-//                                        .font(.headline)
-//                                        .foregroundColor(.primary)
-//                                }
-//                                Spacer()
-//                            }
-//                            .padding()
-//                            .frame(maxWidth: .infinity)
-//                            .background(RoundedRectangle(cornerRadius: 10).stroke(Color.black))
-//                            .padding(.horizontal)
-//                            HStack {
-//                                AsyncImage(url: URL(string: analyticsViewModel.getFavoriteSport2().imageUrl)) { phase in
-//                                    switch phase {
-//                                    case .empty:
-//                                        ProgressView()
-//                                    case .success(let image):
-//                                        image
-//                                            .resizable()
-//                                            .frame(width: 50, height: 50)
-//                                            .aspectRatio(contentMode: .fit)
-//                                            .clipShape(Circle())
-//                                            .overlay(Circle().stroke(Color.white, lineWidth: 2))
-//                                            .padding(.trailing, 10)
-//                                    case .failure:
-//                                        Image(systemName: "exclamationmark.triangle.fill")
-//                                            .foregroundColor(.red)
-//                                            .frame(width: 100, height: 100)
-//                                    @unknown default:
-//                                        EmptyView()
-//                                    }
-//                                }
-//                                
-//                                Spacer()
-//                                
-//                                VStack(alignment: .center, spacing: 5) {
-//                                    Text("Your second most favorite sport is \(analyticsViewModel.getFavoriteSport2().name) with \(analyticsViewModel.getFavoriteSport2().count!) matches.")
-//                                        .font(.headline)
-//                                        .foregroundColor(.primary)
-//                                }
-//                                Spacer()
-//                            }
-//                            .padding()
-//                            .frame(maxWidth: .infinity)
-//                            .background(RoundedRectangle(cornerRadius: 10).stroke(Color.black))
-//                            .padding(.horizontal)
-//                        }
-//                    }
+                    ScrollView{
+                        VStack {
+                            HStack {
+                                AsyncImage(url: URL(string: analyticsViewModel.getFavoriteSport1().imageUrl)) { phase in
+                                    switch phase {
+                                    case .empty:
+                                        ProgressView()
+                                    case .success(let image):
+                                        image
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                            .aspectRatio(contentMode: .fit)
+                                            .clipShape(Circle())
+                                            .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                                            .padding(.trailing, 10)
+                                    case .failure:
+                                        Image(systemName: "exclamationmark.triangle.fill")
+                                            .foregroundColor(.red)
+                                            .frame(width: 100, height: 100)
+                                    @unknown default:
+                                        EmptyView()
+                                    }
+                                }
+                                
+                                Spacer()
+                                
+                                VStack(alignment: .center, spacing: 5) {
+                                    Text("Your most favorite sport is \(analyticsViewModel.getFavoriteSport1().name) with \(analyticsViewModel.getFavoriteSport1().count!) matches.")
+                                        .font(.headline)
+                                        .foregroundColor(.primary)
+                                }
+                                Spacer()
+                            }
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(RoundedRectangle(cornerRadius: 10).stroke(Color.black))
+                            .padding(.horizontal)
+                            HStack {
+                                AsyncImage(url: URL(string: analyticsViewModel.getFavoriteSport2().imageUrl)) { phase in
+                                    switch phase {
+                                    case .empty:
+                                        ProgressView()
+                                    case .success(let image):
+                                        image
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                            .aspectRatio(contentMode: .fit)
+                                            .clipShape(Circle())
+                                            .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                                            .padding(.trailing, 10)
+                                    case .failure:
+                                        Image(systemName: "exclamationmark.triangle.fill")
+                                            .foregroundColor(.red)
+                                            .frame(width: 100, height: 100)
+                                    @unknown default:
+                                        EmptyView()
+                                    }
+                                }
+                                
+                                Spacer()
+                                
+                                VStack(alignment: .center, spacing: 5) {
+                                    Text("Your second most favorite sport is \(analyticsViewModel.getFavoriteSport2().name) with \(analyticsViewModel.getFavoriteSport2().count!) matches.")
+                                        .font(.headline)
+                                        .foregroundColor(.primary)
+                                }
+                                Spacer()
+                            }
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(RoundedRectangle(cornerRadius: 10).stroke(Color.black))
+                            .padding(.horizontal)
+                        }
+                    }
                 }
                 
             }.padding()

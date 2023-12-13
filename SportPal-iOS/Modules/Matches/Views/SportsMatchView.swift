@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct SportsMatchView: View {
     
     @Binding var navPaths: [Routes]
+    @State private var imageLoadError = false
     
     @ObservedObject var matchesViewModel = MatchesViewModel()
     
@@ -63,24 +65,20 @@ struct SportsMatchView: View {
                                 }
                                 HStack {
                                     VStack{
-                                        AsyncImage(url: URL(string: sport.imageUrl)) { phase in
-                                            switch phase {
-                                            case .empty:
-                                                ProgressView()
-                                            case .success(let image):
-                                                image
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fit)
-                                                    .frame(width: 100, height: 100)
-                                            case .failure:
+                                        KFImage(URL(string: sport.imageUrl))
+                                            .onFailure{ error in
                                                 Image(systemName: "exclamationmark.triangle.fill")
                                                     .foregroundColor(.red)
                                                     .frame(width: 100, height: 100)
-                                            @unknown default:
-                                                EmptyView()
                                             }
-                                        }
+                                            .placeholder{
+                                                ProgressView()
+                                            }
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 100, height: 100)
                                     }
+                                    
                                     Spacer()
                                     VStack{
                                         Image(systemName: "chevron.right")
@@ -92,6 +90,8 @@ struct SportsMatchView: View {
                                             .font(Font.title.weight(.thin))
                                     }
                                 }
+                                
+                                
                             }
                             .padding()
                             .background(Color.white)

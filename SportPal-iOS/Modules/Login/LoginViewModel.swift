@@ -28,7 +28,9 @@ class LoginViewModel: ObservableObject {
         loginModel.login(loginData: loginRequest) { [weak self] result in
             switch result {
             case .success(let response):
-                GlobalParameters.shared.setUser(loginResponse: response)
+                DispatchQueue.main.async {
+                    GlobalParameters.shared.setUser(loginResponse: response)
+                }
                 completion(true)
 //                self?.showAlert(title: "Success" ,message: "Logged in")
             case .failure(let error):

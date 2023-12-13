@@ -63,6 +63,7 @@
 		A9F86FC92AF2D1D600CF7EB4 /* GlobalParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FC82AF2D1D600CF7EB4 /* GlobalParameters.swift */; };
 		A9F86FCB2AF2F22A00CF7EB4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FCA2AF2F22A00CF7EB4 /* ProfileViewModel.swift */; };
 		A9F86FCD2AF3083C00CF7EB4 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F86FCC2AF3083C00CF7EB4 /* ImagePicker.swift */; };
+		CC19FDCF2B1EB7DD004C9D20 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CC19FDCE2B1EB7DD004C9D20 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC19FDCF2B1EB7DD004C9D20 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +446,9 @@
 			dependencies = (
 			);
 			name = SportPal;
+			packageProductDependencies = (
+				CC19FDCE2B1EB7DD004C9D20 /* Kingfisher */,
+			);
 			productName = "SportPal-iOS";
 			productReference = A9A010872ACB44FB0070E71F /* SportPal.app */;
 			productType = "com.apple.product-type.application";
@@ -516,6 +521,9 @@
 				Base,
 			);
 			mainGroup = A9A0107E2ACB44FB0070E71F;
+			packageReferences = (
+				CC19FDCD2B1EB7DD004C9D20 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = A9A010882ACB44FB0070E71F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -771,7 +779,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SportPal-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = HF22MP6896;
+				DEVELOPMENT_TEAM = T3ZTCMX84P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SportPal-iOS/Info.plist";
@@ -795,7 +803,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.RamirezIndustries.SportPal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TovarIndustries.SportPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -811,7 +819,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SportPal-iOS/Preview Content\"";
-				DEVELOPMENT_TEAM = HF22MP6896;
+				DEVELOPMENT_TEAM = T3ZTCMX84P;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SportPal-iOS/Info.plist";
@@ -835,7 +843,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.RamirezIndustries.SportPal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TovarIndustries.SportPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -957,6 +965,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC19FDCD2B1EB7DD004C9D20 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC19FDCE2B1EB7DD004C9D20 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC19FDCD2B1EB7DD004C9D20 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A9A0107F2ACB44FB0070E71F /* Project object */;
 }
