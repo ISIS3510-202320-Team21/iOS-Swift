@@ -14,6 +14,39 @@ struct Sport: Identifiable, Decodable, Hashable {
     let count: Int
 }
 
+struct ChatCompletionResponse: Decodable {
+    let id: String
+    let object: String
+    let created: Int
+    let model: String
+    let choices: [Choice]
+    let usage: Usage
+    let systemFingerprint: String?
+
+    struct Choice: Decodable {
+        let index: Int
+        let message: Message
+        let finishReason: String
+
+        struct Message: Decodable {
+            let role: String
+            let content: String
+        }
+    }
+
+    struct Usage: Decodable {
+        let promptTokens: Int
+        let completionTokens: Int
+        let totalTokens: Int
+
+        private enum CodingKeys: String, CodingKey {
+            case promptTokens = "prompt_tokens"
+            case completionTokens = "completion_tokens"
+            case totalTokens = "total_tokens"
+        }
+    }
+}
+
 struct Level: Identifiable, Decodable, Hashable {
     let id: Int
     let name: String
@@ -31,7 +64,7 @@ struct User: Identifiable, Decodable, Hashable {
     let imageUrl: String?
     let latitude: Double?
     let longitude: Double?
-    let notifications: [Notification]
+    let notifications: [Notification]?
 }
 
 struct Match: Identifiable, Decodable, Hashable {
@@ -52,10 +85,10 @@ struct Match: Identifiable, Decodable, Hashable {
 }
 
 struct Claim: Identifiable, Decodable, Hashable {
-    let user_created_id: Int
+    let user_created_id: Int?
     let content: String
     let id: Int
-    let user_created: User
+    let user_created: User?
 }
 
 struct Notification: Identifiable, Decodable, Hashable {
