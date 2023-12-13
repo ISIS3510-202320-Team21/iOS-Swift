@@ -85,9 +85,7 @@ class ProfileViewModel: ObservableObject {
             self.dataLoadGroup.leave()
         }
         dataLoadGroup.enter()
-        fetchClaims {
-            self.dataLoadGroup.leave()
-        }
+        fetchClaims()
         dataLoadGroup.enter()
         fetchUniversities {
             self.dataLoadGroup.leave()
@@ -184,21 +182,23 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
-    func fetchClaims(completion: @escaping () -> Void) {
+    func fetchClaims() {
         
         profileModel.fetchClaims { [weak self] result in
             switch result {
             case .success(let claims):
                 self?.claims = claims
-                completion()
+//                print(claims)
+//                completion()
             
 //                DispatchQueue.main.async {
 //                    self?.errorMessage = ""
 //                    
 //                }
             case .failure(let error):
+                print("Error fetching claims")
                 DispatchQueue.main.async {
-                    completion()
+//                    completion()
                     self?.errorMessage = "Failed to fetch claims: \(error)"
                 }
             }
@@ -215,5 +215,7 @@ class ProfileViewModel: ObservableObject {
         showAlert = true
         alertTitle = title
     }
+    
+    
     
 }

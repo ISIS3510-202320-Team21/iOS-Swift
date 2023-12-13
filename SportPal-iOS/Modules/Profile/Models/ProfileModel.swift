@@ -119,9 +119,10 @@ class ProfileModel {
             case .success(let data):
                 do {
                     let claims = try JSONDecoder().decode([Claim].self, from: data)
-                    print(String(data: data, encoding: .utf8)!)
+//                    print("I managed to decode")
                     completion(.success(claims))
-                } catch {
+                } catch (let e){
+                    print(e)
                     completion(.failure(.decodingFailed))
                 }
             case .failure(let error):
